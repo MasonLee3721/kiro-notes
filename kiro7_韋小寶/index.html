@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即時投信買賣超與投本比分析報告 (2026-08-14) | kiro7 韋小寶</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151d30;
+            --card-border: #232f48;
+            --text-main: #f1f5f9;
+            --text-sub: #94a3b8;
+            --accent-gold: #f59e0b;
+            --accent-blue: #3b82f6;
+            --green-buy: #10b981;
+            --red-sell: #ef4444;
+            --badge-bg: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 24px 16px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .title-group h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f59e0b, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+
+        .title-group p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .meta-badge {
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--accent-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Stat Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 18px 20px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+        }
+
+        .stat-card .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .stat-card .value.buy { color: var(--green-buy); }
+        .stat-card .value.sell { color: var(--red-sell); }
+        .stat-card .value.gold { color: var(--accent-gold); }
+
+        /* Control Bar */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            background: var(--card-bg);
+            padding: 4px;
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: var(--accent-blue);
+            color: #ffffff;
+        }
+
+        .search-input {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            outline: none;
+            width: 260px;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-gold);
+        }
+
+        /* Table */
+        .table-container {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        th {
+            background: #1e293b;
+            color: var(--text-sub);
+            padding: 14px 16px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--card-border);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            white-space: nowrap;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .code-cell {
+            font-family: monospace;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .name-cell {
+            font-weight: 600;
+        }
+
+        .buy-text { color: var(--green-buy); font-weight: 600; }
+        .sell-text { color: var(--red-sell); font-weight: 600; }
+
+        footer {
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            padding: 20px 0;
+            border-top: 1px solid var(--card-border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="title-group">
+                <h1>即時投信買賣超與投本比分析報告</h1>
+                <p>資料日期：2026-08-14 &nbsp;|&nbsp; 報告生成器：kiro7 韋小寶 Multi-Agent Team</p>
+            </div>
+            <div class="meta-badge">官方原生地 API 即時連線</div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">上市投本比冠軍</div>
+                <div class="value gold">高力 (8996)</div>
+                <div class="label" style="margin-top:4px;">投本比 +2.360% / 買超 2204 張</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">上市投賣比警訊</div>
+                <div class="value sell">穎崴 (6515)</div>
+                <div class="label" style="margin-top:4px;">投賣比 -0.862% / 賣超 -310 張</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">上櫃買超冠軍</div>
+                <div class="value buy">合晶             (6182)</div>
+                <div class="label" style="margin-top:4px;">買超 515 張</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">上櫃賣超第一</div>
+                <div class="value sell">群聯             (8299)</div>
+                <div class="label" style="margin-top:4px;">賣超 -611 張</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('twse-buy')">📈 上市買超投本比 TOP 20</button>
+                <button class="tab-btn" onclick="showTab('twse-sell')">📉 上市賣超投本比 TOP 20</button>
+                <button class="tab-btn" onclick="showTab('tpex')">🟢 上櫃投信買賣超焦點榜</button>
+            </div>
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 搜尋股號或股名..." onkeyup="filterTable()">
+        </div>
+
+        <!-- Section 1: TWSE Buy -->
+        <div id="sec-twse-buy" class="table-section">
+            <div class="table-container">
+                <table id="table-twse-buy">
+                    <thead>
+                        <tr>
+                            <th>名次</th>
+                            <th>股號</th>
+                            <th>股票名稱</th>
+                            <th>股本發行張數</th>
+                            <th>投信買超(張)</th>
+                            <th>投本比 (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td class="code-cell">8996</td>
+                            <td class="name-cell">高力</td>
+                            <td>93,387</td>
+                            <td class="buy-text">+2,204</td>
+                            <td class="buy-text">+2.360%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td class="code-cell">4764</td>
+                            <td class="name-cell">雙鍵</td>
+                            <td>85,542</td>
+                            <td class="buy-text">+520</td>
+                            <td class="buy-text">+0.608%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td class="code-cell">8046</td>
+                            <td class="name-cell">南電</td>
+                            <td>646,165</td>
+                            <td class="buy-text">+2,466</td>
+                            <td class="buy-text">+0.382%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td class="code-cell">3532</td>
+                            <td class="name-cell">台勝科</td>
+                            <td>387,848</td>
+                            <td class="buy-text">+1,474</td>
+                            <td class="buy-text">+0.380%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td class="code-cell">2327</td>
+                            <td class="name-cell">國巨*</td>
+                            <td>514,682</td>
+                            <td class="buy-text">+1,473</td>
+                            <td class="buy-text">+0.286%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6</strong></td>
+                            <td class="code-cell">2368</td>
+                            <td class="name-cell">金像電</td>
+                            <td>522,932</td>
+                            <td class="buy-text">+1,359</td>
+                            <td class="buy-text">+0.260%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7</strong></td>
+                            <td class="code-cell">6669</td>
+                            <td class="name-cell">緯穎</td>
+                            <td>185,840</td>
+                            <td class="buy-text">+449</td>
+                            <td class="buy-text">+0.242%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>8</strong></td>
+                            <td class="code-cell">3017</td>
+                            <td class="name-cell">奇鋐</td>
+                            <td>392,543</td>
+                            <td class="buy-text">+784</td>
+                            <td class="buy-text">+0.200%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>9</strong></td>
+                            <td class="code-cell">6442</td>
+                            <td class="name-cell">光聖</td>
+                            <td>80,450</td>
+                            <td class="buy-text">+125</td>
+                            <td class="buy-text">+0.155%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10</strong></td>
+                            <td class="code-cell">1560</td>
+                            <td class="name-cell">中砂</td>
+                            <td>148,925</td>
+                            <td class="buy-text">+211</td>
+                            <td class="buy-text">+0.142%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>11</strong></td>
+                            <td class="code-cell">2883</td>
+                            <td class="name-cell">凱基金</td>
+                            <td>18,556,989</td>
+                            <td class="buy-text">+25,023</td>
+                            <td class="buy-text">+0.135%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>12</strong></td>
+                            <td class="code-cell">2884</td>
+                            <td class="name-cell">玉山金</td>
+                            <td>16,192,000</td>
+                            <td class="buy-text">+18,352</td>
+                            <td class="buy-text">+0.113%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>13</strong></td>
+                            <td class="code-cell">6805</td>
+                            <td class="name-cell">富世達</td>
+                            <td>68,553</td>
+                            <td class="buy-text">+75</td>
+                            <td class="buy-text">+0.109%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>14</strong></td>
+                            <td class="code-cell">2886</td>
+                            <td class="name-cell">兆豐金</td>
+                            <td>14,833,378</td>
+                            <td class="buy-text">+15,554</td>
+                            <td class="buy-text">+0.105%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>15</strong></td>
+                            <td class="code-cell">2892</td>
+                            <td class="name-cell">第一金</td>
+                            <td>14,379,468</td>
+                            <td class="buy-text">+14,618</td>
+                            <td class="buy-text">+0.102%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>16</strong></td>
+                            <td class="code-cell">2890</td>
+                            <td class="name-cell">永豐金</td>
+                            <td>14,792,168</td>
+                            <td class="buy-text">+14,420</td>
+                            <td class="buy-text">+0.097%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>17</strong></td>
+                            <td class="code-cell">4938</td>
+                            <td class="name-cell">和碩</td>
+                            <td>2,682,044</td>
+                            <td class="buy-text">+2,422</td>
+                            <td class="buy-text">+0.090%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>18</strong></td>
+                            <td class="code-cell">2492</td>
+                            <td class="name-cell">華新科</td>
+                            <td>485,204</td>
+                            <td class="buy-text">+414</td>
+                            <td class="buy-text">+0.085%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>19</strong></td>
+                            <td class="code-cell">2887</td>
+                            <td class="name-cell">台新新光金</td>
+                            <td>29,606,150</td>
+                            <td class="buy-text">+25,041</td>
+                            <td class="buy-text">+0.085%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>20</strong></td>
+                            <td class="code-cell">2880</td>
+                            <td class="name-cell">華南金</td>
+                            <td>13,916,965</td>
+                            <td class="buy-text">+11,674</td>
+                            <td class="buy-text">+0.084%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 2: TWSE Sell -->
+        <div id="sec-twse-sell" class="table-section" style="display:none;">
+            <div class="table-container">
+                <table id="table-twse-sell">
+                    <thead>
+                        <tr>
+                            <th>名次</th>
+                            <th>股號</th>
+                            <th>股票名稱</th>
+                            <th>股本發行張數</th>
+                            <th>投信賣超(張)</th>
+                            <th>投賣比 (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td class="code-cell">6515</td>
+                            <td class="name-cell">穎崴</td>
+                            <td>36,038</td>
+                            <td class="sell-text">-310</td>
+                            <td class="sell-text">-0.862%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td class="code-cell">8028</td>
+                            <td class="name-cell">昇陽半導體</td>
+                            <td>179,491</td>
+                            <td class="sell-text">-1,544</td>
+                            <td class="sell-text">-0.860%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td class="code-cell">8210</td>
+                            <td class="name-cell">勤誠</td>
+                            <td>125,319</td>
+                            <td class="sell-text">-864</td>
+                            <td class="sell-text">-0.689%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td class="code-cell">3661</td>
+                            <td class="name-cell">世芯-KY</td>
+                            <td>86,204</td>
+                            <td class="sell-text">-277</td>
+                            <td class="sell-text">-0.321%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td class="code-cell">3533</td>
+                            <td class="name-cell">嘉澤</td>
+                            <td>112,534</td>
+                            <td class="sell-text">-281</td>
+                            <td class="sell-text">-0.250%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6</strong></td>
+                            <td class="code-cell">3583</td>
+                            <td class="name-cell">辛耘</td>
+                            <td>80,346</td>
+                            <td class="sell-text">-184</td>
+                            <td class="sell-text">-0.229%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7</strong></td>
+                            <td class="code-cell">2404</td>
+                            <td class="name-cell">漢唐</td>
+                            <td>190,586</td>
+                            <td class="sell-text">-414</td>
+                            <td class="sell-text">-0.217%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>8</strong></td>
+                            <td class="code-cell">2027</td>
+                            <td class="name-cell">大成鋼</td>
+                            <td>2,584,260</td>
+                            <td class="sell-text">-5,000</td>
+                            <td class="sell-text">-0.193%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>9</strong></td>
+                            <td class="code-cell">3189</td>
+                            <td class="name-cell">景碩</td>
+                            <td>526,910</td>
+                            <td class="sell-text">-961</td>
+                            <td class="sell-text">-0.182%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10</strong></td>
+                            <td class="code-cell">1342</td>
+                            <td class="name-cell">八貫</td>
+                            <td>78,000</td>
+                            <td class="sell-text">-120</td>
+                            <td class="sell-text">-0.154%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>11</strong></td>
+                            <td class="code-cell">6782</td>
+                            <td class="name-cell">視陽</td>
+                            <td>63,000</td>
+                            <td class="sell-text">-78</td>
+                            <td class="sell-text">-0.124%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>12</strong></td>
+                            <td class="code-cell">3004</td>
+                            <td class="name-cell">豐達科</td>
+                            <td>64,365</td>
+                            <td class="sell-text">-60</td>
+                            <td class="sell-text">-0.093%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>13</strong></td>
+                            <td class="code-cell">3231</td>
+                            <td class="name-cell">緯創</td>
+                            <td>3,180,052</td>
+                            <td class="sell-text">-2,862</td>
+                            <td class="sell-text">-0.090%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>14</strong></td>
+                            <td class="code-cell">3665</td>
+                            <td class="name-cell">貿聯-KY</td>
+                            <td>195,078</td>
+                            <td class="sell-text">-171</td>
+                            <td class="sell-text">-0.088%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>15</strong></td>
+                            <td class="code-cell">3711</td>
+                            <td class="name-cell">日月光投控</td>
+                            <td>4,470,572</td>
+                            <td class="sell-text">-3,770</td>
+                            <td class="sell-text">-0.084%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>16</strong></td>
+                            <td class="code-cell">2303</td>
+                            <td class="name-cell">聯電</td>
+                            <td>12,570,093</td>
+                            <td class="sell-text">-8,593</td>
+                            <td class="sell-text">-0.068%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>17</strong></td>
+                            <td class="code-cell">6239</td>
+                            <td class="name-cell">力成</td>
+                            <td>759,146</td>
+                            <td class="sell-text">-490</td>
+                            <td class="sell-text">-0.065%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>18</strong></td>
+                            <td class="code-cell">1590</td>
+                            <td class="name-cell">亞德客-KY</td>
+                            <td>199,999</td>
+                            <td class="sell-text">-120</td>
+                            <td class="sell-text">-0.060%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>19</strong></td>
+                            <td class="code-cell">2458</td>
+                            <td class="name-cell">義隆</td>
+                            <td>303,880</td>
+                            <td class="sell-text">-148</td>
+                            <td class="sell-text">-0.049%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>20</strong></td>
+                            <td class="code-cell">2313</td>
+                            <td class="name-cell">華通</td>
+                            <td>1,233,820</td>
+                            <td class="sell-text">-598</td>
+                            <td class="sell-text">-0.048%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 3: TPEx -->
+        <div id="sec-tpex" class="table-section" style="display:none;">
+            <h3 style="margin-bottom:12px; font-size:1.1rem; color:var(--green-buy);">🟢 上櫃 投信買超 TOP</h3>
+            <div class="table-container" style="margin-bottom:24px;">
+                <table id="table-tpex-buy">
+                    <thead>
+                        <tr>
+                            <th>排行</th>
+                            <th>股號</th>
+                            <th>股票名稱</th>
+                            <th>買進(張)</th>
+                            <th>賣出(張)</th>
+                            <th>買賣超(張)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td class="code-cell">6182</td>
+                            <td class="name-cell">合晶            </td>
+                            <td>515</td>
+                            <td>0</td>
+                            <td class="buy-text">+515</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td class="code-cell">6187</td>
+                            <td class="name-cell">萬潤            </td>
+                            <td>637</td>
+                            <td>304</td>
+                            <td class="buy-text">+333</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td class="code-cell">6488</td>
+                            <td class="name-cell">環球晶          </td>
+                            <td>171</td>
+                            <td>3</td>
+                            <td class="buy-text">+168</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td class="code-cell">8358</td>
+                            <td class="name-cell">金居            </td>
+                            <td>161</td>
+                            <td>1</td>
+                            <td class="buy-text">+160</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td class="code-cell">5904</td>
+                            <td class="name-cell">寶雅*           </td>
+                            <td>92</td>
+                            <td>1</td>
+                            <td class="buy-text">+91</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6</strong></td>
+                            <td class="code-cell">3105</td>
+                            <td class="name-cell">穩懋            </td>
+                            <td>81</td>
+                            <td>2</td>
+                            <td class="buy-text">+79</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7</strong></td>
+                            <td class="code-cell">3491</td>
+                            <td class="name-cell">昇達科          </td>
+                            <td>40</td>
+                            <td>1</td>
+                            <td class="buy-text">+39</td>
+                        </tr>
+                        <tr>
+                            <td><strong>8</strong></td>
+                            <td class="code-cell">6640</td>
+                            <td class="name-cell">均華            </td>
+                            <td>38</td>
+                            <td>0</td>
+                            <td class="buy-text">+38</td>
+                        </tr>
+                        <tr>
+                            <td><strong>9</strong></td>
+                            <td class="code-cell">5274</td>
+                            <td class="name-cell">信驊            </td>
+                            <td>34</td>
+                            <td>1</td>
+                            <td class="buy-text">+33</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10</strong></td>
+                            <td class="code-cell">3293</td>
+                            <td class="name-cell">鈊象            </td>
+                            <td>32</td>
+                            <td>1</td>
+                            <td class="buy-text">+31</td>
+                        </tr>
+                        <tr>
+                            <td><strong>11</strong></td>
+                            <td class="code-cell">3529</td>
+                            <td class="name-cell">力旺            </td>
+                            <td>28</td>
+                            <td>1</td>
+                            <td class="buy-text">+27</td>
+                        </tr>
+                        <tr>
+                            <td><strong>12</strong></td>
+                            <td class="code-cell">3131</td>
+                            <td class="name-cell">弘塑            </td>
+                            <td>54</td>
+                            <td>31</td>
+                            <td class="buy-text">+23</td>
+                        </tr>
+                        <tr>
+                            <td><strong>13</strong></td>
+                            <td class="code-cell">6223</td>
+                            <td class="name-cell">旺矽            </td>
+                            <td>16</td>
+                            <td>4</td>
+                            <td class="buy-text">+12</td>
+                        </tr>
+                        <tr>
+                            <td><strong>14</strong></td>
+                            <td class="code-cell">6121</td>
+                            <td class="name-cell">新普            </td>
+                            <td>10</td>
+                            <td>2</td>
+                            <td class="buy-text">+8</td>
+                        </tr>
+                        <tr>
+                            <td><strong>15</strong></td>
+                            <td class="code-cell">3693</td>
+                            <td class="name-cell">營邦            </td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td class="buy-text">+5</td>
+                        </tr>
+                        <tr>
+                            <td><strong>16</strong></td>
+                            <td class="code-cell">3374</td>
+                            <td class="name-cell">精材            </td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td class="buy-text">+2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>17</strong></td>
+                            <td class="code-cell">6147</td>
+                            <td class="name-cell">頎邦            </td>
+                            <td>12</td>
+                            <td>11</td>
+                            <td class="buy-text">+1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>18</strong></td>
+                            <td class="code-cell">7828</td>
+                            <td class="name-cell">創新服務        </td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td class="buy-text">+1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="margin-bottom:12px; font-size:1.1rem; color:var(--red-sell);">🔴 上櫃 投信賣超 TOP</h3>
+            <div class="table-container">
+                <table id="table-tpex-sell">
+                    <thead>
+                        <tr>
+                            <th>排行</th>
+                            <th>股號</th>
+                            <th>股票名稱</th>
+                            <th>買進(張)</th>
+                            <th>賣出(張)</th>
+                            <th>買賣超(張)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td class="code-cell">8299</td>
+                            <td class="name-cell">群聯            </td>
+                            <td>0</td>
+                            <td>611</td>
+                            <td class="sell-text">-611</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td class="code-cell">4979</td>
+                            <td class="name-cell">華星光          </td>
+                            <td>0</td>
+                            <td>496</td>
+                            <td class="sell-text">-496</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td class="code-cell">5347</td>
+                            <td class="name-cell">世界            </td>
+                            <td>24</td>
+                            <td>284</td>
+                            <td class="sell-text">-260</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td class="code-cell">5536</td>
+                            <td class="name-cell">聖暉*           </td>
+                            <td>0</td>
+                            <td>152</td>
+                            <td class="sell-text">-152</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td class="code-cell">3081</td>
+                            <td class="name-cell">聯亞            </td>
+                            <td>3</td>
+                            <td>112</td>
+                            <td class="sell-text">-109</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6</strong></td>
+                            <td class="code-cell">3264</td>
+                            <td class="name-cell">欣銓            </td>
+                            <td>2</td>
+                            <td>92</td>
+                            <td class="sell-text">-90</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7</strong></td>
+                            <td class="code-cell">7734</td>
+                            <td class="name-cell">印能科技        </td>
+                            <td>0</td>
+                            <td>71</td>
+                            <td class="sell-text">-71</td>
+                        </tr>
+                        <tr>
+                            <td><strong>8</strong></td>
+                            <td class="code-cell">6510</td>
+                            <td class="name-cell">精測            </td>
+                            <td>5</td>
+                            <td>60</td>
+                            <td class="sell-text">-55</td>
+                        </tr>
+                        <tr>
+                            <td><strong>9</strong></td>
+                            <td class="code-cell">3551</td>
+                            <td class="name-cell">世禾            </td>
+                            <td>0</td>
+                            <td>50</td>
+                            <td class="sell-text">-50</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10</strong></td>
+                            <td class="code-cell">3211</td>
+                            <td class="name-cell">順達            </td>
+                            <td>0</td>
+                            <td>31</td>
+                            <td class="sell-text">-31</td>
+                        </tr>
+                        <tr>
+                            <td><strong>11</strong></td>
+                            <td class="code-cell">006201</td>
+                            <td class="name-cell">元大富櫃50      </td>
+                            <td>0</td>
+                            <td>30</td>
+                            <td class="sell-text">-30</td>
+                        </tr>
+                        <tr>
+                            <td><strong>12</strong></td>
+                            <td class="code-cell">6535</td>
+                            <td class="name-cell">順藥            </td>
+                            <td>0</td>
+                            <td>30</td>
+                            <td class="sell-text">-30</td>
+                        </tr>
+                        <tr>
+                            <td><strong>13</strong></td>
+                            <td class="code-cell">5483</td>
+                            <td class="name-cell">中美晶          </td>
+                            <td>12</td>
+                            <td>41</td>
+                            <td class="sell-text">-29</td>
+                        </tr>
+                        <tr>
+                            <td><strong>14</strong></td>
+                            <td class="code-cell">8069</td>
+                            <td class="name-cell">元太            </td>
+                            <td>0</td>
+                            <td>20</td>
+                            <td class="sell-text">-20</td>
+                        </tr>
+                        <tr>
+                            <td><strong>15</strong></td>
+                            <td class="code-cell">5314</td>
+                            <td class="name-cell">世紀*           </td>
+                            <td>0</td>
+                            <td>9</td>
+                            <td class="sell-text">-9</td>
+                        </tr>
+                        <tr>
+                            <td><strong>16</strong></td>
+                            <td class="code-cell">6274</td>
+                            <td class="name-cell">台燿            </td>
+                            <td>20</td>
+                            <td>25</td>
+                            <td class="sell-text">-5</td>
+                        </tr>
+                        <tr>
+                            <td><strong>17</strong></td>
+                            <td class="code-cell">1785</td>
+                            <td class="name-cell">光洋科          </td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td class="sell-text">-4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>18</strong></td>
+                            <td class="code-cell">6509</td>
+                            <td class="name-cell">聚和            </td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td class="sell-text">-4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>19</strong></td>
+                            <td class="code-cell">3260</td>
+                            <td class="name-cell">威剛            </td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td class="sell-text">-4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>20</strong></td>
+                            <td class="code-cell">1815</td>
+                            <td class="name-cell">富喬            </td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td class="sell-text">-3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>21</strong></td>
+                            <td class="code-cell">5309</td>
+                            <td class="name-cell">系統電          </td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td class="sell-text">-3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>22</strong></td>
+                            <td class="code-cell">5289</td>
+                            <td class="name-cell">宜鼎            </td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td class="sell-text">-3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>23</strong></td>
+                            <td class="code-cell">4991</td>
+                            <td class="name-cell">環宇-KY         </td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td class="sell-text">-2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>24</strong></td>
+                            <td class="code-cell">8109</td>
+                            <td class="name-cell">博大            </td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td class="sell-text">-2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>25</strong></td>
+                            <td class="code-cell">6138</td>
+                            <td class="name-cell">茂達            </td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td class="sell-text">-1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>26</strong></td>
+                            <td class="code-cell">6788</td>
+                            <td class="name-cell">華景電          </td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td class="sell-text">-1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>27</strong></td>
+                            <td class="code-cell">3324</td>
+                            <td class="name-cell">雙鴻            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="sell-text">0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>28</strong></td>
+                            <td class="code-cell">4749</td>
+                            <td class="name-cell">新應材          </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="sell-text">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            證券數據來源：臺灣證券交易所 (TWSE) & 證券櫃檯買賣中心 (TPEx) 官方開放資料<br>
+            由 韋小寶 kiro7 隨機應變即時生成 | MasonLee 大老闆專屬分析系統
+        </footer>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.table-section').forEach(sec => sec.style.display = 'none');
+            
+            if (tabId === 'twse-buy') {
+                document.getElementById('sec-twse-buy').style.display = 'block';
+                event.target.classList.add('active');
+            } else if (tabId === 'twse-sell') {
+                document.getElementById('sec-twse-sell').style.display = 'block';
+                event.target.classList.add('active');
+            } else if (tabId === 'tpex') {
+                document.getElementById('sec-tpex').style.display = 'block';
+                event.target.classList.add('active');
+            }
+            filterTable();
+        }
+
+        function filterTable() {
+            const input = document.getElementById('searchInput').value.toUpperCase();
+            const activeSection = document.querySelector('.table-section:not([style*="display: none"])');
+            if (!activeSection) return;
+
+            const tables = activeSection.querySelectorAll('table');
+            tables.forEach(table => {
+                const tr = table.getElementsByTagName('tr');
+                for (let i = 1; i < tr.length; i++) {
+                    const tdCode = tr[i].getElementsByTagName('td')[1];
+                    const tdName = tr[i].getElementsByTagName('td')[2];
+                    if (tdCode || tdName) {
+                        const codeVal = tdCode.textContent || tdCode.innerText;
+                        const nameVal = tdName.textContent || tdName.innerText;
+                        if (codeVal.toUpperCase().indexOf(input) > -1 || nameVal.toUpperCase().indexOf(input) > -1) {
+                            tr[i].style.display = '';
+                        } else {
+                            tr[i].style.display = 'none';
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
