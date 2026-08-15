@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="20" y="25" fill="#f59e0b" font-size="16" font-weight="bold" font-family="sans-serif">8996 高力 日K線圖 (2026/08/14)</text>
+  <text x="450" y="25" fill="#10b981" font-size="14" font-weight="bold" font-family="sans-serif">收盤: 1280</text>
+  
+  <!-- Grid Lines -->
+  <line x1="50" y1="40" x2="580" y2="40" stroke="#334155" stroke-dasharray="2,2"/>
+  <line x1="50" y1="150" x2="580" y2="150" stroke="#334155" stroke-dasharray="2,2"/>
+  <line x1="50" y1="260" x2="580" y2="260" stroke="#334155"/>
+  
+  <!-- Y-Axis Labels -->
+  <text x="10" y="45" fill="#94a3b8" font-size="11" font-family="sans-serif">1295</text>
+  <text x="10" y="260" fill="#94a3b8" font-size="11" font-family="sans-serif">1115.136</text>
+  <line x1="63.25" y1="211.778677222791" x2="63.25" y2="260" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="59.25" y="225.556198016279" width="8" height="20.6662811902326" fill="#ef4444"/>
+  <rect x="59.25" y="323.74" width="8" height="16.26" fill="#ef4444" opacity="0.6"/>
+  <line x1="89.75" y1="190.595739002802" x2="89.75" y2="239.54038162167" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="85.75" y="204.579922608193" width="8" height="20.976275408086" fill="#ef4444"/>
+  <rect x="85.75" y="320.488" width="8" height="19.512" fill="#ef4444" opacity="0.6"/>
+  <line x1="116.25" y1="190.385976248722" x2="116.25" y2="240.064788506872" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="112.25" y="204.579922608193" width="8" height="21.2909195392074" fill="#10b981"/>
+  <rect x="112.25" y="317.236" width="8" height="22.764" fill="#10b981" opacity="0.6"/>
+  <line x1="142.75" y1="190.918249237201" x2="142.75" y2="239.85187931148" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="138.75" y="204.899286401281" width="8" height="20.9715557461194" fill="#ef4444"/>
+  <rect x="138.75" y="313.984" width="8" height="26.016" fill="#ef4444" opacity="0.6"/>
+  <line x1="169.25" y1="169.422404597429" x2="169.25" y2="219.090039122822" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="165.25" y="183.61315731897" width="8" height="21.2861290823111" fill="#ef4444"/>
+  <rect x="165.25" y="326.992" width="8" height="13.008" fill="#ef4444" opacity="0.6"/>
+  <line x1="195.75" y1="169.209543306606" x2="195.75" y2="219.62219234988" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="191.75" y="183.61315731897" width="8" height="21.6054210185459" fill="#10b981"/>
+  <rect x="191.75" y="323.74" width="8" height="16.26" fill="#10b981" opacity="0.6"/>
+  <line x1="222.25" y1="169.74967883207" x2="222.25" y2="219.406138139694" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="218.25" y="183.937238634248" width="8" height="21.2813397032676" fill="#ef4444"/>
+  <rect x="218.25" y="320.488" width="8" height="19.512" fill="#ef4444" opacity="0.6"/>
+  <line x1="248.75" y1="147.93630563622" x2="248.75" y2="198.337611833459" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="244.75" y="162.336678835431" width="8" height="21.6005597988167" fill="#ef4444"/>
+  <rect x="244.75" y="317.236" width="8" height="22.764" fill="#ef4444" opacity="0.6"/>
+  <line x1="275.25" y1="147.720300038232" x2="275.25" y2="198.877625828429" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="271.25" y="162.336678835431" width="8" height="21.9245681957989" fill="#10b981"/>
+  <rect x="271.25" y="313.984" width="8" height="26.016" fill="#10b981" opacity="0.6"/>
+  <line x1="301.75" y1="148.268414243127" x2="301.75" y2="198.658380146472" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="297.75" y="162.665547358369" width="8" height="21.5956996728617" fill="#ef4444"/>
+  <rect x="297.75" y="326.992" width="8" height="13.008" fill="#ef4444" opacity="0.6"/>
+  <line x1="328.25" y1="126.132822078444" x2="328.25" y2="177.278637470339" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="324.25" y="140.745912190414" width="8" height="21.9196351679548" fill="#ef4444"/>
+  <rect x="324.25" y="323.74" width="8" height="16.26" fill="#ef4444" opacity="0.6"/>
+  <line x1="354.75" y1="125.913625726764" x2="354.75" y2="177.826628349537" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="350.75" y="140.745912190414" width="8" height="22.248429695474" fill="#10b981"/>
+  <rect x="350.75" y="320.488" width="8" height="19.512" fill="#10b981" opacity="0.6"/>
+  <line x1="381.25" y1="126.469836469151" x2="381.25" y2="177.604144052582" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="377.25" y="141.079638635846" width="8" height="21.914703250042" fill="#ef4444"/>
+  <rect x="377.25" y="317.236" width="8" height="22.764" fill="#ef4444" opacity="0.6"/>
+  <line x1="407.75" y1="104.007265637858" x2="407.75" y2="155.908587835041" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="403.75" y="118.836214837053" width="8" height="22.2434237987926" fill="#ef4444"/>
+  <rect x="403.75" y="313.984" width="8" height="26.016" fill="#ef4444" opacity="0.6"/>
+  <line x1="434.25" y1="103.78483139987" x2="434.25" y2="156.464673430011" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="430.25" y="118.836214837053" width="8" height="22.5770751557745" fill="#10b981"/>
+  <rect x="430.25" y="326.992" width="8" height="13.008" fill="#10b981" opacity="0.6"/>
+  <line x1="460.75" y1="104.349258278764" x2="460.75" y2="156.238902678453" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="456.75" y="119.17487096439" width="8" height="22.238419028438" fill="#ef4444"/>
+  <rect x="456.75" y="323.74" width="8" height="16.26" fill="#ef4444" opacity="0.6"/>
+  <line x1="487.25" y1="81.5548787746156" x2="487.25" y2="134.222867840299" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="483.25" y="96.6028756505252" width="8" height="22.5719953138645" fill="#ef4444"/>
+  <rect x="483.25" y="320.488" width="8" height="19.512" fill="#ef4444" opacity="0.6"/>
+  <line x1="513.75" y1="81.329158821477" x2="513.75" y2="134.787167723146" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="509.75" y="96.6028756505252" width="8" height="22.9105752435724" fill="#10b981"/>
+  <rect x="509.75" y="317.236" width="8" height="22.764" fill="#10b981" opacity="0.6"/>
+  <line x1="540.25" y1="81.9019232025663" x2="540.25" y2="134.55806197071" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="536.25" y="96.9465342791788" width="8" height="22.5669166149187" fill="#ef4444"/>
+  <rect x="536.25" y="313.984" width="8" height="26.016" fill="#ef4444" opacity="0.6"/>
+  <line x1="566.75" y1="40" x2="566.75" y2="150.083173953654" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="562.75" y="58.3471956589423" width="8" height="85.6202464083976" fill="#ef4444"/>
+  <rect x="562.75" y="307.48" width="8" height="32.52" fill="#ef4444" opacity="0.6"/>
+  <polyline points="169.25,208.903881298425 195.75,204.836357362672 222.25,200.707820567883 248.75,188.000987905489 275.25,183.873380031479 301.75,179.683858039359 328.25,166.789324809939 354.75,162.600745460266 381.25,158.349337420349 407.75,145.264330981514 434.25,141.013879508406 460.75,136.699671263201 487.25,123.421378016129 513.75,119.108140467779 540.25,114.730204356204 566.75,98.1169854894267" fill="none" stroke="#f59e0b" stroke-width="2"/>
+</svg>
