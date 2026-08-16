@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台股 7 合 1 官方真實籌碼與技術分析儀表板</title>
+    <title>📈 Goodinfo 投信買超 + 6大技術面指標選股報告</title>
     <style>
         body {
             background-color: #050811;
@@ -16,12 +16,12 @@
             text-align: center;
             padding: 20px 0;
             border-bottom: 1px solid #1e293b;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         .header h1 {
             color: #facc15;
             margin: 0 0 10px 0;
-            font-size: 28px;
+            font-size: 26px;
         }
         .header p {
             color: #94a3b8;
@@ -38,11 +38,40 @@
             font-weight: bold;
             margin-top: 10px;
         }
+        table {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+            border-collapse: collapse;
+            background-color: #0f172a;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #1e293b;
+        }
+        th {
+            background-color: #1e293b;
+            color: #facc15;
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 14px;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #1e293b;
+            font-size: 14px;
+        }
+        tr:hover {
+            background-color: #1e293b;
+        }
+        .star {
+            color: #facc15;
+            font-weight: bold;
+        }
         .grid {
             display: flex;
             flex-direction: column;
             gap: 30px;
-            max-width: 1120px;
+            max-width: 1100px;
             margin: 0 auto;
         }
         .card {
@@ -50,7 +79,6 @@
             border: 1px solid #1e293b;
             border-radius: 12px;
             padding: 15px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
         }
         .card-title {
             color: #38bdf8;
@@ -59,7 +87,6 @@
             margin-bottom: 15px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
         .card img {
             width: 100%;
@@ -71,42 +98,84 @@
 </head>
 <body>
     <div class="header">
-        <h1>🏛️ 台股 7 合 1 官方真實籌碼與技術分析儀表板</h1>
+        <h1>📈 Goodinfo 投信買超 + 6大技術面指標選股報告</h1>
         <p>100% 台灣證券交易所 (TWSE) 官方 Raw Data | 絕無擬合與模擬數據</p>
-        <div class="badge">資料更新時間：2026/08/14 盤後</div>
+        <div class="badge">資料計算時間：2026/08/14 盤後</div>
     </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>代號</th>
+                <th>股票名稱</th>
+                <th>收盤價</th>
+                <th>投信買超(張)</th>
+                <th>投本比 (%)</th>
+                <th>技術指標得分</th>
+                <th>圖表連結</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td> <td>8996</td> <td>高力</td> <td>1,280.00</td> <td>2,204</td> <td>2.360%</td> <td class="star">6/6 分 ⭐</td>
+                <td><a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8996_v8.svg" style="color:#38bdf8;">查看圖表 ↗</a></td>
+            </tr>
+            <tr>
+                <td>2</td> <td>4764</td> <td>雙鍵</td> <td>232.00</td> <td>520</td> <td>0.608%</td> <td class="star">5/6 分 ⭐</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>3</td> <td>8046</td> <td>南電</td> <td>1,305.00</td> <td>2,466</td> <td>0.382%</td> <td class="star">5/6 分 ⭐</td>
+                <td><a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8046_v8.svg" style="color:#38bdf8;">查看圖表 ↗</a></td>
+            </tr>
+            <tr>
+                <td>4</td> <td>3532</td> <td>台勝科</td> <td>356.00</td> <td>1,474</td> <td>0.380%</td> <td class="star">5/6 分 ⭐</td>
+                <td><a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_3532_v8.svg" style="color:#38bdf8;">查看圖表 ↗</a></td>
+            </tr>
+            <tr>
+                <td>5</td> <td>2327</td> <td>國巨*</td> <td>622.00</td> <td>1,473</td> <td>0.286%</td> <td class="star">5/6 分 ⭐</td>
+                <td><a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2327_v8.svg" style="color:#38bdf8;">查看圖表 ↗</a></td>
+            </tr>
+            <tr>
+                <td>6</td> <td>2368</td> <td>金像電</td> <td>1,015.00</td> <td>1,359</td> <td>0.260%</td> <td class="star">5/6 分 ⭐</td>
+                <td><a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2368_v8.svg" style="color:#38bdf8;">查看圖表 ↗</a></td>
+            </tr>
+        </tbody>
+    </table>
+
     <div class="grid">
         <div class="card">
             <div class="card-title">
-                <span>8996 高力</span>
+                <span>8996 高力 (6/6 分 ⭐)</span>
                 <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8996_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
             </div>
             <img src="../charts/kline_8996_v8.svg" alt="8996 高力">
         </div>
         <div class="card">
             <div class="card-title">
-                <span>8046 南電</span>
+                <span>8046 南電 (5/6 分 ⭐)</span>
                 <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8046_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
             </div>
             <img src="../charts/kline_8046_v8.svg" alt="8046 南電">
         </div>
         <div class="card">
             <div class="card-title">
-                <span>3532 台勝科</span>
+                <span>3532 台勝科 (5/6 分 ⭐)</span>
                 <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_3532_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
             </div>
             <img src="../charts/kline_3532_v8.svg" alt="3532 台勝科">
         </div>
         <div class="card">
             <div class="card-title">
-                <span>2327 國巨*</span>
+                <span>2327 國巨* (5/6 分 ⭐)</span>
                 <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2327_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
             </div>
             <img src="../charts/kline_2327_v8.svg" alt="2327 國巨*">
         </div>
         <div class="card">
             <div class="card-title">
-                <span>2368 金像電</span>
+                <span>2368 金像電 (5/6 分 ⭐)</span>
                 <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2368_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
             </div>
             <img src="../charts/kline_2368_v8.svg" alt="2368 金像電">
