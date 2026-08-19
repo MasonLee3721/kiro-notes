@@ -117,7 +117,7 @@
 <body>
     <div class="header">
         <h1>🏛️ 台股全方位官方籌碼與技術分析綜合儀表板</h1>
-        <p>100% 台灣證券交易所 (TWSE) 官方 Raw Data | 絕無擬合與模擬數據</p>
+        <p>100% 台灣證券交易所 (TWSE) 官方 Raw Data | 包含【外資獨立買賣超】與【投信獨立買賣超】柱狀圖</p>
         <div class="badge">最新交易日：2026/08/19 當日盤後最新數據</div>
     </div>
     
@@ -133,16 +133,16 @@
                     <th>投信買超 (張 / %)</th>
                     <th>外資買超 (張 / %)</th>
                     <th>法人合計佔股本 (%)</th>
-                    <th>籌碼強勢狀態</th>
+                    <th>圖表連結</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>1</td><td>2478</td><td>大毅</td><td class="sitc-val">+257 (+0.18%)</td><td class="foreign-val">+2,156 (+1.49%)</td><td class="total-val">+1.73% 🔥</td><td>外資爆量主導同買</td></tr>
-                <tr><td>2</td><td>6214</td><td>精誠</td><td class="sitc-val">+1,319 (+0.48%)</td><td class="foreign-val">+2,563 (+0.94%)</td><td class="total-val">+1.41% 🔥</td><td>雙法人同步大加碼</td></tr>
-                <tr><td>3</td><td>6672</td><td>騰輝電子-KY</td><td class="sitc-val">+203 (+0.25%)</td><td class="foreign-val">+202 (+0.25%)</td><td class="total-val">+0.44% 🔥</td><td>兩大法人買超比例均等</td></tr>
-                <tr><td>4</td><td>2455</td><td>全新</td><td class="sitc-val">+607 (+0.33%)</td><td class="foreign-val">+420 (+0.23%)</td><td class="total-val">+0.46% 🔥</td><td>PA 化合物半導體同買</td></tr>
-                <tr><td>5</td><td>1504</td><td>東元</td><td class="sitc-val">+1,415 (+0.06%)</td><td class="foreign-val">+3,099 (+0.13%)</td><td class="total-val">+0.19% 🔥</td><td>機電大廠法人布局</td></tr>
-                <tr><td>6</td><td>3189</td><td>景碩</td><td class="sitc-val">+399 (+0.08%)</td><td class="foreign-val">+660 (+0.13%)</td><td class="total-val">+0.06% 🔥</td><td>載板族群同步買超</td></tr>
+                <tr><td>1</td><td>2478</td><td>大毅</td><td class="sitc-val">+257 (+0.18%)</td><td class="foreign-val">+2,156 (+1.49%)</td><td class="total-val">+1.73% 🔥</td><td><a href="#chart-2478" style="color:#38bdf8;">查看外資/投信圖表 ⬇</a></td></tr>
+                <tr><td>2</td><td>6214</td><td>精誠</td><td class="sitc-val">+1,319 (+0.48%)</td><td class="foreign-val">+2,563 (+0.94%)</td><td class="total-val">+1.41% 🔥</td><td><a href="#chart-6214" style="color:#38bdf8;">查看外資/投信圖表 ⬇</a></td></tr>
+                <tr><td>3</td><td>6672</td><td>騰輝電子-KY</td><td class="sitc-val">+203 (+0.25%)</td><td class="foreign-val">+202 (+0.25%)</td><td class="total-val">+0.44% 🔥</td><td>-</td></tr>
+                <tr><td>4</td><td>2455</td><td>全新</td><td class="sitc-val">+607 (+0.33%)</td><td class="foreign-val">+420 (+0.23%)</td><td class="total-val">+0.46% 🔥</td><td>-</td></tr>
+                <tr><td>5</td><td>1504</td><td>東元</td><td class="sitc-val">+1,415 (+0.06%)</td><td class="foreign-val">+3,099 (+0.13%)</td><td class="total-val">+0.19% 🔥</td><td>-</td></tr>
+                <tr><td>6</td><td>3189</td><td>景碩</td><td class="sitc-val">+399 (+0.08%)</td><td class="foreign-val">+660 (+0.13%)</td><td class="total-val">+0.06% 🔥</td><td>-</td></tr>
             </tbody>
         </table>
     </div>
@@ -181,85 +181,51 @@
         </table>
     </div>
 
-    <!-- 3. 上市股票 投信賣超投賣比 TOP 15 -->
+    <!-- 3. 7合1 外資與投信獨立買賣超柱狀圖技術分析展演 -->
     <div class="section-container">
-        <div class="section-title title-sell">🧊 上市股票 投信賣超投賣比 TOP 15 (2026/08/19 當日最新)</div>
-        <table>
-            <thead>
-                <tr>
-                    <th>名次</th>
-                    <th>代號</th>
-                    <th>股票名稱</th>
-                    <th>發行張數</th>
-                    <th>投信賣超 (張)</th>
-                    <th>投賣比 (%)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>1</td><td>6531</td><td>愛普*</td><td>81,423</td><td class="sell-val">-1,493</td><td class="sell-val">-1.834%</td></tr>
-                <tr><td>2</td><td>2316</td><td>楠梓電</td><td>182,740</td><td class="sell-val">-1,144</td><td class="sell-val">-0.626%</td></tr>
-                <tr><td>3</td><td>8016</td><td>矽創</td><td>120,136</td><td class="sell-val">-689</td><td class="sell-val">-0.574%</td></tr>
-                <tr><td>4</td><td>2327</td><td>國巨*</td><td>514,682</td><td class="sell-val">-2,731</td><td class="sell-val">-0.531%</td></tr>
-                <tr><td>5</td><td>8021</td><td>尖點</td><td>145,042</td><td class="sell-val">-760</td><td class="sell-val">-0.524%</td></tr>
-                <tr><td>6</td><td>2344</td><td>華邦電</td><td>4,500,000</td><td class="sell-val">-17,582</td><td class="sell-val">-0.391%</td></tr>
-                <tr><td>7</td><td>6257</td><td>矽格</td><td>483,912</td><td class="sell-val">-1,585</td><td class="sell-val">-0.328%</td></tr>
-                <tr><td>8</td><td>1560</td><td>中砂</td><td>148,925</td><td class="sell-val">-469</td><td class="sell-val">-0.315%</td></tr>
-                <tr><td>9</td><td>6239</td><td>力成</td><td>759,146</td><td class="sell-val">-2,339</td><td class="sell-val">-0.308%</td></tr>
-                <tr><td>10</td><td>2467</td><td>志聖</td><td>156,855</td><td class="sell-val">-481</td><td class="sell-val">-0.307%</td></tr>
-                <tr><td>11</td><td>2472</td><td>立隆電</td><td>164,735</td><td class="sell-val">-504</td><td class="sell-val">-0.306%</td></tr>
-                <tr><td>12</td><td>6515</td><td>穎崴</td><td>36,038</td><td class="sell-val">-102</td><td class="sell-val">-0.283%</td></tr>
-                <tr><td>13</td><td>6278</td><td>台表科</td><td>292,398</td><td class="sell-val">-813</td><td class="sell-val">-0.278%</td></tr>
-                <tr><td>14</td><td>6715</td><td>嘉基</td><td>68,274</td><td class="sell-val">-185</td><td class="sell-val">-0.271%</td></tr>
-                <tr><td>15</td><td>3583</td><td>辛耘</td><td>80,346</td><td class="sell-val">-192</td><td class="sell-val">-0.239%</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- 4. 7合1 官方真實籌碼與技術分析圖表展示 -->
-    <div class="section-container">
-        <div class="section-title title-charts">📈 7合1 官方真實籌碼與技術分析圖表展示</div>
+        <div class="section-title title-charts">📈 7合1 獨立外資買賣超與投信買賣超柱狀圖展演</div>
         <div class="grid">
+            <div class="card" id="chart-2478">
+                <div class="card-title">
+                    <span>2478 大毅 (外資+投信雙雄同買第 1 名)</span>
+                    <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2478_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
+                </div>
+                <img src="../charts/kline_2478_v8.svg" alt="2478 大毅 外資與投信買賣超圖表">
+            </div>
+            <div class="card" id="chart-6214">
+                <div class="card-title">
+                    <span>6214 精誠 (外資+投信雙雄同買第 2 名)</span>
+                    <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_6214_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
+                </div>
+                <img src="../charts/kline_6214_v8.svg" alt="6214 精誠 外資與投信買賣超圖表">
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <span>8070 長華* (投信買超投本比第 1 名)</span>
+                    <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8070_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
+                </div>
+                <img src="../charts/kline_8070_v8.svg" alt="8070 長華* 外資與投信買賣超圖表">
+            </div>
             <div class="card">
                 <div class="card-title">
                     <span>6442 光聖</span>
                     <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_6442_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
                 </div>
-                <img src="../charts/kline_6442_v8.svg" alt="6442 光聖">
+                <img src="../charts/kline_6442_v8.svg" alt="6442 光聖 外資與投信買賣超圖表">
             </div>
             <div class="card">
                 <div class="card-title">
                     <span>8996 高力</span>
                     <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8996_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
                 </div>
-                <img src="../charts/kline_8996_v8.svg" alt="8996 高力">
+                <img src="../charts/kline_8996_v8.svg" alt="8996 高力 外資與投信買賣超圖表">
             </div>
             <div class="card">
                 <div class="card-title">
                     <span>8046 南電</span>
                     <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8046_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
                 </div>
-                <img src="../charts/kline_8046_v8.svg" alt="8046 南電">
-            </div>
-            <div class="card">
-                <div class="card-title">
-                    <span>3532 台勝科</span>
-                    <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_3532_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
-                </div>
-                <img src="../charts/kline_3532_v8.svg" alt="3532 台勝科">
-            </div>
-            <div class="card">
-                <div class="card-title">
-                    <span>2327 國巨*</span>
-                    <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2327_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
-                </div>
-                <img src="../charts/kline_2327_v8.svg" alt="2327 國巨*">
-            </div>
-            <div class="card">
-                <div class="card-title">
-                    <span>2368 金像電</span>
-                    <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2368_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
-                </div>
-                <img src="../charts/kline_2368_v8.svg" alt="2368 金像電">
+                <img src="../charts/kline_8046_v8.svg" alt="8046 南電 外資與投信買賣超圖表">
             </div>
         </div>
     </div>
