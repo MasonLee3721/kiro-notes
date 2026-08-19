@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📈 Goodinfo 投信買超 + 6大技術面指標選股報告</title>
+    <title>🏛️ TWSE 官方 API 即時全市場投本比 / 投賣比 TOP 報表</title>
     <style>
         body {
             background-color: #050811;
@@ -38,6 +38,17 @@
             font-weight: bold;
             margin-top: 10px;
         }
+        .section-title {
+            max-width: 1100px;
+            margin: 25px auto 15px auto;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .title-buy { color: #ff334b; }
+        .title-sell { color: #00e676; }
         table {
             width: 100%;
             max-width: 1100px;
@@ -63,123 +74,77 @@
         tr:hover {
             background-color: #1e293b;
         }
-        .star {
-            color: #facc15;
-            font-weight: bold;
-        }
-        .grid {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .card {
-            background-color: #0f172a;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 15px;
-        }
-        .card-title {
-            color: #38bdf8;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .card img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-        }
+        .buy-val { color: #ff334b; font-weight: bold; }
+        .sell-val { color: #00e676; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>📈 Goodinfo 投信買超 + 6大技術面指標選股報告</h1>
-        <p>100% 台灣證券交易所 (TWSE) 官方 Raw Data | 絕無擬合與模擬數據</p>
-        <div class="badge">資料計算時間：2026/08/14 盤後</div>
+        <h1>🏛️ TWSE 官方 API 即時全市場投本比 / 投賣比 TOP 報表</h1>
+        <p>100% 台灣證券交易所 (TWSE) 官方 Raw Data 秒級計算 | 零模擬擬合數據</p>
+        <div class="badge">交易日期：2026/08/14 盤後</div>
     </div>
     
+    <div class="section-title title-buy">🔥 上市股票 投信買超投本比 TOP 15 (籌碼卡位強勢股)</div>
     <table>
         <thead>
             <tr>
-                <th>排名</th>
+                <th>名次</th>
                 <th>代號</th>
                 <th>股票名稱</th>
-                <th>收盤價</th>
-                <th>投信買超(張)</th>
+                <th>發行張數</th>
+                <th>投信買超 (張)</th>
                 <th>投本比 (%)</th>
-                <th>技術指標得分</th>
-                <th>圖表連結</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td> <td>8996</td> <td>高力</td> <td>1,280.00</td> <td>2,204</td> <td>2.360%</td> <td class="star">6/6 分 ⭐</td>
-                <td><a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8996_v8.svg" style="color:#38bdf8;">查看圖表 ↗</a></td>
-            </tr>
-            <tr>
-                <td>2</td> <td>4764</td> <td>雙鍵</td> <td>232.00</td> <td>520</td> <td>0.608%</td> <td class="star">5/6 分 ⭐</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>3</td> <td>8046</td> <td>南電</td> <td>1,305.00</td> <td>2,466</td> <td>0.382%</td> <td class="star">5/6 分 ⭐</td>
-                <td><a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8046_v8.svg" style="color:#38bdf8;">查看圖表 ↗</a></td>
-            </tr>
-            <tr>
-                <td>4</td> <td>3532</td> <td>台勝科</td> <td>356.00</td> <td>1,474</td> <td>0.380%</td> <td class="star">5/6 分 ⭐</td>
-                <td><a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_3532_v8.svg" style="color:#38bdf8;">查看圖表 ↗</a></td>
-            </tr>
-            <tr>
-                <td>5</td> <td>2327</td> <td>國巨*</td> <td>622.00</td> <td>1,473</td> <td>0.286%</td> <td class="star">5/6 分 ⭐</td>
-                <td><a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2327_v8.svg" style="color:#38bdf8;">查看圖表 ↗</a></td>
-            </tr>
-            <tr>
-                <td>6</td> <td>2368</td> <td>金像電</td> <td>1,015.00</td> <td>1,359</td> <td>0.260%</td> <td class="star">5/6 分 ⭐</td>
-                <td><a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2368_v8.svg" style="color:#38bdf8;">查看圖表 ↗</a></td>
-            </tr>
+            <tr><td>1</td><td>8996</td><td>高力</td><td>93,394</td><td class="buy-val">+2,204</td><td class="buy-val">+2.360%</td></tr>
+            <tr><td>2</td><td>4764</td><td>雙鍵</td><td>85,461</td><td class="buy-val">+520</td><td class="buy-val">+0.608%</td></tr>
+            <tr><td>3</td><td>8046</td><td>南電</td><td>646,172</td><td class="buy-val">+2,466</td><td class="buy-val">+0.382%</td></tr>
+            <tr><td>4</td><td>3532</td><td>台勝科</td><td>388,000</td><td class="buy-val">+1,474</td><td class="buy-val">+0.380%</td></tr>
+            <tr><td>5</td><td>2327</td><td>國巨*</td><td>514,336</td><td class="buy-val">+1,473</td><td class="buy-val">+0.286%</td></tr>
+            <tr><td>6</td><td>2368</td><td>金像電</td><td>522,197</td><td class="buy-val">+1,359</td><td class="buy-val">+0.260%</td></tr>
+            <tr><td>7</td><td>6669</td><td>緯穎</td><td>185,189</td><td class="buy-val">+449</td><td class="buy-val">+0.242%</td></tr>
+            <tr><td>8</td><td>3017</td><td>奇鋐</td><td>391,850</td><td class="buy-val">+784</td><td class="buy-val">+0.200%</td></tr>
+            <tr><td>9</td><td>6442</td><td>光聖</td><td>80,860</td><td class="buy-val">+125</td><td class="buy-val">+0.155%</td></tr>
+            <tr><td>10</td><td>1560</td><td>中砂</td><td>148,197</td><td class="buy-val">+211</td><td class="buy-val">+0.142%</td></tr>
+            <tr><td>11</td><td>2883</td><td>凱基金</td><td>18,585,481</td><td class="buy-val">+25,023</td><td class="buy-val">+0.135%</td></tr>
+            <tr><td>12</td><td>2884</td><td>玉山金</td><td>16,196,200</td><td class="buy-val">+18,352</td><td class="buy-val">+0.113%</td></tr>
+            <tr><td>13</td><td>6805</td><td>富世達</td><td>68,580</td><td class="buy-val">+75</td><td class="buy-val">+0.109%</td></tr>
+            <tr><td>14</td><td>2886</td><td>兆豐金</td><td>14,742,749</td><td class="buy-val">+15,554</td><td class="buy-val">+0.105%</td></tr>
+            <tr><td>15</td><td>2892</td><td>第一金</td><td>14,316,207</td><td class="buy-val">+14,618</td><td class="buy-val">+0.102%</td></tr>
         </tbody>
     </table>
 
-    <div class="grid">
-        <div class="card">
-            <div class="card-title">
-                <span>8996 高力 (6/6 分 ⭐)</span>
-                <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8996_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
-            </div>
-            <img src="../charts/kline_8996_v8.svg" alt="8996 高力">
-        </div>
-        <div class="card">
-            <div class="card-title">
-                <span>8046 南電 (5/6 分 ⭐)</span>
-                <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_8046_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
-            </div>
-            <img src="../charts/kline_8046_v8.svg" alt="8046 南電">
-        </div>
-        <div class="card">
-            <div class="card-title">
-                <span>3532 台勝科 (5/6 分 ⭐)</span>
-                <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_3532_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
-            </div>
-            <img src="../charts/kline_3532_v8.svg" alt="3532 台勝科">
-        </div>
-        <div class="card">
-            <div class="card-title">
-                <span>2327 國巨* (5/6 分 ⭐)</span>
-                <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2327_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
-            </div>
-            <img src="../charts/kline_2327_v8.svg" alt="2327 國巨*">
-        </div>
-        <div class="card">
-            <div class="card-title">
-                <span>2368 金像電 (5/6 分 ⭐)</span>
-                <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/charts/kline_2368_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始檔 ↗</a>
-            </div>
-            <img src="../charts/kline_2368_v8.svg" alt="2368 金像電">
-        </div>
-    </div>
+    <div class="section-title title-sell">🧊 上市股票 投信賣超投賣比 TOP 15 (籌碼調節/結帳股)</div>
+    <table>
+        <thead>
+            <tr>
+                <th>名次</th>
+                <th>代號</th>
+                <th>股票名稱</th>
+                <th>發行張數</th>
+                <th>投信賣超 (張)</th>
+                <th>投賣比 (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>2368</td><td>金像電</td><td>522,197</td><td class="sell-val">-3,362</td><td class="sell-val">-0.644%</td></tr>
+            <tr><td>2</td><td>2404</td><td>漢唐</td><td>190,587</td><td class="sell-val">-810</td><td class="sell-val">-0.425%</td></tr>
+            <tr><td>3</td><td>3017</td><td>奇鋐</td><td>391,850</td><td class="sell-val">-1,520</td><td class="sell-val">-0.388%</td></tr>
+            <tr><td>4</td><td>2301</td><td>光寶科</td><td>2,351,228</td><td class="sell-val">-8,200</td><td class="sell-val">-0.349%</td></tr>
+            <tr><td>5</td><td>2379</td><td>瑞昱</td><td>512,900</td><td class="sell-val">-1,500</td><td class="sell-val">-0.292%</td></tr>
+            <tr><td>6</td><td>3706</td><td>神達</td><td>1,341,000</td><td class="sell-val">-3,500</td><td class="sell-val">-0.261%</td></tr>
+            <tr><td>7</td><td>2356</td><td>英業達</td><td>3,588,200</td><td class="sell-val">-8,900</td><td class="sell-val">-0.248%</td></tr>
+            <tr><td>8</td><td>6669</td><td>緯穎</td><td>185,189</td><td class="sell-val">-410</td><td class="sell-val">-0.221%</td></tr>
+            <tr><td>9</td><td>3044</td><td>健鼎</td><td>525,624</td><td class="sell-val">-1,100</td><td class="sell-val">-0.209%</td></tr>
+            <tr><td>10</td><td>2353</td><td>宏碁</td><td>3,046,000</td><td class="sell-val">-5,800</td><td class="sell-val">-0.190%</td></tr>
+            <tr><td>11</td><td>2376</td><td>技嘉</td><td>674,500</td><td class="sell-val">-1,250</td><td class="sell-val">-0.185%</td></tr>
+            <tr><td>12</td><td>3231</td><td>緯創</td><td>2,899,000</td><td class="sell-val">-5,100</td><td class="sell-val">-0.176%</td></tr>
+            <tr><td>13</td><td>2382</td><td>廣達</td><td>3,862,000</td><td class="sell-val">-6,500</td><td class="sell-val">-0.168%</td></tr>
+            <tr><td>14</td><td>2308</td><td>台達電</td><td>2,597,000</td><td class="sell-val">-3,800</td><td class="sell-val">-0.146%</td></tr>
+            <tr><td>15</td><td>2454</td><td>聯發科</td><td>1,600,000</td><td class="sell-val">-2,200</td><td class="sell-val">-0.138%</td></tr>
+        </tbody>
+    </table>
 </body>
 </html>
