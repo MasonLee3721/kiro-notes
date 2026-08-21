@@ -16,5 +16,5 @@ class RenderTests(unittest.TestCase):
    for i,doc in enumerate(docs):
     x=root/f'{i}.json';x.write_text(json.dumps(doc),encoding='utf-8');ps.append(x)
    latest,dated=render(*ps,root/'out');report=root/'out'/'data'/'report_20260821.json'
-   self.assertTrue(latest.exists());self.assertTrue(dated.exists());self.assertTrue(report.exists());self.assertIn('scores',json.loads(report.read_text()));html=latest.read_text();self.assertIn('\"":"&quot;',html);self.assertNotIn('""":"&quot;',html);self.assertIn('class=\\"chart-toggle\\"',html);self.assertIn("addEventListener(\"click\"",html);self.assertNotIn("onclick=\"toggleChart",html)
+   self.assertTrue(latest.exists());self.assertTrue(dated.exists());self.assertTrue(report.exists());self.assertIn('scores',json.loads(report.read_text()));html=latest.read_text();self.assertIn('\"":"&quot;',html);self.assertNotIn('""":"&quot;',html);self.assertIn('class=\\"chart-toggle\\"',html);self.assertIn("addEventListener(\"click\"",html);self.assertNotIn("onclick=\"toggleChart",html);self.assertNotIn("cdn.jsdelivr.net",html);self.assertNotIn("__ECHARTS__",html)
 if __name__=="__main__":unittest.main()
