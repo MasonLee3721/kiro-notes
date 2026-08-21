@@ -1,0 +1,1197 @@
+{
+  "schema_version": "1.0",
+  "trade_date": "2026-08-20",
+  "requested_trading_days": 10,
+  "successful_market_days": {
+    "TWSE": 10,
+    "TPEx": 10
+  },
+  "warnings": [],
+  "records": [
+    {
+      "market": "TPEx",
+      "stock_code": "3081",
+      "stock_name": "聯亞",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": -336038,
+          "sitc_net_shares": 392500,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F07"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": -314262,
+          "sitc_net_shares": 450900,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F10"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": 78046,
+          "sitc_net_shares": 16134,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F11"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": 41405,
+          "sitc_net_shares": 192000,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F12"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": -102973,
+          "sitc_net_shares": 261000,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F13"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": -33028,
+          "sitc_net_shares": -108600,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F14"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": 78488,
+          "sitc_net_shares": -4900,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F17"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": -409183,
+          "sitc_net_shares": 721717,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F18"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": -670029,
+          "sitc_net_shares": 10000,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F19"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -133626,
+          "sitc_net_shares": 206503,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F20"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TPEx",
+      "stock_code": "3265",
+      "stock_name": "台星科",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": -32000,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F07"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": 110000,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F10"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": 36190,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F11"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": 903565,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F12"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": 688000,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F13"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": 221479,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F14"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": -70135,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F17"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": -1210621,
+          "sitc_net_shares": 1358000,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F18"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": -1134339,
+          "sitc_net_shares": 1358000,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F19"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -900415,
+          "sitc_net_shares": 756000,
+          "missing": false,
+          "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F20"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2049",
+      "stock_name": "上銀",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": 3854924,
+          "sitc_net_shares": -1540000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": -496340,
+          "sitc_net_shares": 912,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": -287254,
+          "sitc_net_shares": 47387,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": 888263,
+          "sitc_net_shares": -120000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": 2730968,
+          "sitc_net_shares": -685000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": 460807,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": 1481757,
+          "sitc_net_shares": 185000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": -479580,
+          "sitc_net_shares": 215000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": -461345,
+          "sitc_net_shares": 1234000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -1939379,
+          "sitc_net_shares": 1090000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2428",
+      "stock_name": "興勤",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": -148974,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": -58780,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": -161353,
+          "sitc_net_shares": 324,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": -243353,
+          "sitc_net_shares": -12000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": -2660451,
+          "sitc_net_shares": 90000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": -534943,
+          "sitc_net_shares": 20000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": -324307,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": -361990,
+          "sitc_net_shares": 226000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": -194555,
+          "sitc_net_shares": 226000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -849199,
+          "sitc_net_shares": 1904000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2455",
+      "stock_name": "全新",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": -1947821,
+          "sitc_net_shares": 4000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": -48565,
+          "sitc_net_shares": 190000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": 134510,
+          "sitc_net_shares": 41057,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": 247696,
+          "sitc_net_shares": 7000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": 416907,
+          "sitc_net_shares": -21000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": -19833,
+          "sitc_net_shares": -18000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": 716991,
+          "sitc_net_shares": -179000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": -483946,
+          "sitc_net_shares": 495000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": 420170,
+          "sitc_net_shares": 607000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -4116464,
+          "sitc_net_shares": 2065000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2458",
+      "stock_name": "義隆",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": -2004340,
+          "sitc_net_shares": -554227,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": 699227,
+          "sitc_net_shares": -188000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": -435821,
+          "sitc_net_shares": -438933,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": -220480,
+          "sitc_net_shares": -200000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": -1238000,
+          "sitc_net_shares": -16000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": -774710,
+          "sitc_net_shares": -148000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": -484000,
+          "sitc_net_shares": 129000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": -1359779,
+          "sitc_net_shares": -153000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": -1145373,
+          "sitc_net_shares": -5000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -1160000,
+          "sitc_net_shares": 1613000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2478",
+      "stock_name": "大毅",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": -417822,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": 337383,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": -6525133,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": 2739430,
+          "sitc_net_shares": -2000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": -7594848,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": 397846,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": 265475,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": 382844,
+          "sitc_net_shares": 457000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": 2156668,
+          "sitc_net_shares": 257000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -3817401,
+          "sitc_net_shares": 3767000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2486",
+      "stock_name": "一詮",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": -388887,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": -1881233,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": -209929,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": -71323,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": -239706,
+          "sitc_net_shares": 250000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": 135194,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": 2311235,
+          "sitc_net_shares": 165000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": 119550,
+          "sitc_net_shares": 113000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": 182797,
+          "sitc_net_shares": 64000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -303304,
+          "sitc_net_shares": 517000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "3090",
+      "stock_name": "日電貿",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": -2102426,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": -1232877,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": -4372968,
+          "sitc_net_shares": 420872,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": -4347396,
+          "sitc_net_shares": -3000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": -947104,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": -1171752,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": -395444,
+          "sitc_net_shares": -528000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": 1075069,
+          "sitc_net_shares": 341000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": 4269258,
+          "sitc_net_shares": -236000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -3340442,
+          "sitc_net_shares": 2864000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "3167",
+      "stock_name": "大量",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": 65672,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": -1194447,
+          "sitc_net_shares": -66000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": -25001,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": -80190,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": 13000,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": 29000,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": -18806,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": 121908,
+          "sitc_net_shares": -168000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": -609927,
+          "sitc_net_shares": -1000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": 61592,
+          "sitc_net_shares": 853000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6214",
+      "stock_name": "精誠",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": 468581,
+          "sitc_net_shares": 870,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": -393106,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": -123310,
+          "sitc_net_shares": -5104,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": 64073,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": -13944,
+          "sitc_net_shares": -2409,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": -23000,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": 1005417,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": -427788,
+          "sitc_net_shares": 1319000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": 2563526,
+          "sitc_net_shares": 1319000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -976376,
+          "sitc_net_shares": 866000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6472",
+      "stock_name": "保瑞",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": 124579,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": 358573,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": 61041,
+          "sitc_net_shares": -37,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": 40325,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": 760,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": -142265,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": 131219,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": -90608,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": 67246,
+          "sitc_net_shares": -1000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": 583032,
+          "sitc_net_shares": 469000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6672",
+      "stock_name": "騰輝電子-KY",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": -415957,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": 582951,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": -852100,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": 717920,
+          "sitc_net_shares": -1000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": -791050,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": 919609,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": 145843,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": 785270,
+          "sitc_net_shares": 202000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": 202590,
+          "sitc_net_shares": 203000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": 237891,
+          "sitc_net_shares": 140000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6715",
+      "stock_name": "嘉基",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": 14000,
+          "sitc_net_shares": -192000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": 74000,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": 24659,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": 106000,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": 4220,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": -12123,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": -44900,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": -66869,
+          "sitc_net_shares": 261000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": -128600,
+          "sitc_net_shares": -185000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": 241572,
+          "sitc_net_shares": 216000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "8422",
+      "stock_name": "可寧衛*",
+      "trade_date": "2026-08-20",
+      "sitc_history": [
+        {
+          "trade_date": "2026-08-07",
+          "foreign_net_shares": 2605735,
+          "sitc_net_shares": -25000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260807&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-10",
+          "foreign_net_shares": 2718834,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260810&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-11",
+          "foreign_net_shares": 635128,
+          "sitc_net_shares": -4604,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260811&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-12",
+          "foreign_net_shares": 1886121,
+          "sitc_net_shares": 1000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260812&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-13",
+          "foreign_net_shares": -175000,
+          "sitc_net_shares": 0,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260813&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-14",
+          "foreign_net_shares": 1089920,
+          "sitc_net_shares": -2000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260814&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-17",
+          "foreign_net_shares": 435000,
+          "sitc_net_shares": 413000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260817&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-18",
+          "foreign_net_shares": 3009503,
+          "sitc_net_shares": 718000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260818&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-19",
+          "foreign_net_shares": -583844,
+          "sitc_net_shares": -9000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260819&selectType=ALLBUT0999"
+        },
+        {
+          "trade_date": "2026-08-20",
+          "foreign_net_shares": -283434,
+          "sitc_net_shares": 2559000,
+          "missing": false,
+          "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260820&selectType=ALLBUT0999"
+        }
+      ],
+      "history_count": 10
+    }
+  ]
+}

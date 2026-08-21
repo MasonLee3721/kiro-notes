@@ -1,0 +1,1598 @@
+{
+  "schema_version": "1.0",
+  "trade_date": "2026-08-20",
+  "generated_at": "2026-08-21T11:12:03.199168+00:00",
+  "data_status": "official_market_and_history_with_estimated_cumulative_ratio",
+  "warnings": [
+    "期間累計買超比例不是實際投信持股比例"
+  ],
+  "counts": {
+    "candidates": 15,
+    "strong": 0,
+    "watch": 0
+  },
+  "records": [
+    {
+      "market": "TWSE",
+      "stock_code": "2478",
+      "stock_name": "大毅",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "2.602753505928664143706982494",
+      "positive_ratio_rank": 1,
+      "volume_lots": "18349.904",
+      "paid_in_capital_twd": 1447313390,
+      "sitc_buy_streak": 3,
+      "sitc_net_shares_3d_sum": 4481000,
+      "foreign_net_shares_3d_sum": -1277889,
+      "cumulative_buy_ratio_estimated_pct": "3.094699483157548898238273053",
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "128.50",
+        "ma5": "127.70",
+        "ma10": "125.40",
+        "ma20": "121.195",
+        "ma5_up": false,
+        "ma10_up": true,
+        "ma20_up": false,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": false,
+        "prior_20d_high": "147.00",
+        "distance_from_prior_20d_high_pct": "-12.58503401360544217687074830",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "2.497023141249396122939163214",
+        "long_upper_shadow": false,
+        "high_open_low_close": true,
+        "false_breakout": false,
+        "risk_flags": [
+          "高開走低"
+        ]
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 25,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比2.602753505928664143706982494%",
+            "全市場正投本比排名1"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 16,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買3日",
+            "近3日3日買超",
+            "最新買盤未低於前兩日平均"
+          ]
+        },
+        "chip_position": {
+          "score": 11,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）3.094699483157548898238273053%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 0,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "法人分歧"
+          ]
+        },
+        "moving_averages": {
+          "score": 13,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA10向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 1,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "量比介於0.8至2.5",
+            "高開走低-3分"
+          ]
+        }
+      },
+      "total_score": 66,
+      "rating": "條件不足",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2428",
+      "stock_name": "興勤",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "1.486191153250458506362591957",
+      "positive_ratio_rank": 2,
+      "volume_lots": "5192.499",
+      "paid_in_capital_twd": 1281127260,
+      "sitc_buy_streak": 3,
+      "sitc_net_shares_3d_sum": 2356000,
+      "foreign_net_shares_3d_sum": -1405744,
+      "cumulative_buy_ratio_estimated_pct": "1.915753474795314245362322553",
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "267.00",
+        "ma5": "257.00",
+        "ma10": "248.40",
+        "ma20": "235.90",
+        "ma5_up": true,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": true,
+        "prior_20d_high": "266.00",
+        "distance_from_prior_20d_high_pct": "0.3759398496240601503759398496",
+        "close_breakout_prior_20d_high": true,
+        "volume_ratio_20d": "4.267104992808711732073145675",
+        "long_upper_shadow": true,
+        "high_open_low_close": false,
+        "false_breakout": false,
+        "risk_flags": [
+          "長上影線"
+        ]
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 23,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比1.486191153250458506362591957%",
+            "全市場正投本比排名2"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 16,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買3日",
+            "近3日3日買超",
+            "最新買盤未低於前兩日平均"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）1.915753474795314245362322553%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 0,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "法人分歧"
+          ]
+        },
+        "moving_averages": {
+          "score": 15,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA5向上",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 7,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤突破前20日高",
+            "距前20日高點3%內",
+            "收紅K",
+            "長上影-4分"
+          ]
+        }
+      },
+      "total_score": 66,
+      "rating": "條件不足",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2455",
+      "stock_name": "全新",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "1.116784158309092086495576632",
+      "positive_ratio_rank": 3,
+      "volume_lots": "16531.391",
+      "paid_in_capital_twd": 1849059180,
+      "sitc_buy_streak": 3,
+      "sitc_net_shares_3d_sum": 3167000,
+      "foreign_net_shares_3d_sum": -4180240,
+      "cumulative_buy_ratio_estimated_pct": "1.725773320029702889228239845",
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "412.00",
+        "ma5": "404.50",
+        "ma10": "390.70",
+        "ma20": "356.65",
+        "ma5_up": true,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": true,
+        "prior_20d_high": "437.50",
+        "distance_from_prior_20d_high_pct": "-5.828571428571428571428571429",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "1.460342139320403358672078940",
+        "long_upper_shadow": true,
+        "high_open_low_close": false,
+        "false_breakout": false,
+        "risk_flags": [
+          "長上影線"
+        ]
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 23,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比1.116784158309092086495576632%",
+            "全市場正投本比排名3"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 18,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買3日",
+            "近3日3日買超",
+            "買盤逐日加速"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）1.725773320029702889228239845%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 0,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "法人分歧"
+          ]
+        },
+        "moving_averages": {
+          "score": 15,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA5向上",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 2,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收紅K",
+            "量比介於0.8至2.5",
+            "長上影-4分"
+          ]
+        }
+      },
+      "total_score": 63,
+      "rating": "條件不足",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2486",
+      "stock_name": "一詮",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.2209792871070566726257984325",
+      "positive_ratio_rank": 16,
+      "volume_lots": "16747.756",
+      "paid_in_capital_twd": 2339585790,
+      "sitc_buy_streak": 4,
+      "sitc_net_shares_3d_sum": 694000,
+      "foreign_net_shares_3d_sum": -957,
+      "cumulative_buy_ratio_estimated_pct": "0.4740155307576902319961517633",
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "251.00",
+        "ma5": "236.90",
+        "ma10": "234.05",
+        "ma20": "220.525",
+        "ma5_up": true,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": true,
+        "prior_20d_high": "249.50",
+        "distance_from_prior_20d_high_pct": "0.6012024048096192384769539078",
+        "close_breakout_prior_20d_high": true,
+        "volume_ratio_20d": "2.167924503877072842366891481",
+        "long_upper_shadow": false,
+        "high_open_low_close": false,
+        "false_breakout": false,
+        "risk_flags": []
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 10,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.2209792871070566726257984325%",
+            "全市場正投本比排名16"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 16,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買4日",
+            "近3日3日買超",
+            "最新買盤未低於前兩日平均"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）0.4740155307576902319961517633%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 0,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "法人分歧"
+          ]
+        },
+        "moving_averages": {
+          "score": 15,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA5向上",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 15,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤突破前20日高",
+            "距前20日高點3%內",
+            "收紅K",
+            "量比介於0.8至2.5"
+          ]
+        }
+      },
+      "total_score": 61,
+      "rating": "條件不足",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6715",
+      "stock_name": "嘉基",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.3163721442177732421990172368",
+      "positive_ratio_rank": 14,
+      "volume_lots": "3323.695",
+      "paid_in_capital_twd": 682740260,
+      "sitc_buy_streak": 1,
+      "sitc_net_shares_3d_sum": 292000,
+      "foreign_net_shares_3d_sum": 46103,
+      "cumulative_buy_ratio_estimated_pct": "0.1464685852860061306476931652",
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "492.00",
+        "ma5": "430.00",
+        "ma10": "399.45",
+        "ma20": "376.25",
+        "ma5_up": true,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": true,
+        "prior_20d_high": "463.00",
+        "distance_from_prior_20d_high_pct": "6.263498920086393088552915767",
+        "close_breakout_prior_20d_high": true,
+        "volume_ratio_20d": "3.953834255458385388779820334",
+        "long_upper_shadow": false,
+        "high_open_low_close": false,
+        "false_breakout": false,
+        "risk_flags": []
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 10,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.3163721442177732421990172368%",
+            "全市場正投本比排名14"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 9,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買1日",
+            "近3日2日買超",
+            "最新買盤未低於前兩日平均"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）0.1464685852860061306476931652%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 7,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "當日同步買超",
+            "近3日外資累計買超"
+          ]
+        },
+        "moving_averages": {
+          "score": 15,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA5向上",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 11,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤突破前20日高",
+            "距前20日高點3%內",
+            "收紅K"
+          ]
+        }
+      },
+      "total_score": 57,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "3167",
+      "stock_name": "大量",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.9529289836321990838230183649",
+      "positive_ratio_rank": 5,
+      "volume_lots": "9929.286",
+      "paid_in_capital_twd": 895134910,
+      "sitc_buy_streak": 1,
+      "sitc_net_shares_3d_sum": 684000,
+      "foreign_net_shares_3d_sum": -426427,
+      "cumulative_buy_ratio_estimated_pct": "0.6903987243665873784321516407",
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "762.00",
+        "ma5": "720.00",
+        "ma10": "692.70",
+        "ma20": "627.975",
+        "ma5_up": true,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": true,
+        "prior_20d_high": "774.00",
+        "distance_from_prior_20d_high_pct": "-1.550387596899224806201550388",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "5.417541945164370481516846269",
+        "long_upper_shadow": false,
+        "high_open_low_close": false,
+        "false_breakout": false,
+        "risk_flags": []
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 19,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.9529289836321990838230183649%",
+            "全市場正投本比排名5"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 8,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買1日",
+            "近3日1日買超",
+            "買盤逐日加速"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）0.6903987243665873784321516407%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 4,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "當日同步買超",
+            "法人分歧"
+          ]
+        },
+        "moving_averages": {
+          "score": 15,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA5向上",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 5,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "距前20日高點3%內",
+            "收紅K"
+          ]
+        }
+      },
+      "total_score": 56,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6214",
+      "stock_name": "精誠",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.3180980925332364571592063983",
+      "positive_ratio_rank": 13,
+      "volume_lots": "4170.45",
+      "paid_in_capital_twd": 2722430660,
+      "sitc_buy_streak": 3,
+      "sitc_net_shares_3d_sum": 3504000,
+      "foreign_net_shares_3d_sum": 1159362,
+      "cumulative_buy_ratio_estimated_pct": "1.284645023796492212587702785",
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "180.00",
+        "ma5": "176.40",
+        "ma10": "161.50",
+        "ma20": "154.075",
+        "ma5_up": true,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": true,
+        "prior_20d_high": "181.50",
+        "distance_from_prior_20d_high_pct": "-0.8264462809917355371900826446",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "1.020483077600763526906981866",
+        "long_upper_shadow": false,
+        "high_open_low_close": false,
+        "false_breakout": false,
+        "risk_flags": []
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 10,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.3180980925332364571592063983%",
+            "全市場正投本比排名13"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 14,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買3日",
+            "近3日3日買超"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）1.284645023796492212587702785%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 3,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "近3日外資累計買超"
+          ]
+        },
+        "moving_averages": {
+          "score": 15,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA5向上",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 9,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "距前20日高點3%內",
+            "收紅K",
+            "量比介於0.8至2.5"
+          ]
+        }
+      },
+      "total_score": 56,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TPEx",
+      "stock_code": "3265",
+      "stock_name": "台星科",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.5548149094529958717147279118",
+      "positive_ratio_rank": 8,
+      "volume_lots": "4045.12",
+      "paid_in_capital_twd": 1362616590,
+      "sitc_buy_streak": 3,
+      "sitc_net_shares_3d_sum": 3472000,
+      "foreign_net_shares_3d_sum": -3245375,
+      "cumulative_buy_ratio_estimated_pct": "2.548038843413758818245417077",
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "174.50",
+        "ma5": "173.90",
+        "ma10": "170.30",
+        "ma20": "160.50",
+        "ma5_up": false,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": false,
+        "prior_20d_high": "190.50",
+        "distance_from_prior_20d_high_pct": "-8.398950131233595800524934383",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "2.554790627171098338912398156",
+        "long_upper_shadow": false,
+        "high_open_low_close": true,
+        "false_breakout": false,
+        "risk_flags": [
+          "高開走低"
+        ]
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 17,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.5548149094529958717147279118%",
+            "全市場正投本比排名8"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 14,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買3日",
+            "近3日3日買超"
+          ]
+        },
+        "chip_position": {
+          "score": 9,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）2.548038843413758818245417077%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 0,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "法人分歧"
+          ]
+        },
+        "moving_averages": {
+          "score": 14,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 0,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "高開走低-3分"
+          ]
+        }
+      },
+      "total_score": 54,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6672",
+      "stock_name": "騰輝電子-KY",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.1715261410984818319266311144",
+      "positive_ratio_rank": 22,
+      "volume_lots": "5170.899",
+      "paid_in_capital_twd": 816202120,
+      "sitc_buy_streak": 3,
+      "sitc_net_shares_3d_sum": 545000,
+      "foreign_net_shares_3d_sum": 1225751,
+      "cumulative_buy_ratio_estimated_pct": "0.6665015768398151183434809015",
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "287.50",
+        "ma5": "282.50",
+        "ma10": "268.25",
+        "ma20": "238.80",
+        "ma5_up": true,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": false,
+        "prior_20d_high": "295.00",
+        "distance_from_prior_20d_high_pct": "-2.542372881355932203389830508",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "1.245648062258309339951089641",
+        "long_upper_shadow": true,
+        "high_open_low_close": true,
+        "false_breakout": false,
+        "risk_flags": [
+          "長上影線",
+          "高開走低"
+        ]
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 10,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.1715261410984818319266311144%",
+            "全市場正投本比排名22"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 14,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買3日",
+            "近3日3日買超"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）0.6665015768398151183434809015%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 10,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "當日同步買超",
+            "近3日外資累計買超",
+            "近3日皆同步買超"
+          ]
+        },
+        "moving_averages": {
+          "score": 15,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA5向上",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 0,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "距前20日高點3%內",
+            "量比介於0.8至2.5",
+            "長上影-4分",
+            "高開走低-3分"
+          ]
+        }
+      },
+      "total_score": 54,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "3090",
+      "stock_name": "日電貿",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.9959412957982161731616424199",
+      "positive_ratio_rank": 4,
+      "volume_lots": "22502.808",
+      "paid_in_capital_twd": 2875671500,
+      "sitc_buy_streak": 1,
+      "sitc_net_shares_3d_sum": 2969000,
+      "foreign_net_shares_3d_sum": 2003885,
+      "cumulative_buy_ratio_estimated_pct": "0.9941580601261305402929367975",
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "172.00",
+        "ma5": "170.30",
+        "ma10": "168.30",
+        "ma20": "154.625",
+        "ma5_up": false,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": false,
+        "prior_20d_high": "187.00",
+        "distance_from_prior_20d_high_pct": "-8.021390374331550802139037433",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "2.142088779308309613791921711",
+        "long_upper_shadow": false,
+        "high_open_low_close": true,
+        "false_breakout": false,
+        "risk_flags": [
+          "高開走低"
+        ]
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 19,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.9959412957982161731616424199%",
+            "全市場正投本比排名4"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 9,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買1日",
+            "近3日2日買超",
+            "最新買盤未低於前兩日平均"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）0.9941580601261305402929367975%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 3,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "近3日外資累計買超"
+          ]
+        },
+        "moving_averages": {
+          "score": 14,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 1,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "量比介於0.8至2.5",
+            "高開走低-3分"
+          ]
+        }
+      },
+      "total_score": 51,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "8422",
+      "stock_name": "可寧衛*",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.1885233094411655623417152879",
+      "positive_ratio_rank": 19,
+      "volume_lots": "6360.439",
+      "paid_in_capital_twd": 1357391830,
+      "sitc_buy_streak": 1,
+      "sitc_net_shares_3d_sum": 3268000,
+      "foreign_net_shares_3d_sum": 2142225,
+      "cumulative_buy_ratio_estimated_pct": "0.2689272116806537726103744119",
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "27.10",
+        "ma5": "26.75",
+        "ma10": "26.685",
+        "ma20": "26.13",
+        "ma5_up": true,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": true,
+        "prior_20d_high": "27.25",
+        "distance_from_prior_20d_high_pct": "-0.5504587155963302752293577982",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "1.014475415719583682258643378",
+        "long_upper_shadow": false,
+        "high_open_low_close": false,
+        "false_breakout": false,
+        "risk_flags": []
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 10,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.1885233094411655623417152879%",
+            "全市場正投本比排名19"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 9,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買1日",
+            "近3日2日買超",
+            "最新買盤未低於前兩日平均"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）0.2689272116806537726103744119%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 3,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "近3日外資累計買超"
+          ]
+        },
+        "moving_averages": {
+          "score": 15,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA5向上",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 9,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "距前20日高點3%內",
+            "收紅K",
+            "量比介於0.8至2.5"
+          ]
+        }
+      },
+      "total_score": 51,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TPEx",
+      "stock_code": "3081",
+      "stock_name": "聯亞",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.2029134529016320136138897458",
+      "positive_ratio_rank": 17,
+      "volume_lots": "4730.272",
+      "paid_in_capital_twd": 1017690040,
+      "sitc_buy_streak": 3,
+      "sitc_net_shares_3d_sum": 938220,
+      "foreign_net_shares_3d_sum": -1212838,
+      "cumulative_buy_ratio_estimated_pct": "2.100103092293209433394867459",
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "2780.00",
+        "ma5": "2743.00",
+        "ma10": "2642.50",
+        "ma20": "2232.25",
+        "ma5_up": true,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": true,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": true,
+        "prior_20d_high": "3065.00",
+        "distance_from_prior_20d_high_pct": "-9.298531810766721044045676998",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "1.387727559447842861124558084",
+        "long_upper_shadow": true,
+        "high_open_low_close": false,
+        "false_breakout": false,
+        "risk_flags": [
+          "長上影線"
+        ]
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 10,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.2029134529016320136138897458%",
+            "全市場正投本比排名17"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 14,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買3日",
+            "近3日3日買超"
+          ]
+        },
+        "chip_position": {
+          "score": 9,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）2.100103092293209433394867459%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 0,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "法人分歧"
+          ]
+        },
+        "moving_averages": {
+          "score": 15,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤站上多頭排列",
+            "MA5向上",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 2,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收紅K",
+            "量比介於0.8至2.5",
+            "長上影-4分"
+          ]
+        }
+      },
+      "total_score": 50,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6472",
+      "stock_name": "保瑞",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.3671058763639539006130425485",
+      "positive_ratio_rank": 11,
+      "volume_lots": "3090.38",
+      "paid_in_capital_twd": 1277560590,
+      "sitc_buy_streak": 1,
+      "sitc_net_shares_3d_sum": 468000,
+      "foreign_net_shares_3d_sum": 559670,
+      "cumulative_buy_ratio_estimated_pct": "0.3662941731789018319671241581",
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "445.50",
+        "ma5": "416.00",
+        "ma10": "419.80",
+        "ma20": "407.075",
+        "ma5_up": true,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": false,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": true,
+        "red_candle": true,
+        "prior_20d_high": "436.00",
+        "distance_from_prior_20d_high_pct": "2.178899082568807339449541284",
+        "close_breakout_prior_20d_high": true,
+        "volume_ratio_20d": "4.267071739280535800593799627",
+        "long_upper_shadow": false,
+        "high_open_low_close": false,
+        "false_breakout": false,
+        "risk_flags": []
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 10,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.3671058763639539006130425485%",
+            "全市場正投本比排名11"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 6,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買1日",
+            "近3日1日買超",
+            "最新買盤未低於前兩日平均"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）0.3662941731789018319671241581%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 7,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "當日同步買超",
+            "近3日外資累計買超"
+          ]
+        },
+        "moving_averages": {
+          "score": 9,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "MA5向上",
+            "MA10向上",
+            "MA20向上",
+            "站上MA5",
+            "站上MA10",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 11,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "收盤突破前20日高",
+            "距前20日高點3%內",
+            "收紅K"
+          ]
+        }
+      },
+      "total_score": 48,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2458",
+      "stock_name": "義隆",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.5308009474991068196331667230",
+      "positive_ratio_rank": 9,
+      "volume_lots": "4562.955",
+      "paid_in_capital_twd": 3038803920,
+      "sitc_buy_streak": 1,
+      "sitc_net_shares_3d_sum": 1455000,
+      "foreign_net_shares_3d_sum": -3665152,
+      "cumulative_buy_ratio_estimated_pct": "0.01278134457586193978583521111",
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "146.00",
+        "ma5": "144.30",
+        "ma10": "144.50",
+        "ma20": "150.20",
+        "ma5_up": true,
+        "ma10_up": false,
+        "ma20_up": false,
+        "bullish_alignment": false,
+        "close_above_ma5": true,
+        "close_above_ma10": true,
+        "close_above_ma20": false,
+        "red_candle": false,
+        "prior_20d_high": "176.00",
+        "distance_from_prior_20d_high_pct": "-17.04545454545454545454545455",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "1.404989220819217739451801663",
+        "long_upper_shadow": true,
+        "high_open_low_close": false,
+        "false_breakout": false,
+        "risk_flags": [
+          "長上影線"
+        ]
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 17,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.5308009474991068196331667230%",
+            "全市場正投本比排名9"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 8,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買1日",
+            "近3日1日買超",
+            "買盤逐日加速"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）0.01278134457586193978583521111%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 0,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "法人分歧"
+          ]
+        },
+        "moving_averages": {
+          "score": 5,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "MA5向上",
+            "站上MA5",
+            "站上MA10"
+          ]
+        },
+        "breakout_volume": {
+          "score": 0,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "量比介於0.8至2.5",
+            "長上影-4分"
+          ]
+        }
+      },
+      "total_score": 35,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2049",
+      "stock_name": "上銀",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.3080904205247690000210292911",
+      "positive_ratio_rank": 15,
+      "volume_lots": "11847.316",
+      "paid_in_capital_twd": 3537922400,
+      "sitc_buy_streak": 4,
+      "sitc_net_shares_3d_sum": 2539000,
+      "foreign_net_shares_3d_sum": -2880304,
+      "cumulative_buy_ratio_estimated_pct": "0.1207768152291864852660420138",
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "technical": {
+        "trade_date": "2026-08-20",
+        "history_count": 120,
+        "close": "366.50",
+        "ma5": "371.30",
+        "ma10": "374.85",
+        "ma20": "347.675",
+        "ma5_up": false,
+        "ma10_up": true,
+        "ma20_up": true,
+        "bullish_alignment": false,
+        "close_above_ma5": false,
+        "close_above_ma10": false,
+        "close_above_ma20": true,
+        "red_candle": false,
+        "prior_20d_high": "404.50",
+        "distance_from_prior_20d_high_pct": "-9.394313967861557478368355995",
+        "close_breakout_prior_20d_high": false,
+        "volume_ratio_20d": "1.999324951480887688802632689",
+        "long_upper_shadow": true,
+        "high_open_low_close": true,
+        "false_breakout": false,
+        "risk_flags": [
+          "長上影線",
+          "高開走低",
+          "收盤跌破MA5",
+          "收盤跌破MA10"
+        ]
+      },
+      "sections": {
+        "investment_ratio": {
+          "score": 10,
+          "max": 25,
+          "status": "actual",
+          "reasons": [
+            "投本比0.3080904205247690000210292911%",
+            "全市場正投本比排名15"
+          ]
+        },
+        "sitc_continuity": {
+          "score": 16,
+          "max": 20,
+          "status": "actual",
+          "reasons": [
+            "連買4日",
+            "近3日3日買超",
+            "最新買盤未低於前兩日平均"
+          ]
+        },
+        "chip_position": {
+          "score": 5,
+          "max": 15,
+          "status": "estimated",
+          "reasons": [
+            "期間累計買超比例（估算）0.1207768152291864852660420138%"
+          ]
+        },
+        "foreign_sync": {
+          "score": 0,
+          "max": 10,
+          "status": "actual",
+          "reasons": [
+            "法人分歧"
+          ]
+        },
+        "moving_averages": {
+          "score": 4,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "MA10向上",
+            "MA20向上",
+            "站上MA20"
+          ]
+        },
+        "breakout_volume": {
+          "score": 0,
+          "max": 15,
+          "status": "actual",
+          "reasons": [
+            "量比介於0.8至2.5",
+            "長上影-4分",
+            "高開走低-3分"
+          ]
+        }
+      },
+      "total_score": 35,
+      "rating": "不列入",
+      "confidence": "中",
+      "confidence_reason": "期間累計買超比例為估算；其餘本次評分來源為官方資料"
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+{
+  "schema_version": "1.0",
+  "trade_date": "2026-08-20",
+  "generated_at": "2026-08-21T01:50:01.100764+00:00",
+  "thresholds": {
+    "aggressive_min_streak": 1,
+    "conservative_min_streak": 3,
+    "buying_cooling_latest_vs_previous_max_ratio": 0.5
+  },
+  "counts": {
+    "preselected": 15,
+    "aggressive": 15,
+    "conservative": 9,
+    "buying_cooling": 0
+  },
+  "records": [
+    {
+      "market": "TWSE",
+      "stock_code": "2049",
+      "stock_name": "上銀",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.3080904205247690000210292911",
+      "positive_ratio_rank": 15,
+      "sitc_net_shares": 1090000,
+      "foreign_net_shares": -1939379,
+      "volume_lots": "11847.316",
+      "paid_in_capital_twd": 3537922400,
+      "sitc_buy_streak": 4,
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "sitc_net_shares_3d": [
+        215000,
+        1234000,
+        1090000
+      ],
+      "sitc_net_shares_3d_sum": 2539000,
+      "foreign_net_shares_3d": [
+        -479580,
+        -461345,
+        -1939379
+      ],
+      "foreign_net_shares_3d_sum": -2880304,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2486",
+      "stock_name": "一詮",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.2209792871070566726257984325",
+      "positive_ratio_rank": 16,
+      "sitc_net_shares": 517000,
+      "foreign_net_shares": -303304,
+      "volume_lots": "16747.756",
+      "paid_in_capital_twd": 2339585790,
+      "sitc_buy_streak": 4,
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "sitc_net_shares_3d": [
+        113000,
+        64000,
+        517000
+      ],
+      "sitc_net_shares_3d_sum": 694000,
+      "foreign_net_shares_3d": [
+        119550,
+        182797,
+        -303304
+      ],
+      "foreign_net_shares_3d_sum": -957,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2478",
+      "stock_name": "大毅",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "2.602753505928664143706982494",
+      "positive_ratio_rank": 1,
+      "sitc_net_shares": 3767000,
+      "foreign_net_shares": -3817401,
+      "volume_lots": "18349.904",
+      "paid_in_capital_twd": 1447313390,
+      "sitc_buy_streak": 3,
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "sitc_net_shares_3d": [
+        457000,
+        257000,
+        3767000
+      ],
+      "sitc_net_shares_3d_sum": 4481000,
+      "foreign_net_shares_3d": [
+        382844,
+        2156668,
+        -3817401
+      ],
+      "foreign_net_shares_3d_sum": -1277889,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2428",
+      "stock_name": "興勤",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "1.486191153250458506362591957",
+      "positive_ratio_rank": 2,
+      "sitc_net_shares": 1904000,
+      "foreign_net_shares": -849199,
+      "volume_lots": "5192.499",
+      "paid_in_capital_twd": 1281127260,
+      "sitc_buy_streak": 3,
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "sitc_net_shares_3d": [
+        226000,
+        226000,
+        1904000
+      ],
+      "sitc_net_shares_3d_sum": 2356000,
+      "foreign_net_shares_3d": [
+        -361990,
+        -194555,
+        -849199
+      ],
+      "foreign_net_shares_3d_sum": -1405744,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2455",
+      "stock_name": "全新",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "1.116784158309092086495576632",
+      "positive_ratio_rank": 3,
+      "sitc_net_shares": 2065000,
+      "foreign_net_shares": -4116464,
+      "volume_lots": "16531.391",
+      "paid_in_capital_twd": 1849059180,
+      "sitc_buy_streak": 3,
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "sitc_net_shares_3d": [
+        495000,
+        607000,
+        2065000
+      ],
+      "sitc_net_shares_3d_sum": 3167000,
+      "foreign_net_shares_3d": [
+        -483946,
+        420170,
+        -4116464
+      ],
+      "foreign_net_shares_3d_sum": -4180240,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TPEx",
+      "stock_code": "3265",
+      "stock_name": "台星科",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.5548149094529958717147279118",
+      "positive_ratio_rank": 8,
+      "sitc_net_shares": 756000,
+      "foreign_net_shares": -900415,
+      "volume_lots": "4045.12",
+      "paid_in_capital_twd": 1362616590,
+      "sitc_buy_streak": 3,
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "sitc_net_shares_3d": [
+        1358000,
+        1358000,
+        756000
+      ],
+      "sitc_net_shares_3d_sum": 3472000,
+      "foreign_net_shares_3d": [
+        -1210621,
+        -1134339,
+        -900415
+      ],
+      "foreign_net_shares_3d_sum": -3245375,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6214",
+      "stock_name": "精誠",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.3180980925332364571592063983",
+      "positive_ratio_rank": 13,
+      "sitc_net_shares": 866000,
+      "foreign_net_shares": -976376,
+      "volume_lots": "4170.45",
+      "paid_in_capital_twd": 2722430660,
+      "sitc_buy_streak": 3,
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "sitc_net_shares_3d": [
+        1319000,
+        1319000,
+        866000
+      ],
+      "sitc_net_shares_3d_sum": 3504000,
+      "foreign_net_shares_3d": [
+        -427788,
+        2563526,
+        -976376
+      ],
+      "foreign_net_shares_3d_sum": 1159362,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TPEx",
+      "stock_code": "3081",
+      "stock_name": "聯亞",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.2029134529016320136138897458",
+      "positive_ratio_rank": 17,
+      "sitc_net_shares": 206503,
+      "foreign_net_shares": -133626,
+      "volume_lots": "4730.272",
+      "paid_in_capital_twd": 1017690040,
+      "sitc_buy_streak": 3,
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "sitc_net_shares_3d": [
+        721717,
+        10000,
+        206503
+      ],
+      "sitc_net_shares_3d_sum": 938220,
+      "foreign_net_shares_3d": [
+        -409183,
+        -670029,
+        -133626
+      ],
+      "foreign_net_shares_3d_sum": -1212838,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6672",
+      "stock_name": "騰輝電子-KY",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.1715261410984818319266311144",
+      "positive_ratio_rank": 22,
+      "sitc_net_shares": 140000,
+      "foreign_net_shares": 237891,
+      "volume_lots": "5170.899",
+      "paid_in_capital_twd": 816202120,
+      "sitc_buy_streak": 3,
+      "aggressive_passed": true,
+      "conservative_passed": true,
+      "sitc_net_shares_3d": [
+        202000,
+        203000,
+        140000
+      ],
+      "sitc_net_shares_3d_sum": 545000,
+      "foreign_net_shares_3d": [
+        785270,
+        202590,
+        237891
+      ],
+      "foreign_net_shares_3d_sum": 1225751,
+      "foreign_sync_latest": true,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "3090",
+      "stock_name": "日電貿",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.9959412957982161731616424199",
+      "positive_ratio_rank": 4,
+      "sitc_net_shares": 2864000,
+      "foreign_net_shares": -3340442,
+      "volume_lots": "22502.808",
+      "paid_in_capital_twd": 2875671500,
+      "sitc_buy_streak": 1,
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "sitc_net_shares_3d": [
+        341000,
+        -236000,
+        2864000
+      ],
+      "sitc_net_shares_3d_sum": 2969000,
+      "foreign_net_shares_3d": [
+        1075069,
+        4269258,
+        -3340442
+      ],
+      "foreign_net_shares_3d_sum": 2003885,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "3167",
+      "stock_name": "大量",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.9529289836321990838230183649",
+      "positive_ratio_rank": 5,
+      "sitc_net_shares": 853000,
+      "foreign_net_shares": 61592,
+      "volume_lots": "9929.286",
+      "paid_in_capital_twd": 895134910,
+      "sitc_buy_streak": 1,
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "sitc_net_shares_3d": [
+        -168000,
+        -1000,
+        853000
+      ],
+      "sitc_net_shares_3d_sum": 684000,
+      "foreign_net_shares_3d": [
+        121908,
+        -609927,
+        61592
+      ],
+      "foreign_net_shares_3d_sum": -426427,
+      "foreign_sync_latest": true,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "2458",
+      "stock_name": "義隆",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.5308009474991068196331667230",
+      "positive_ratio_rank": 9,
+      "sitc_net_shares": 1613000,
+      "foreign_net_shares": -1160000,
+      "volume_lots": "4562.955",
+      "paid_in_capital_twd": 3038803920,
+      "sitc_buy_streak": 1,
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "sitc_net_shares_3d": [
+        -153000,
+        -5000,
+        1613000
+      ],
+      "sitc_net_shares_3d_sum": 1455000,
+      "foreign_net_shares_3d": [
+        -1359779,
+        -1145373,
+        -1160000
+      ],
+      "foreign_net_shares_3d_sum": -3665152,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6472",
+      "stock_name": "保瑞",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.3671058763639539006130425485",
+      "positive_ratio_rank": 11,
+      "sitc_net_shares": 469000,
+      "foreign_net_shares": 583032,
+      "volume_lots": "3090.38",
+      "paid_in_capital_twd": 1277560590,
+      "sitc_buy_streak": 1,
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "sitc_net_shares_3d": [
+        0,
+        -1000,
+        469000
+      ],
+      "sitc_net_shares_3d_sum": 468000,
+      "foreign_net_shares_3d": [
+        -90608,
+        67246,
+        583032
+      ],
+      "foreign_net_shares_3d_sum": 559670,
+      "foreign_sync_latest": true,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "6715",
+      "stock_name": "嘉基",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.3163721442177732421990172368",
+      "positive_ratio_rank": 14,
+      "sitc_net_shares": 216000,
+      "foreign_net_shares": 241572,
+      "volume_lots": "3323.695",
+      "paid_in_capital_twd": 682740260,
+      "sitc_buy_streak": 1,
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "sitc_net_shares_3d": [
+        261000,
+        -185000,
+        216000
+      ],
+      "sitc_net_shares_3d_sum": 292000,
+      "foreign_net_shares_3d": [
+        -66869,
+        -128600,
+        241572
+      ],
+      "foreign_net_shares_3d_sum": 46103,
+      "foreign_sync_latest": true,
+      "buying_cooling": false,
+      "chip_flags": []
+    },
+    {
+      "market": "TWSE",
+      "stock_code": "8422",
+      "stock_name": "可寧衛*",
+      "trade_date": "2026-08-20",
+      "investment_ratio_pct": "0.1885233094411655623417152879",
+      "positive_ratio_rank": 19,
+      "sitc_net_shares": 2559000,
+      "foreign_net_shares": -283434,
+      "volume_lots": "6360.439",
+      "paid_in_capital_twd": 1357391830,
+      "sitc_buy_streak": 1,
+      "aggressive_passed": true,
+      "conservative_passed": false,
+      "sitc_net_shares_3d": [
+        718000,
+        -9000,
+        2559000
+      ],
+      "sitc_net_shares_3d_sum": 3268000,
+      "foreign_net_shares_3d": [
+        3009503,
+        -583844,
+        -283434
+      ],
+      "foreign_net_shares_3d_sum": 2142225,
+      "foreign_sync_latest": false,
+      "buying_cooling": false,
+      "chip_flags": []
+    }
+  ]
+}
