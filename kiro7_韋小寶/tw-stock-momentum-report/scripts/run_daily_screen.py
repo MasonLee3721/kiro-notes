@@ -27,7 +27,7 @@ def execute(day:str,root:Path)->dict:
  except DailyScreenError as exc:history_status="failed";history_error=str(exc)
  technical_status="completed";technical_error=None
  try:
-  run([py,str(base/"fetch_price_history.py"),"--targets",str(paths["candidates"]),"--end-date",day,"--days","120","--cache-dir",str(root/"cache"/"price"),"--output",str(paths["prices"])])
+  run([py,str(base/"fetch_price_history.py"),"--targets",str(paths["candidates"]),"--end-date",day,"--days","120","--cache-dir",str(root/"cache"/"price"),"--daily-quotes",str(paths["quotes"]),"--output",str(paths["prices"])])
   run([py,str(base/"compute_technical_signals.py"),"--input",str(paths["prices"]),"--output",str(paths["technical"])])
   if history_status=="completed":
    run([py,str(base/"build_daily_scores.py"),"--dataset",str(paths["dataset"]),"--screened",str(paths["screened"]),"--history",str(paths["history"]),"--technical",str(paths["technical"]),"--output",str(paths["scores"])])

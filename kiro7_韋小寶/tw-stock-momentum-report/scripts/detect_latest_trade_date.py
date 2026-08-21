@@ -10,7 +10,7 @@ def singleton_date(records,label:str)->str:
  if len(dates)!=1:raise TradeDateError(f"{label} returned dates {sorted(dates)}")
  return next(iter(dates))
 def detect()->dict:
- quote_dates={m:singleton_date(fetch_quote_market(m),f"{m} quotes") for m in ("twse","tpex")}
+ tpex_date=singleton_date(fetch_quote_market("tpex"),"tpex quotes");quote_dates={"twse":singleton_date(fetch_quote_market("twse",tpex_date),"twse quotes"),"tpex":tpex_date}
  if len(set(quote_dates.values()))!=1:raise TradeDateError(f"market quote dates differ: {quote_dates}")
  day=quote_dates["twse"];institutional_dates={m:singleton_date(fetch_institutional_market(m,day),f"{m} institutional") for m in ("twse","tpex")}
  if set(institutional_dates.values())!={day}:raise TradeDateError(f"institutional dates differ from quotes: {institutional_dates} vs {day}")

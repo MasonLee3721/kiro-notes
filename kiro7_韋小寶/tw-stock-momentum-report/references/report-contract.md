@@ -31,3 +31,7 @@ HTML 頂部及底部均顯示：
 台股慣例：漲／買超／強勢紅色，跌／賣超／弱勢綠色，警戒橘色，缺失灰色。支援桌面與手機。對名稱、文字、URL 與外部輸入 escape；安全序列化 JavaScript，防止 `</script>` 與 HTML 注入。主要內容不依賴後端。
 
 最終回報交易日期、掃描與入選數、前 5 名代號／名稱／投本比／總分／一句原因、缺失與警告、HTML 及 JSON 實際路徑或已確認連結。失敗時明說原因；未經授權不得自行發布。
+
+## Schema 2.0 降級揭露
+
+正式 `report_YYYYMMDD.json` 保存 scores、prices、history 三層 bundle。技術缺失候選仍出現在排名表，但 HTML 顯示警告及「無技術圖」，不得顯示交易計畫。`counts.technical_missing` 必須與逐檔 `technical_status=missing` 數量一致。

@@ -2,6 +2,7 @@
 """Fetch official listed/OTC company capital and issued common-share data."""
 from __future__ import annotations
 import argparse,json,re,time
+from http.client import IncompleteRead
 from dataclasses import asdict,dataclass
 from datetime import date,datetime,timezone
 from decimal import Decimal,InvalidOperation
@@ -81,7 +82,7 @@ def fetch_json(url:str,timeout:float=20,attempts:int=3)->tuple[Any,str]:
    req=Request(url,headers={'User-Agent':'tw-stock-momentum-report/1.0','Accept':'application/json'})
    with urlopen(req,timeout=timeout) as response:raw=response.read();stamp=datetime.now(timezone.utc).isoformat()
    return json.loads(raw.decode('utf-8-sig')),stamp
-  except (HTTPError,URLError,TimeoutError,json.JSONDecodeError,UnicodeDecodeError) as exc:
+  except (HTTPError,URLError,TimeoutError,IncompleteRead,json.JSONDecodeError,UnicodeDecodeError) as exc:
    error=exc
    if attempt+1<attempts:time.sleep(2**attempt)
  raise CompanyDataError(f'official company fetch failed: {error}')

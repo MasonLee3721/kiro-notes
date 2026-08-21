@@ -1,7 +1,7 @@
 import json,sys,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
-from fetch_price_history import PriceHistoryError,cached_month,collect,decimal_text,parse_tpex_month,parse_twse_month,previous_month
+from fetch_price_history import PriceHistoryError,cached_month,collect,decimal_text,is_single_weekday_gap,parse_tpex_month,parse_twse_month,previous_month
 from datetime import date,timedelta
 from unittest.mock import patch
 class PriceTests(unittest.TestCase):
@@ -40,4 +40,15 @@ class PriceTests(unittest.TestCase):
    self.assertEqual(result['completed_count'],1);self.assertEqual(result['failed_count'],1)
    self.assertEqual(result['records'][0]['stock_code'],'GOOD');self.assertIn('rate limited',result['failures'][0]['reason'])
 
+ def test_single_weekday_gap_allows_weekend_but_not_two_weekdays(self):
+  self.assertTrue(is_single_weekday_gap('2026-08-21','2026-08-24'))
+  self.assertFalse(is_single_weekday_gap('2026-08-20','2026-08-24'))
+ def test_missing_last_k_is_appended_from_verified_daily_quote(self):
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);target=root/'targets.json';quotes=root/'quotes.json'
+   target.write_text(json.dumps({'trade_date':'2026-08-24','targets':[{'market':'TWSE','stock_code':'2330'}]}),encoding='utf-8')
+   quotes.write_text(json.dumps({'trade_date':'2026-08-24','records':[{'trade_date':'2026-08-24','market':'TWSE','stock_code':'2330','open':'10','high':'11','low':'9','close':'10.5','change':'0.5','volume_shares':1000,'source_name':'TWSE MI_INDEX'}]}),encoding='utf-8')
+   rows=[{'trade_date':(date(2026,8,21)-timedelta(days=59-i)).isoformat(),'open':'10','high':'11','low':'9','close':'10','change':'0','volume_shares':1000} for i in range(60)]
+   with patch('fetch_price_history.cached_month',return_value=rows):result=collect(target,'2026-08-24',60,max_months=1,daily_quotes_path=quotes)
+  self.assertEqual(result['completed_count'],1);self.assertTrue(result['records'][0]['daily_fallback_applied']);self.assertEqual(result['records'][0]['ohlcv_history'][-1]['trade_date'],'2026-08-24')
 if __name__=='__main__':unittest.main()

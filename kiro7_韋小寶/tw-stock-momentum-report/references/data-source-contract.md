@@ -62,3 +62,11 @@ python scripts/fetch_official_data.py --market all --date 2026-08-19 --output ou
 ## 候選股歷史資料
 
 `scripts/fetch_institutional_history.py` 逐交易日取得 TWSE T86 或 TPEx `insti/dailyTrade` 全表，但只保存目標清單中的股票；缺少個股列時保存 null 與警告，不可填 0。`scripts/fetch_price_history.py` 逐月取得 TWSE `STOCK_DAY` 或 TPEx `afterTrading/tradingStock`；TWSE 成交量為股，TPEx 成交量為張，正規化時乘 1,000。官方除權息漲跌值可能帶 `X` 註記，須剝離註記但保留數值。行情請求必須節流；大量目標應使用斷點快取，遇 307／限流不得產出半套報告。
+
+## 官方行情備援與降級規則（Schema 2.0）
+
+TWSE `STOCK_DAY_ALL` 日期落後時，只能以目標日期查詢官方 `MI_INDEX`；回傳 `stat=OK`、日期完全相符且存在完整收盤行情表才可採用。正規化記錄標示 `source_name=TWSE MI_INDEX`。TPEx 不得使用 MI_INDEX，仍使用櫃買官方行情。
+
+個股歷史行情只缺最後一個營業日時，可由已驗證的同日全市場 OHLCV 補齊，並標示 `daily_fallback_applied=true`、`data_status=actual_fallback`。缺兩個以上平日不得補造。
+
+候選技術資料失敗不得中止全體：保留候選、兩個技術分項均為 0、`technical_status=missing`、可信度低、`trading_plan=null`，並保存結構化失敗原因。

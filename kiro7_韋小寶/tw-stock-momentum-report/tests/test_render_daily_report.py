@@ -9,4 +9,12 @@ class RenderTests(unittest.TestCase):
    for i,day in enumerate(["2026-08-20","2026-08-19","2026-08-20"]):
     p=Path(d)/f"{i}.json";p.write_text(json.dumps({"trade_date":day}),encoding="utf-8");ps.append(p)
    with self.assertRaises(ReportError):render(*ps,Path(d)/"out")
+ def test_writes_machine_readable_report_bundle(self):
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);ps=[]
+   docs=[{'trade_date':'2026-08-21','records':[],'counts':{'strong':0,'watch':0},'warnings':[]},{'trade_date':'2026-08-21','records':[]},{'trade_date':'2026-08-21','records':[]}]
+   for i,doc in enumerate(docs):
+    x=root/f'{i}.json';x.write_text(json.dumps(doc),encoding='utf-8');ps.append(x)
+   latest,dated=render(*ps,root/'out');report=root/'out'/'data'/'report_20260821.json'
+   self.assertTrue(latest.exists());self.assertTrue(dated.exists());self.assertTrue(report.exists());self.assertIn('scores',json.loads(report.read_text()))
 if __name__=="__main__":unittest.main()

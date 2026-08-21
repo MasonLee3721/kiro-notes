@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Fetch and normalize current official TWSE/TPEx daily close quotes."""
 from __future__ import annotations
-import argparse,json,time
+import argparse,json,re,time
+from http.client import IncompleteRead
 from dataclasses import asdict,dataclass
 from datetime import date,datetime,timezone
 from decimal import Decimal,InvalidOperation
@@ -10,6 +11,7 @@ from typing import Any
 from urllib.error import HTTPError,URLError
 from urllib.request import Request,urlopen
 TWSE_URL='https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL'
+TWSE_MI_INDEX='https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date={date}&type=ALLBUT0999&response=json'
 TPEX_URL='https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes'
 class QuoteDataError(RuntimeError):pass
 @dataclass(frozen=True)
@@ -66,6 +68,21 @@ def parse_tpex(payload:Any,url:str,stamp:str)->list[QuoteRecord]:
  keys={'date':'Date','code':'SecuritiesCompanyCode','name':'CompanyName','open':'Open','high':'High','low':'Low','close':'Close','change':'Change','volume':'TradingShares'}
  return _unique([_record('TPEx',r,url,stamp,keys,'TPEx mainboard daily close quotes') for r in payload if isinstance(r,dict)])
 
+def parse_twse_mi_index(payload:Any,requested_date:str,url:str,stamp:str)->list[QuoteRecord]:
+ if not isinstance(payload,dict) or payload.get('stat')!='OK' or payload.get('date')!=requested_date.replace('-',''):raise QuoteDataError('TWSE MI_INDEX date/status mismatch')
+ tables=payload.get('tables')
+ if not isinstance(tables,list):raise QuoteDataError('TWSE MI_INDEX tables missing')
+ prefix=['證券代號','證券名稱','成交股數','成交筆數','成交金額','開盤價','最高價','最低價','收盤價','漲跌(+/-)','漲跌價差']
+ table=next((x for x in tables if isinstance(x,dict) and x.get('fields') and x['fields'][:len(prefix)]==prefix),None)
+ if table is None or not isinstance(table.get('data'),list):raise QuoteDataError('TWSE MI_INDEX quote table missing')
+ records=[]
+ for row in table['data']:
+  if not isinstance(row,list) or len(row)<len(prefix):raise QuoteDataError('TWSE MI_INDEX row too short')
+  sign='-' if 'green' in str(row[9]).lower() else '+' if 'red' in str(row[9]).lower() else ''
+  values=[decimal_text(row[i]) for i in (5,6,7,8)];volume=integer(row[2]);change=decimal_text(sign+str(row[10]))
+  records.append(QuoteRecord(requested_date,'TWSE',str(row[0]).strip(),str(row[1]).strip(),*values,change,volume,all(x is not None for x in values),volume is not None and volume>0,'TWSE MI_INDEX',url,stamp))
+ return _unique(records)
+
 def fetch_json(url:str,timeout:float=20,attempts:int=3)->tuple[Any,str]:
  error=None
  for attempt in range(attempts):
@@ -73,19 +90,22 @@ def fetch_json(url:str,timeout:float=20,attempts:int=3)->tuple[Any,str]:
    request=Request(url,headers={'User-Agent':'tw-stock-momentum-report/1.0','Accept':'application/json'})
    with urlopen(request,timeout=timeout) as response:raw=response.read();stamp=datetime.now(timezone.utc).isoformat()
    return json.loads(raw.decode('utf-8-sig')),stamp
-  except (HTTPError,URLError,TimeoutError,json.JSONDecodeError,UnicodeDecodeError) as exc:
+  except (HTTPError,URLError,TimeoutError,IncompleteRead,json.JSONDecodeError,UnicodeDecodeError) as exc:
    error=exc
    if attempt+1<attempts:time.sleep(2**attempt)
  raise QuoteDataError(f'official quote fetch failed: {error}')
 
-def fetch_market(market:str)->list[QuoteRecord]:
+def fetch_market(market:str,requested_date:str|None=None)->list[QuoteRecord]:
  url=TWSE_URL if market=='twse' else TPEX_URL;payload,stamp=fetch_json(url)
- return parse_twse(payload,url,stamp) if market=='twse' else parse_tpex(payload,url,stamp)
+ records=parse_twse(payload,url,stamp) if market=='twse' else parse_tpex(payload,url,stamp)
+ if market=='twse' and requested_date and {x.trade_date for x in records}!={requested_date}:
+  url=TWSE_MI_INDEX.format(date=requested_date.replace('-',''));payload,stamp=fetch_json(url);records=parse_twse_mi_index(payload,requested_date,url,stamp)
+ return records
 
 def main()->int:
  p=argparse.ArgumentParser();p.add_argument('--market',choices=('twse','tpex','all'),default='all');p.add_argument('--date',required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
  markets=('twse','tpex') if a.market=='all' else (a.market,);records=[]
- for market in markets:records.extend(fetch_market(market))
+ for market in markets:records.extend(fetch_market(market,a.date))
  dates={r.trade_date for r in records}
  if dates!={a.date}:raise QuoteDataError(f'official quote dates {sorted(dates)}, expected {a.date}')
  _unique(records)
