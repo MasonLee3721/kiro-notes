@@ -2,7 +2,7 @@
   "scores": {
     "schema_version": "2.0",
     "trade_date": "2026-08-21",
-    "generated_at": "2026-08-22T12:48:27.222618+00:00",
+    "generated_at": "2026-08-22T13:09:15.110616+00:00",
     "data_status": "official_with_explicit_degradation",
     "warnings": [
       "期間累計買超比例不是實際投信持股比例",
@@ -1828,7 +1828,7 @@
     "schema_version": "1.1",
     "trade_date": "2026-08-21",
     "requested_trading_days": 120,
-    "generated_at": "2026-08-22T12:48:27.010608+00:00",
+    "generated_at": "2026-08-22T13:09:14.901839+00:00",
     "requested_count": 17,
     "completed_count": 16,
     "failed_count": 1,
