@@ -30,10 +30,10 @@ uv run --python 3.12 scripts/run_daily_screen.py --output-dir output
 排程使用重試包裝器；預設每 15 分鐘重試、最多 16 次。安裝 cron 前先閱讀 [每日排程建議](references/scheduling.md)：
 
 ```bash
-uv run --python 3.12 scripts/run_scheduled_daily.py --output-dir output --attempts 16 --interval-seconds 900
+uv run --python 3.12 scripts/run_scheduled_daily.py --output-dir output --attempts 16 --interval-seconds 900 --publish
 ```
 
-檢查 `output/data/daily_run_status.json`、`output/logs/` 以及命令回傳碼。暫時錯誤不得覆蓋上一份 `latest.html`；非暫時錯誤不得無限重試。
+加上 `--publish` 時，僅在報告成功且HTML／JSON交易日期一致後，提交 `latest.html`、日期版HTML、報告JSON與執行狀態，並推送目前分支至 `origin`。發布器不得自動pull、rebase或提交其他檔案。檢查 `output/data/daily_run_status.json`、`output/logs/` 以及命令回傳碼。暫時錯誤不得覆蓋上一份 `latest.html`；非暫時錯誤不得無限重試。
 
 ### 1. 稽核能力與輸入
 
