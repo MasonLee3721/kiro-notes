@@ -1,8 +1,6 @@
 name: Daily Taiwan Stock Momentum Report
 
 on:
-  schedule:
-    - cron: "30 9 * * *"
   workflow_dispatch:
 
 permissions:
@@ -41,7 +39,7 @@ jobs:
         run: |
           set -euo pipefail
           SOURCE="_agent_skills/kiro/kiro7/tw-stock-momentum-report/output"
-          DAY="$(jq -r '.trade_date' "$SOURCE/data/daily_scores_latest.json")"
+          DAY="$(jq -r .trade_date "$SOURCE/data/daily_scores_latest.json")"
           test "$DAY" != "null"
           STAMP="${DAY//-/}"
           DEST="kiro7_韋小寶/tw-stock-momentum-report/output"
@@ -62,7 +60,7 @@ jobs:
             echo "No report changes"
             exit 0
           fi
-          DAY="$(jq -r '.trade_date' _agent_skills/kiro/kiro7/tw-stock-momentum-report/output/data/daily_scores_latest.json)"
+          DAY="$(jq -r .trade_date _agent_skills/kiro/kiro7/tw-stock-momentum-report/output/data/daily_scores_latest.json)"
           git commit -m "data: publish momentum report $DAY"
           git push origin master
 
@@ -81,14 +79,4 @@ jobs:
           SOURCE="_agent_skills/kiro/kiro7/tw-stock-momentum-report/output"
           DAY="unknown"
           if [ -f "$SOURCE/data/daily_scores_latest.json" ]; then
-            DAY="$(jq -r '.trade_date // "unknown"' "$SOURCE/data/daily_scores_latest.json")"
-          fi
-          REPORT_URL="https://masonlee3721.github.io/kiro-notes/kiro7_%E9%9F%8B%E5%B0%8F%E5%AF%B6/tw-stock-momentum-report/output/latest.html"
-          RUN_URL="https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          if [ "$JOB_STATUS" = "success" ]; then
-            MESSAGE="✅ 台股動能報告完成｜交易日：$DAY｜報告：$REPORT_URL｜執行紀錄：$RUN_URL"
-          else
-            MESSAGE="❌ 台股動能報告失敗｜交易日：$DAY｜請檢查：$RUN_URL"
-          fi
-          jq -n --arg content "$MESSAGE" '{content: $content}' |
-            curl --silent --show-error --fail-with-body -H "Content-Type: application/json" -d @- "$DISCORD_WEBHOOK_URL"
+            DAY="$(jq -r .trade_date
