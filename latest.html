@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏛️ 台股全方位官方籌碼與技術分析綜合儀表板</title>
+    <title>⚡ 台股動能量價與法人籌碼每日報告 (tw-stock-momentum-report)</title>
     <style>
         body {
             background-color: #050811;
@@ -14,14 +14,14 @@
         }
         .header {
             text-align: center;
-            padding: 20px 0;
+            padding: 25px 0;
             border-bottom: 1px solid #1e293b;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         .header h1 {
             color: #facc15;
             margin: 0 0 10px 0;
-            font-size: 26px;
+            font-size: 28px;
         }
         .header p {
             color: #94a3b8;
@@ -32,11 +32,11 @@
             display: inline-block;
             background-color: #0284c7;
             color: #ffffff;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 12px;
         }
         .section-container {
             max-width: 1100px;
@@ -52,10 +52,8 @@
             padding-bottom: 8px;
             border-bottom: 2px solid #1e293b;
         }
-        .title-buy { color: #ff334b; border-color: #ff334b; }
-        .title-joint { color: #38bdf8; border-color: #38bdf8; }
-        .title-charts { color: #facc15; border-color: #facc15; }
-
+        .title-momentum { color: #facc15; border-color: #facc15; }
+        .title-sitc { color: #ff334b; border-color: #ff334b; }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -83,59 +81,18 @@
         .buy-val { color: #ff334b; font-weight: bold; }
         .foreign-val { color: #38bdf8; font-weight: bold; }
         .sitc-val { color: #facc15; font-weight: bold; }
-        .total-val { color: #ff334b; font-weight: bold; }
-
-        .card {
-            background-color: #0f172a;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 35px;
-        }
-        .card-title {
-            color: #38bdf8;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .svg-container {
-            width: 100%;
-            overflow-x: auto;
-            border-radius: 8px;
-            background-color: #050811;
-            padding: 10px 0;
-            margin-bottom: 15px;
-        }
-        .svg-container object {
-            width: 100%;
-            min-width: 1000px;
-            height: 1180px;
-            display: block;
-        }
-        .table-scroll {
-            max-height: 250px;
-            overflow-y: auto;
-            border: 1px solid #1e293b;
-            border-radius: 6px;
-        }
-        .table-scroll table {
-            margin-bottom: 0;
-        }
+        .score-val { color: #facc15; font-weight: bold; font-size: 15px; }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🏛️ 台股全方位官方籌碼與技術分析綜合儀表板</h1>
-        <p>100% 台灣證券交易所 (TWSE) 官方 Raw Data | 支援 Hover Tooltip 與單一發布目錄 `kiro7_韋小寶/charts/`</p>
-        <div class="badge">最新交易日：2026/08/19 當日盤後最新數據</div>
+        <h1>⚡ 台股動能量價與法人籌碼每日報告 (tw-stock-momentum-report)</h1>
+        <p>100% 台灣證券交易所 (TWSE) 官方 API | 高階動能評分選股系統</p>
+        <div class="badge">最新交易日：2026/08/21 盤後即時</div>
     </div>
     
-    <!-- 1. 外資與投信法人雙雄同買強勢榜 -->
     <div class="section-container">
-        <div class="section-title title-joint">🚀 外資與投信法人雙雄同買強勢榜 (2026/08/19 當日最新)</div>
+        <div class="section-title title-momentum">🚀 全市場法人籌碼動能強勢 TOP 15 (2026/08/21)</div>
         <table>
             <thead>
                 <tr>
@@ -144,135 +101,59 @@
                     <th>股票名稱</th>
                     <th>投信買超 (張 / %)</th>
                     <th>外資買超 (張 / %)</th>
-                    <th>法人合計佔股本 (%)</th>
-                    <th>圖表連結</th>
+                    <th>動能綜合評分</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>1</td><td>2478</td><td>大毅</td><td class="sitc-val">+257 (+0.18%)</td><td class="foreign-val">+2,156 (+1.49%)</td><td class="total-val">+1.73% 🔥</td><td><a href="#chart-2478" style="color:#38bdf8;">查看 Tooltip 圖表與明細 ⬇</a></td></tr>
-                <tr><td>2</td><td>6214</td><td>精誠</td><td class="sitc-val">+1,319 (+0.48%)</td><td class="foreign-val">+2,563 (+0.94%)</td><td class="total-val">+1.41% 🔥</td><td><a href="#chart-6214" style="color:#38bdf8;">查看 Tooltip 圖表與明細 ⬇</a></td></tr>
-                <tr><td>3</td><td>6672</td><td>騰輝電子-KY</td><td class="sitc-val">+203 (+0.25%)</td><td class="foreign-val">+202 (+0.25%)</td><td class="total-val">+0.44% 🔥</td><td>-</td></tr>
-                <tr><td>4</td><td>2455</td><td>全新</td><td class="sitc-val">+607 (+0.33%)</td><td class="foreign-val">+420 (+0.23%)</td><td class="total-val">+0.46% 🔥</td><td>-</td></tr>
-                <tr><td>5</td><td>1504</td><td>東元</td><td class="sitc-val">+1,415 (+0.06%)</td><td class="foreign-val">+3,099 (+0.13%)</td><td class="total-val">+0.19% 🔥</td><td>-</td></tr>
-                <tr><td>6</td><td>3189</td><td>景碩</td><td class="sitc-val">+399 (+0.08%)</td><td class="foreign-val">+660 (+0.13%)</td><td class="total-val">+0.06% 🔥</td><td>-</td></tr>
+<tr><td>1</td><td><b>2484</b></td><td><b>希華</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+438,4張 (+3.03%)</td><td class="score-val">🔥 4.55</td></tr>
+<tr><td>2</td><td><b>2451</b></td><td><b>創見</b></td><td class="sitc-val">9-張 (-0.00%)</td><td class="foreign-val">+541,9張 (+2.12%)</td><td class="score-val">🔥 3.17</td></tr>
+<tr><td>3</td><td><b>2426</b></td><td><b>鼎元</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+272,6張 (+2.09%)</td><td class="score-val">🔥 3.13</td></tr>
+<tr><td>4</td><td><b>3450</b></td><td><b>聯鈞</b></td><td class="sitc-val">+419張 (+0.63%)</td><td class="foreign-val">+104張 (+0.28%)</td><td class="score-val">🔥 2.30</td></tr>
+<tr><td>5</td><td><b>4967</b></td><td><b>十銓</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+252,1張 (+1.47%)</td><td class="score-val">🔥 2.21</td></tr>
+<tr><td>6</td><td><b>2455</b></td><td><b>全新</b></td><td class="sitc-val">+215,1張 (+0.82%)</td><td class="foreign-val">200,1-張 (-0.54%)</td><td class="score-val">🔥 1.64</td></tr>
+<tr><td>7</td><td><b>2609</b></td><td><b>陽明</b></td><td class="sitc-val">+7張 (+0.00%)</td><td class="foreign-val">+851,73張 (+1.06%)</td><td class="score-val">🔥 1.60</td></tr>
+<tr><td>8</td><td><b>6919</b></td><td><b>康霈*</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+808張 (+1.04%)</td><td class="score-val">🔥 1.56</td></tr>
+<tr><td>9</td><td><b>1709</b></td><td><b>和益</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+583,3張 (+0.71%)</td><td class="score-val">🔥 1.06</td></tr>
+<tr><td>10</td><td><b>1402</b></td><td><b>遠東新</b></td><td class="sitc-val">+011,11張 (+0.21%)</td><td class="foreign-val">+090,51張 (+0.28%)</td><td class="score-val">🔥 1.05</td></tr>
+<tr><td>11</td><td><b>6278</b></td><td><b>台表科</b></td><td class="sitc-val">+158,2張 (+0.98%)</td><td class="foreign-val">087,3-張 (-1.29%)</td><td class="score-val">🔥 0.99</td></tr>
+<tr><td>12</td><td><b>2615</b></td><td><b>萬海</b></td><td class="sitc-val">+928張 (+0.03%)</td><td class="foreign-val">+832,61張 (+0.58%)</td><td class="score-val">🔥 0.96</td></tr>
+<tr><td>13</td><td><b>6213</b></td><td><b>聯茂</b></td><td class="sitc-val">+131張 (+0.04%)</td><td class="foreign-val">+930,2張 (+0.56%)</td><td class="score-val">🔥 0.95</td></tr>
+<tr><td>14</td><td><b>4956</b></td><td><b>光鋐</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+026張 (+0.62%)</td><td class="score-val">🔥 0.93</td></tr>
+<tr><td>15</td><td><b>6531</b></td><td><b>愛普*</b></td><td class="sitc-val">+622張 (+0.28%)</td><td class="foreign-val">+73張 (+0.05%)</td><td class="score-val">🔥 0.90</td></tr>
             </tbody>
         </table>
     </div>
 
-    <!-- 2. 上市股票 投信買超投本比 TOP 15 -->
     <div class="section-container">
-        <div class="section-title title-buy">🔥 上市股票 投信買超投本比 TOP 15 (2026/08/19 當日最新)</div>
+        <div class="section-title title-sitc">🔥 投信買超投本比 TOP 15 (2026/08/21)</div>
         <table>
             <thead>
                 <tr>
                     <th>名次</th>
                     <th>代號</th>
                     <th>股票名稱</th>
-                    <th>發行張數</th>
                     <th>投信買超 (張)</th>
                     <th>投本比 (%)</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>1</td><td>8070</td><td>長華*</td><td>72,564</td><td class="buy-val">+4,672</td><td class="buy-val">+6.438%</td></tr>
-                <tr><td>2</td><td>3450</td><td>聯鈞</td><td>145,681</td><td class="buy-val">+2,161</td><td class="buy-val">+1.483%</td></tr>
-                <tr><td>3</td><td>3406</td><td>玉晶光</td><td>112,743</td><td class="buy-val">+678</td><td class="buy-val">+0.601%</td></tr>
-                <tr><td>4</td><td>6214</td><td>精誠</td><td>272,243</td><td class="buy-val">+1,319</td><td class="buy-val">+0.484%</td></tr>
-                <tr><td>5</td><td>2049</td><td>上銀</td><td>353,792</td><td class="buy-val">+1,234</td><td class="buy-val">+0.349%</td></tr>
+<tr><td>1</td><td><b>6278</b></td><td><b>台表科</b></td><td class="buy-val">+158,2張</td><td class="buy-val">+0.975%</td></tr>
+<tr><td>2</td><td><b>2455</b></td><td><b>全新</b></td><td class="buy-val">+215,1張</td><td class="buy-val">+0.818%</td></tr>
+<tr><td>3</td><td><b>2486</b></td><td><b>一詮</b></td><td class="buy-val">+888,1張</td><td class="buy-val">+0.807%</td></tr>
+<tr><td>4</td><td><b>3450</b></td><td><b>聯鈞</b></td><td class="buy-val">+419張</td><td class="buy-val">+0.627%</td></tr>
+<tr><td>5</td><td><b>6472</b></td><td><b>保瑞</b></td><td class="buy-val">+705張</td><td class="buy-val">+0.397%</td></tr>
+<tr><td>6</td><td><b>3042</b></td><td><b>晶技</b></td><td class="buy-val">+299張</td><td class="buy-val">+0.289%</td></tr>
+<tr><td>7</td><td><b>6531</b></td><td><b>愛普*</b></td><td class="buy-val">+622張</td><td class="buy-val">+0.278%</td></tr>
+<tr><td>8</td><td><b>1402</b></td><td><b>遠東新</b></td><td class="buy-val">+011,11張</td><td class="buy-val">+0.208%</td></tr>
+<tr><td>9</td><td><b>3532</b></td><td><b>台勝科</b></td><td class="buy-val">+586張</td><td class="buy-val">+0.177%</td></tr>
+<tr><td>10</td><td><b>3665</b></td><td><b>貿聯-KY</b></td><td class="buy-val">+143張</td><td class="buy-val">+0.171%</td></tr>
+<tr><td>11</td><td><b>2049</b></td><td><b>上銀</b></td><td class="buy-val">+735張</td><td class="buy-val">+0.152%</td></tr>
+<tr><td>12</td><td><b>4746</b></td><td><b>台耀</b></td><td class="buy-val">+631張</td><td class="buy-val">+0.113%</td></tr>
+<tr><td>13</td><td><b>3014</b></td><td><b>聯陽</b></td><td class="buy-val">+781張</td><td class="buy-val">+0.113%</td></tr>
+<tr><td>14</td><td><b>8996</b></td><td><b>高力</b></td><td class="buy-val">+301張</td><td class="buy-val">+0.110%</td></tr>
+<tr><td>15</td><td><b>2313</b></td><td><b>華通</b></td><td class="buy-val">+603,1張</td><td class="buy-val">+0.106%</td></tr>
             </tbody>
         </table>
-    </div>
-
-    <!-- 3. 互動式圖表展演與期間數據明細表 -->
-    <div class="section-container">
-        <div class="section-title title-charts">📈 7合1 互動式圖表展演與每日官方籌碼明細對照表</div>
-        
-        <!-- 2478 大毅 -->
-        <div class="card" id="chart-2478">
-            <div class="card-title">
-                <span>2478 大毅 (外資+投信雙雄同買第 1 名)</span>
-                <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/kiro7_%E9%9F%8B%E5%B0%8F%E5%AF%B6/charts/kline_2478_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始 SVG ↗</a>
-            </div>
-            <div class="svg-container">
-                <object data="charts/kline_2478_v8.svg" type="image/svg+xml"></object>
-            </div>
-            <div style="color: #facc15; font-size: 14px; margin-bottom: 8px; font-weight: bold;">📊 2478 大毅 每日外資與投信官方買賣超明細對照表:</div>
-            <div class="table-scroll">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>日期</th>
-                            <th>外資買賣超 (張)</th>
-                            <th>外資原始股數</th>
-                            <th>投信買賣超 (張)</th>
-                            <th>投信原始股數</th>
-                            <th>資料來源</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2026/08/19</td><td class="foreign-val">+2,156 張</td><td>+2,156,000 股</td><td class="sitc-val">+257 張</td><td>+257,000 股</td><td>TWSE 官方 T86</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- 6214 精誠 -->
-        <div class="card" id="chart-6214">
-            <div class="card-title">
-                <span>6214 精誠 (外資+投信雙雄同買第 2 名)</span>
-                <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/kiro7_%E9%9F%8B%E5%B0%8F%E5%AF%B6/charts/kline_6214_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始 SVG ↗</a>
-            </div>
-            <div class="svg-container">
-                <object data="charts/kline_6214_v8.svg" type="image/svg+xml"></object>
-            </div>
-            <div style="color: #facc15; font-size: 14px; margin-bottom: 8px; font-weight: bold;">📊 6214 精誠 每日外資與投信官方買賣超明細對照表:</div>
-            <div class="table-scroll">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>日期</th>
-                            <th>外資買賣超 (張)</th>
-                            <th>外資原始股數</th>
-                            <th>投信買賣超 (張)</th>
-                            <th>投信原始股數</th>
-                            <th>資料來源</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2026/08/19</td><td class="foreign-val">+2,563 張</td><td>+2,563,000 股</td><td class="sitc-val">+1,319 張</td><td>+1,319,000 股</td><td>TWSE 官方 T86</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- 8070 長華* -->
-        <div class="card">
-            <div class="card-title">
-                <span>8070 長華* (投信買超投本比第 1 名)</span>
-                <a href="https://github.com/MasonLee3721/kiro-notes/blob/master/kiro7_%E9%9F%8B%E5%B0%8F%E5%AF%B6/charts/kline_8070_v8.svg" target="_blank" style="color: #facc15; text-decoration: none; font-size: 14px;">查看 GitHub 原始 SVG ↗</a>
-            </div>
-            <div class="svg-container">
-                <object data="charts/kline_8070_v8.svg" type="image/svg+xml"></object>
-            </div>
-            <div style="color: #facc15; font-size: 14px; margin-bottom: 8px; font-weight: bold;">📊 8070 長華* 每日外資與投信官方買賣超明細對照表:</div>
-            <div class="table-scroll">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>日期</th>
-                            <th>外資買賣超 (張)</th>
-                            <th>外資原始股數</th>
-                            <th>投信買賣超 (張)</th>
-                            <th>投信原始股數</th>
-                            <th>資料來源</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2026/08/19</td><td class="foreign-val">+175 張</td><td>+175,000 股</td><td class="sitc-val">+4,672 張</td><td>+4,672,000 股</td><td>TWSE 官方 T86</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
 </body>
 </html>
