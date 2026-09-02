@@ -2,7 +2,7 @@
   "scores": {
     "schema_version": "2.0",
     "trade_date": "2026-09-02",
-    "generated_at": "2026-09-02T09:32:23.078464+00:00",
+    "generated_at": "2026-09-02T11:39:25.177654+00:00",
     "data_status": "official_with_explicit_degradation",
     "warnings": [
       "期間累計買超比例不是實際投信持股比例"
@@ -48,6 +48,8 @@
           "distance_from_prior_20d_high_pct": "3.435114503816793893129770992",
           "close_breakout_prior_20d_high": true,
           "volume_ratio_20d": "2.688598710003794106487922094",
+          "first_day_ignition": true,
+          "volume_surge_2x": true,
           "long_upper_shadow": false,
           "high_open_low_close": false,
           "false_breakout": false,
@@ -107,17 +109,18 @@
             ]
           },
           "breakout_volume": {
-            "score": 11,
+            "score": 15,
             "max": 15,
             "status": "actual",
             "reasons": [
+              "🚀 噴出第一根起爆 (+5分)",
               "收盤突破前20日高",
               "距前20日高點3%內",
               "收紅K"
             ]
           }
         },
-        "total_score": 83,
+        "total_score": 87,
         "rating": "強勢候選",
         "confidence": "中",
         "confidence_reason": "期間累計買超比例為估算",
@@ -157,6 +160,8 @@
           "distance_from_prior_20d_high_pct": "5.278592375366568914956011730",
           "close_breakout_prior_20d_high": true,
           "volume_ratio_20d": "1.749519876272540321895341525",
+          "first_day_ignition": false,
+          "volume_surge_2x": false,
           "long_upper_shadow": false,
           "high_open_low_close": false,
           "false_breakout": false,
@@ -267,6 +272,8 @@
           "distance_from_prior_20d_high_pct": "-4.887218045112781954887218045",
           "close_breakout_prior_20d_high": false,
           "volume_ratio_20d": "1.460241730279898218829516539",
+          "first_day_ignition": false,
+          "volume_surge_2x": false,
           "long_upper_shadow": false,
           "high_open_low_close": false,
           "false_breakout": false,
@@ -373,6 +380,8 @@
           "distance_from_prior_20d_high_pct": "-4.781704781704781704781704782",
           "close_breakout_prior_20d_high": false,
           "volume_ratio_20d": "1.130588026737019927630687091",
+          "first_day_ignition": false,
+          "volume_surge_2x": false,
           "long_upper_shadow": true,
           "high_open_low_close": false,
           "false_breakout": false,
@@ -483,6 +492,8 @@
           "distance_from_prior_20d_high_pct": "-8.074534161490683229813664596",
           "close_breakout_prior_20d_high": false,
           "volume_ratio_20d": "0.7870743692462693590143394639",
+          "first_day_ignition": false,
+          "volume_surge_2x": false,
           "long_upper_shadow": false,
           "high_open_low_close": false,
           "false_breakout": false,
@@ -559,7 +570,7 @@
     "schema_version": "1.1",
     "trade_date": "2026-09-02",
     "requested_trading_days": 120,
-    "generated_at": "2026-09-02T09:32:22.906254+00:00",
+    "generated_at": "2026-09-02T11:39:25.007702+00:00",
     "requested_count": 5,
     "completed_count": 5,
     "failed_count": 0,
