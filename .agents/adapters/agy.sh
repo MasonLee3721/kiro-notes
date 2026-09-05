@@ -3,9 +3,9 @@ set -e
 
 AGENTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 REPO_ROOT="$(cd "$AGENTS_DIR/.." && pwd)"
-SKILLS_SRC="$AGENTS_DIR/skills"
-AGY_SKILLS_DEST="${HOME}/.gemini/config/skills"
-SNAPSHOT_DIR="${HOME}/.gemini/config/skills_snapshots"
+SKILLS_SRC="${SKILLS_SRC:-$AGENTS_DIR/skills}"
+AGY_SKILLS_DEST="${AGY_SKILLS_DEST:-${HOME}/.gemini/config/skills}"
+SNAPSHOT_DIR="${SNAPSHOT_DIR:-${HOME}/.gemini/config/skills_snapshots}"
 
 MODE=${1:-"dry-run"}
 SKILL_TARGET=${2:-""}
