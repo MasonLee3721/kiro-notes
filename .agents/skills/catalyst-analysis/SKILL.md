@@ -7,7 +7,9 @@ supported_platforms: [linux]
 required_tools: [bash, curl]
 required_secrets: []
 network_access: true
-external_side_effects: false
+external_side_effects: true
+side_effects: [git_commit, git_push]
+writes_to: [market-catalyst/]
 last_verified: 2026-09-05
 description: 執行台股個股催化劑分析 (Catalyst Analysis) 的標準三層 (Layer 1-3) 評估流程與 GitHub 同步規範。當使用者要求「催化劑分析」、「個股分析」時自動觸發。
 ---

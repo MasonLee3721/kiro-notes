@@ -4,13 +4,13 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 SKILLS_SRC="$REPO_ROOT/.agents/skills"
-AGY_SKILLS_DEST="${HOME}/.gemini/config/skills"
-SNAPSHOT_DIR="${HOME}/.gemini/config/skills_snapshots"
+KIRO_SKILLS_DEST="${HOME}/.kiro/skills"
+SNAPSHOT_DIR="${HOME}/.kiro/skills_snapshots"
 
 MODE=${1:-"dry-run"}
 SKILL_TARGET=${2:-""}
 
-echo "=== Running AGY Adapter (Mode: $MODE, Skill Target: ${SKILL_TARGET:-ALL}) ==="
+echo "=== Running Kiro Adapter (Mode: $MODE, Skill Target: ${SKILL_TARGET:-ALL}) ==="
 
 if [ ! -d "$SKILLS_SRC" ]; then
   echo "❌ Error: Source skills directory $SKILLS_SRC does not exist!"
@@ -36,7 +36,7 @@ case "$MODE" in
   apply)
     echo "[Apply] Creating backup snapshot before applying..."
     mkdir -p "$SNAPSHOT_DIR"
-    mkdir -p "$AGY_SKILLS_DEST"
+    mkdir -p "$KIRO_SKILLS_DEST"
 
     for skill_path in "$SKILLS_SRC"/*; do
       if [ -d "$skill_path" ]; then
@@ -46,23 +46,23 @@ case "$MODE" in
         fi
 
         # Take granular snapshot of single skill if exists
-        if [ -d "$AGY_SKILLS_DEST/$skill_name" ]; then
+        if [ -d "$KIRO_SKILLS_DEST/$skill_name" ]; then
           snapshot_time=$(date +%Y%m%d_%H%M%S)
           echo "[Snapshot] Backing up $skill_name to $SNAPSHOT_DIR/${skill_name}_${snapshot_time}"
-          cp -r "$AGY_SKILLS_DEST/$skill_name" "$SNAPSHOT_DIR/${skill_name}_${snapshot_time}"
+          cp -r "$KIRO_SKILLS_DEST/$skill_name" "$SNAPSHOT_DIR/${skill_name}_${snapshot_time}"
         fi
 
         # Sync single skill
-        mkdir -p "$AGY_SKILLS_DEST/$skill_name"
-        cp -r "$skill_path"/* "$AGY_SKILLS_DEST/$skill_name/"
-        echo "✅ [Apply] Synced $skill_name -> $AGY_SKILLS_DEST/$skill_name"
+        mkdir -p "$KIRO_SKILLS_DEST/$skill_name"
+        cp -r "$skill_path"/* "$KIRO_SKILLS_DEST/$skill_name/"
+        echo "✅ [Apply] Synced $skill_name -> $KIRO_SKILLS_DEST/$skill_name"
       fi
     done
     ;;
 
   rollback)
     if [ -z "$SKILL_TARGET" ]; then
-      echo "❌ Error: Rollback requires specifying a skill target (e.g. ./agy.sh rollback catalyst-analysis)"
+      echo "❌ Error: Rollback requires specifying a skill target (e.g. ./kiro.sh rollback catalyst-analysis)"
       exit 1
     fi
 
@@ -73,8 +73,8 @@ case "$MODE" in
     fi
 
     echo "[Rollback] Restoring $SKILL_TARGET from snapshot $latest_snapshot..."
-    rm -rf "$AGY_SKILLS_DEST/$SKILL_TARGET"
-    cp -r "$latest_snapshot" "$AGY_SKILLS_DEST/$SKILL_TARGET"
+    rm -rf "$KIRO_SKILLS_DEST/$SKILL_TARGET"
+    cp -r "$latest_snapshot" "$KIRO_SKILLS_DEST/$SKILL_TARGET"
     echo "✅ [Rollback] Restored $SKILL_TARGET successfully."
     ;;
 
