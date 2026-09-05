@@ -9,6 +9,7 @@ SNAPSHOT_DIR="${HOME}/.gemini/config/skills_snapshots"
 
 MODE=${1:-"dry-run"}
 SKILL_TARGET=${2:-""}
+FORCE_FLAG=${3:-""}
 
 # Validate SKILL_TARGET to prevent path traversal
 if [ -n "$SKILL_TARGET" ]; then
@@ -16,31 +17,31 @@ if [ -n "$SKILL_TARGET" ]; then
     echo "❌ Error: Invalid skill target '$SKILL_TARGET'. Alphanumeric, hyphen, and underscore only."
     exit 1
   fi
-
-  if [ ! -d "$SKILLS_SRC/$SKILL_TARGET" ]; then
-    echo "❌ Error: Target skill '$SKILL_TARGET' not found in $SKILLS_SRC!"
-    exit 1
-  fi
-fi
-
-echo "=== Running AGY Adapter (Mode: $MODE, Skill Target: ${SKILL_TARGET:-ALL}) ==="
-
-if [ ! -d "$SKILLS_SRC" ]; then
-  echo "❌ Error: Source skills directory $SKILLS_SRC does not exist!"
-  exit 1
 fi
 
 get_checksum() {
   local dir=$1
   if [ -d "$dir" ]; then
-    find "$dir" -type f -exec md5sum {} + | sort -k2 | md5sum | awk '{print $1}'
+    (cd "$dir" && find . -type f ! -name ".installed_checksum" -exec md5sum {} + | sort -k2 | md5sum | awk '{print $1}')
   else
     echo "NONE"
   fi
 }
 
+echo "=== Running AGY Adapter (Mode: $MODE, Skill Target: ${SKILL_TARGET:-ALL}) ==="
+
 case "$MODE" in
   dry-run)
+    if [ ! -d "$SKILLS_SRC" ]; then
+      echo "❌ Error: Source skills directory $SKILLS_SRC does not exist!"
+      exit 1
+    fi
+
+    if [ -n "$SKILL_TARGET" ] && [ ! -d "$SKILLS_SRC/$SKILL_TARGET" ]; then
+      echo "❌ Error: Target skill '$SKILL_TARGET' not found in $SKILLS_SRC!"
+      exit 1
+    fi
+
     echo "[Dry-Run] Destination: $AGY_SKILLS_DEST"
     echo "[Dry-Run] Comparing SSOT vs Destination Checksums & Diff:"
 
@@ -70,6 +71,16 @@ case "$MODE" in
     ;;
 
   apply)
+    if [ ! -d "$SKILLS_SRC" ]; then
+      echo "❌ Error: Source skills directory $SKILLS_SRC does not exist!"
+      exit 1
+    fi
+
+    if [ -n "$SKILL_TARGET" ] && [ ! -d "$SKILLS_SRC/$SKILL_TARGET" ]; then
+      echo "❌ Error: Target skill '$SKILL_TARGET' not found in $SKILLS_SRC!"
+      exit 1
+    fi
+
     echo "[Apply] Syncing skills from $SKILLS_SRC to $AGY_SKILLS_DEST..."
     mkdir -p "$SNAPSHOT_DIR"
     mkdir -p "$AGY_SKILLS_DEST"
@@ -81,9 +92,17 @@ case "$MODE" in
           continue
         fi
 
-        snapshot_time=$(date +%Y%m%d_%H%M%S_%N)
         dest_dir="$AGY_SKILLS_DEST/$skill_name"
+        src_hash=$(get_checksum "$skill_path")
+        dest_hash=$(get_checksum "$dest_dir")
 
+        # Conflict check fail-closed
+        if [ "$dest_hash" != "NONE" ] && [ "$src_hash" != "$dest_hash" ] && [ "$FORCE_FLAG" != "--force" ]; then
+          echo "❌ Conflict Error: Skill $skill_name at $dest_dir differs from SSOT. Pass '--force' to overwrite."
+          exit 1
+        fi
+
+        snapshot_time=$(date +%Y%m%d_%H%M%S_%N)
         if [ -d "$dest_dir" ]; then
           echo "[Snapshot] Backing up pre-existing $skill_name -> $SNAPSHOT_DIR/${skill_name}_${snapshot_time}"
           cp -r "$dest_dir" "$SNAPSHOT_DIR/${skill_name}_${snapshot_time}"
@@ -92,9 +111,9 @@ case "$MODE" in
           mkdir -p "$SNAPSHOT_DIR/${skill_name}_${snapshot_time}_INITIAL"
         fi
 
+        rm -rf "$dest_dir"
         mkdir -p "$dest_dir"
         cp -r "$skill_path"/* "$dest_dir/"
-        src_hash=$(get_checksum "$skill_path")
         echo "$src_hash" > "$dest_dir/.installed_checksum"
         echo "✅ [Apply] Synced $skill_name (Hash: $src_hash) -> $dest_dir"
       fi
@@ -126,7 +145,7 @@ case "$MODE" in
     ;;
 
   *)
-    echo "Usage: $0 [dry-run|apply|rollback] [skill_name]"
+    echo "Usage: $0 [dry-run|apply|rollback] [skill_name] [--force]"
     exit 1
     ;;
 esac
