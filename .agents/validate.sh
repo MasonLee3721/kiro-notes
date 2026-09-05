@@ -85,16 +85,25 @@ for skill_file in $(find "$SKILLS_DIR" -name "SKILL.md"); do
     fi
   done
 done
+echo "✅ Pass: SKILL.md frontmatter check complete."
 
-# 5. Check Registry vs SKILL.md Metadata Consistency
+# 5. Dynamic Check Registry vs SKILL.md Metadata Consistency
 echo "[Check 5] Registry vs SKILL.md Consistency Check..."
-if grep -q "network_access: false" "$SKILLS_DIR/catalyst-analysis/SKILL.md"; then
-  if grep -q "network_access: true" "$REGISTRY_FILE"; then
-    echo "❌ Error: Registry network_access contradicts SKILL.md!"
-    ERRORS=$((ERRORS + 1))
+for skill_dir in "$SKILLS_DIR"/*; do
+  if [ -d "$skill_dir" ]; then
+    skill_name=$(basename "$skill_dir")
+    skill_file="$skill_dir/SKILL.md"
+    if [ -f "$skill_file" ]; then
+      skill_net=$(grep "^network_access:" "$skill_file" | awk '{print $2}' || true)
+      reg_net=$(grep -A 10 "name: \"$skill_name\"" "$REGISTRY_FILE" | grep "network_access:" | awk '{print $2}' || true)
+      if [ -n "$skill_net" ] && [ -n "$reg_net" ] && [ "$skill_net" != "$reg_net" ]; then
+        echo "❌ Error: $skill_name network_access mismatch (Skill: $skill_net vs Registry: $reg_net)"
+        ERRORS=$((ERRORS + 1))
+      fi
+    fi
   fi
-fi
-echo "✅ Pass: Registry metadata consistency check complete."
+done
+echo "✅ Pass: Registry vs SKILL.md metadata consistency check complete."
 
 # 6. Check Adapter Shell Script Syntax
 echo "[Check 6] Adapter Script Syntax Check..."

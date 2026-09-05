@@ -3,12 +3,17 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+TEST_FAIL_DIR="$SCRIPT_DIR/skills/test_fail_temp"
+
+cleanup() {
+  rm -rf "$TEST_FAIL_DIR" 2>/dev/null || true
+}
+trap cleanup EXIT INT TERM
 
 echo "=== Running Agent Skills 3.0 Negative Tests ==="
 
 # 1. Test validate.sh on bad skill input
 echo "[Negative Test 1] Hardcoded Path & Secret Scanner Failure Check..."
-TEST_FAIL_DIR="$SCRIPT_DIR/skills/test_fail_temp"
 mkdir -p "$TEST_FAIL_DIR"
 cat << 'EOF' > "$TEST_FAIL_DIR/SKILL.md"
 ---
@@ -24,12 +29,11 @@ EOF
 
 if bash "$SCRIPT_DIR/validate.sh" 2>/dev/null; then
   echo "❌ Error: validate.sh failed to catch bad input!"
-  rm -rf "$TEST_FAIL_DIR"
   exit 1
 else
   echo "✅ Pass: validate.sh successfully caught bad input and exited with non-zero code."
 fi
-rm -rf "$TEST_FAIL_DIR"
+cleanup
 
 # 2. Test adapters non-existent target failure check
 echo "[Negative Test 2] Adapters Non-existent Target Failure Check..."
