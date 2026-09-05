@@ -87,23 +87,60 @@ for skill_file in $(find "$SKILLS_DIR" -name "SKILL.md"); do
 done
 echo "✅ Pass: SKILL.md frontmatter check complete."
 
-# 5. Dynamic Check Registry vs SKILL.md Metadata Consistency
-echo "[Check 5] Registry vs SKILL.md Consistency Check..."
+# 5. Robust Check Registry vs SKILL.md Metadata & 2-Way Registration
+echo "[Check 5] Registry vs SKILL.md Full Metadata & 2-Way Registration Check..."
+
+# Check 5a: Disk skills registered in registry.yaml & attribute consistency
 for skill_dir in "$SKILLS_DIR"/*; do
   if [ -d "$skill_dir" ]; then
     skill_name=$(basename "$skill_dir")
     skill_file="$skill_dir/SKILL.md"
     if [ -f "$skill_file" ]; then
-      skill_net=$(grep "^network_access:" "$skill_file" | awk '{print $2}' || true)
-      reg_net=$(grep -A 10 "name: \"$skill_name\"" "$REGISTRY_FILE" | grep "network_access:" | awk '{print $2}' || true)
-      if [ -n "$skill_net" ] && [ -n "$reg_net" ] && [ "$skill_net" != "$reg_net" ]; then
-        echo "❌ Error: $skill_name network_access mismatch (Skill: $skill_net vs Registry: $reg_net)"
+      reg_block=$(awk -v target="$skill_name" '
+        $1 == "-" && $2 == "name:" {
+          name = $3; gsub(/"/, "", name); gsub(/'\''/, "", name);
+          in_block = (name == target);
+          next;
+        }
+        $1 == "-" { in_block = 0; }
+        in_block { print $0 }
+      ' "$REGISTRY_FILE")
+
+      if [ -z "$reg_block" ]; then
+        echo "❌ Error: Skill '$skill_name' on disk is missing from registry.yaml!"
         ERRORS=$((ERRORS + 1))
+      else
+        # Compare all key metadata fields
+        for field in "version" "owner" "entrypoint" "network_access" "external_side_effects" "required_tools" "required_secrets" "side_effects" "writes_to"; do
+          skill_val=$(sed -n '1,/^---$/p' "$skill_file" | grep -E "^${field}:" | sed "s/^${field}:[[:space:]]*//" | tr -d '"' | tr -d "'" || true)
+          reg_val=$(echo "$reg_block" | grep -E "^[[:space:]]*${field}:" | head -n 1 | sed "s/^[[:space:]]*${field}:[[:space:]]*//" | tr -d '"' | tr -d "'" || true)
+
+          if [ -z "$skill_val" ]; then
+            echo "❌ Error: Skill '$skill_name' frontmatter missing field '$field'!"
+            ERRORS=$((ERRORS + 1))
+          elif [ -z "$reg_val" ]; then
+            echo "❌ Error: Skill '$skill_name' in registry.yaml missing field '$field'!"
+            ERRORS=$((ERRORS + 1))
+          elif [ "$skill_val" != "$reg_val" ]; then
+            echo "❌ Error: Skill '$skill_name' metadata '$field' mismatch! (SKILL.md: '$skill_val' vs Registry: '$reg_val')"
+            ERRORS=$((ERRORS + 1))
+          fi
+        done
       fi
     fi
   fi
 done
-echo "✅ Pass: Registry vs SKILL.md metadata consistency check complete."
+
+# Check 5b: Registered skills exist on disk
+reg_skill_names=$(awk '$1 == "-" && $2 == "name:" { name = $3; gsub(/"/, "", name); gsub(/'\''/, "", name); print name }' "$REGISTRY_FILE")
+for reg_name in $reg_skill_names; do
+  if [ ! -d "$SKILLS_DIR/$reg_name" ] || [ ! -f "$SKILLS_DIR/$reg_name/SKILL.md" ]; then
+    echo "❌ Error: Registered skill '$reg_name' in registry.yaml does not exist at $SKILLS_DIR/$reg_name/SKILL.md!"
+    ERRORS=$((ERRORS + 1))
+  fi
+done
+
+echo "✅ Pass: Registry vs SKILL.md full metadata and 2-way registration check complete."
 
 # 6. Check Adapter Shell Script Syntax
 echo "[Check 6] Adapter Script Syntax Check..."

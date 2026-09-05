@@ -50,6 +50,34 @@ else
 fi
 cleanup
 
+# 1b. Test validate.sh catch unregistered skill & metadata attribute mismatch
+echo "[Negative Test 1b] Unregistered Skill & Metadata Attribute Mismatch Check..."
+mkdir -p "$TEST_FAIL_DIR"
+cat << 'EOF' > "$TEST_FAIL_DIR/SKILL.md"
+---
+name: test_unregistered
+version: 1.0.0
+owner: suquan
+entrypoint: SKILL.md
+supported_platforms: [linux]
+required_tools: [bash]
+required_secrets: []
+network_access: false
+external_side_effects: false
+side_effects: []
+writes_to: []
+description: test unregistered
+---
+EOF
+
+if bash "$SCRIPT_DIR/validate.sh" 2>/dev/null; then
+  echo "❌ Error: validate.sh failed to catch unregistered skill!"
+  exit 1
+else
+  echo "✅ Pass: validate.sh successfully caught unregistered skill on disk."
+fi
+cleanup
+
 # 2. Test adapters non-existent target failure check
 echo "[Negative Test 2] Adapters Non-existent Target Failure Check..."
 if bash "$SCRIPT_DIR/adapters/agy.sh" dry-run does-not-exist 2>/dev/null; then
