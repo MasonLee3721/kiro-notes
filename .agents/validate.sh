@@ -86,8 +86,18 @@ for skill_file in $(find "$SKILLS_DIR" -name "SKILL.md"); do
   done
 done
 
-# 5. Check Adapter Shell Script Syntax
-echo "[Check 5] Adapter Script Syntax Check..."
+# 5. Check Registry vs SKILL.md Metadata Consistency
+echo "[Check 5] Registry vs SKILL.md Consistency Check..."
+if grep -q "network_access: false" "$SKILLS_DIR/catalyst-analysis/SKILL.md"; then
+  if grep -q "network_access: true" "$REGISTRY_FILE"; then
+    echo "❌ Error: Registry network_access contradicts SKILL.md!"
+    ERRORS=$((ERRORS + 1))
+  fi
+fi
+echo "✅ Pass: Registry metadata consistency check complete."
+
+# 6. Check Adapter Shell Script Syntax
+echo "[Check 6] Adapter Script Syntax Check..."
 for adapter in "$ADAPTERS_DIR"/*.sh; do
   if [ -f "$adapter" ]; then
     if ! bash -n "$adapter"; then
