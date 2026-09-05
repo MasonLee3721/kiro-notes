@@ -1,0 +1,18 @@
+# Agent Skills 3.0 Central Registry
+version: "3.0.0"
+updated_at: "2026-09-05"
+
+skills:
+  - name: "catalyst-analysis"
+    namespace: "team/catalyst-analysis"
+    version: "1.0.0"
+    owner: "suquan"
+    entrypoint: "SKILL.md"
+    supported_platforms: ["linux"]
+    required_tools: ["bash", "curl"]
+    required_secrets: []
+    network_access: true
+    external_side_effects: false
+    tested_version: "1.0.0"
+    tested_at: "2026-09-05"
+    description: "台股個股催化劑分析 (Catalyst Analysis) 標準三層評估流程與 GitHub 同步規範"
