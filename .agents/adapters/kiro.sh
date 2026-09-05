@@ -4,7 +4,7 @@ set -e
 AGENTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 REPO_ROOT="$(cd "$AGENTS_DIR/.." && pwd)"
 SKILLS_SRC="$AGENTS_DIR/skills"
-KIRO_SKILLS_DEST="${HOME}/.kiro/skills"
+KIRO_SKILLS_DEST="${HOME}/.kiro/steering/skills"
 SNAPSHOT_DIR="${HOME}/.kiro/skills_snapshots"
 
 MODE=${1:-"dry-run"}
