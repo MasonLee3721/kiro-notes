@@ -1,6 +1,8 @@
 name: Daily Taiwan Stock Momentum Report
 
 on:
+  schedule:
+    - cron: '0 10 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -79,4 +81,6 @@ jobs:
           SOURCE="_agent_skills/kiro/kiro7/tw-stock-momentum-report/output"
           DAY="unknown"
           if [ -f "$SOURCE/data/daily_scores_latest.json" ]; then
-            DAY="$(jq -r .trade_date
+            DAY="$(jq -r .trade_date "$SOURCE/data/daily_scores_latest.json")"
+          fi
+          curl -H "Content-Type: application/json" -X POST -d "{\"content\": \"📊 Daily TW Stock Momentum Report for **${DAY}** completed with status: **${JOB_STATUS}**\"}" "$DISCORD_WEBHOOK_URL"
