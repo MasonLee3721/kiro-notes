@@ -1,0 +1,27 @@
+name: Agent Skills Governance Validation
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Bash scripts permission
+        run: chmod +x .agents/*.sh .agents/adapters/*.sh
+
+      - name: Run Agent Skills Governance Validator
+        run: bash .agents/validate.sh
+
+      - name: Run Negative & Boundary Security Tests
+        run: bash .agents/test_negative.sh
+
+      - name: Run Dual-CLI Adapters Dry-Run Check
+        run: |
+          bash .agents/adapters/agy.sh dry-run
+          bash .agents/adapters/kiro.sh dry-run
