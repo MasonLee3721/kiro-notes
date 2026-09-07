@@ -15,7 +15,7 @@ skills:
     external_side_effects: false
     side_effects: []
     writes_to: []
-    tested_cli: ["agy", "kiro"]
+    tested_cli: ["agy"]
     tested_version: "1.0.0"
     tested_at: "2026-09-05"
     description: "台股個股催化劑分析 (Catalyst Analysis) 標準三層評估流程知識庫"
