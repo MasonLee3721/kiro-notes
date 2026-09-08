@@ -2,7 +2,7 @@
   "scores": {
     "schema_version": "2.0",
     "trade_date": "2026-09-08",
-    "generated_at": "2026-09-08T09:32:25.385520+00:00",
+    "generated_at": "2026-09-08T14:12:50.963277+00:00",
     "data_status": "official_with_explicit_degradation",
     "warnings": [
       "期間累計買超比例不是實際投信持股比例"
@@ -20,13 +20,13 @@
         "stock_name": "大量",
         "trade_date": "2026-09-08",
         "investment_ratio_pct": "0.5585750197140674582784398388",
-        "positive_ratio_rank": 4,
+        "positive_ratio_rank": 6,
         "volume_lots": "16040.426",
         "paid_in_capital_twd": 895134910,
         "sitc_buy_streak": 1,
         "sitc_net_shares_3d_sum": 499000,
         "foreign_net_shares_3d_sum": 4336719,
-        "cumulative_buy_ratio_estimated_pct": "0.4982489175849481727843683362",
+        "cumulative_buy_ratio_estimated_pct": "0.4725544666781010697035601036",
         "aggressive_passed": true,
         "conservative_passed": false,
         "technical": {
@@ -34,8 +34,8 @@
           "history_count": 120,
           "close": "938.00",
           "ma5": "825.60",
-          "ma10": "775.40",
-          "ma20": "731.20",
+          "ma10": "796.30",
+          "ma20": "748.65",
           "ma5_up": true,
           "ma10_up": true,
           "ma20_up": true,
@@ -47,7 +47,7 @@
           "prior_20d_high": "883.00",
           "distance_from_prior_20d_high_pct": "6.228765571913929784824462061",
           "close_breakout_prior_20d_high": true,
-          "volume_ratio_20d": "4.760986034638844778201570176",
+          "volume_ratio_20d": "4.019596787329749777594005689",
           "first_day_ignition": true,
           "volume_surge_2x": true,
           "long_upper_shadow": false,
@@ -64,7 +64,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.5585750197140674582784398388%",
-              "全市場正投本比排名4"
+              "全市場正投本比排名6"
             ]
           },
           "sitc_continuity": {
@@ -82,7 +82,7 @@
             "max": 15,
             "status": "estimated",
             "reasons": [
-              "期間累計買超比例（估算）0.4982489175849481727843683362%"
+              "期間累計買超比例（估算）0.4725544666781010697035601036%"
             ]
           },
           "foreign_sync": {
@@ -240,130 +240,17 @@
       },
       {
         "market": "TPEx",
-        "stock_code": "4979",
-        "stock_name": "華星光",
-        "trade_date": "2026-09-08",
-        "investment_ratio_pct": "0.4207663758691003250620451280",
-        "positive_ratio_rank": 5,
-        "volume_lots": "12788.066",
-        "paid_in_capital_twd": 1423592840,
-        "sitc_buy_streak": 1,
-        "sitc_net_shares_3d_sum": -442000,
-        "foreign_net_shares_3d_sum": 18221,
-        "cumulative_buy_ratio_estimated_pct": "0.5198115494877032396425933134",
-        "aggressive_passed": true,
-        "conservative_passed": false,
-        "technical": {
-          "trade_date": "2026-09-08",
-          "history_count": 120,
-          "close": "605.00",
-          "ma5": "604.00",
-          "ma10": "582.40",
-          "ma20": "548.875",
-          "ma5_up": true,
-          "ma10_up": true,
-          "ma20_up": true,
-          "bullish_alignment": true,
-          "close_above_ma5": true,
-          "close_above_ma10": true,
-          "close_above_ma20": true,
-          "red_candle": true,
-          "prior_20d_high": "635.00",
-          "distance_from_prior_20d_high_pct": "-4.724409448818897637795275591",
-          "close_breakout_prior_20d_high": false,
-          "volume_ratio_20d": "1.548690249839535925786879488",
-          "first_day_ignition": false,
-          "volume_surge_2x": false,
-          "long_upper_shadow": true,
-          "high_open_low_close": false,
-          "false_breakout": false,
-          "risk_flags": [
-            "長上影線"
-          ]
-        },
-        "technical_status": "actual",
-        "technical_error": null,
-        "sections": {
-          "investment_ratio": {
-            "score": 17,
-            "max": 25,
-            "status": "actual",
-            "reasons": [
-              "投本比0.4207663758691003250620451280%",
-              "全市場正投本比排名5"
-            ]
-          },
-          "sitc_continuity": {
-            "score": 9,
-            "max": 20,
-            "status": "actual",
-            "reasons": [
-              "連買1日",
-              "近3日2日買超",
-              "最新買盤未低於前兩日平均"
-            ]
-          },
-          "chip_position": {
-            "score": 5,
-            "max": 15,
-            "status": "estimated",
-            "reasons": [
-              "期間累計買超比例（估算）0.5198115494877032396425933134%"
-            ]
-          },
-          "foreign_sync": {
-            "score": 7,
-            "max": 10,
-            "status": "actual",
-            "reasons": [
-              "當日同步買超",
-              "近3日外資累計買超"
-            ]
-          },
-          "moving_averages": {
-            "score": 15,
-            "max": 15,
-            "status": "actual",
-            "reasons": [
-              "收盤站上多頭排列",
-              "MA5向上",
-              "MA10向上",
-              "MA20向上",
-              "站上MA5",
-              "站上MA10",
-              "站上MA20"
-            ]
-          },
-          "breakout_volume": {
-            "score": 2,
-            "max": 15,
-            "status": "actual",
-            "reasons": [
-              "收紅K",
-              "量比介於0.8至2.5",
-              "長上影-4分"
-            ]
-          }
-        },
-        "total_score": 55,
-        "rating": "不列入",
-        "confidence": "中",
-        "confidence_reason": "期間累計買超比例為估算",
-        "trading_plan": null
-      },
-      {
-        "market": "TPEx",
         "stock_code": "6187",
         "stock_name": "萬潤",
         "trade_date": "2026-09-08",
-        "investment_ratio_pct": "0.3867183063154793598822845758",
-        "positive_ratio_rank": 7,
+        "investment_ratio_pct": "0.3578060245196299687921379843",
+        "positive_ratio_rank": 8,
         "volume_lots": "3668.072",
         "paid_in_capital_twd": 982627390,
         "sitc_buy_streak": 4,
-        "sitc_net_shares_3d_sum": 443000,
+        "sitc_net_shares_3d_sum": 439590,
         "foreign_net_shares_3d_sum": 62079,
-        "cumulative_buy_ratio_estimated_pct": "1.439908977094562772161276718",
+        "cumulative_buy_ratio_estimated_pct": "2.450047723583198713807478947",
         "aggressive_passed": true,
         "conservative_passed": true,
         "technical": {
@@ -371,8 +258,8 @@
           "history_count": 120,
           "close": "1385.00",
           "ma5": "1340.00",
-          "ma10": "1344.00",
-          "ma20": "1290.25",
+          "ma10": "1351.50",
+          "ma20": "1305.00",
           "ma5_up": true,
           "ma10_up": true,
           "ma20_up": true,
@@ -384,7 +271,7 @@
           "prior_20d_high": "1455.00",
           "distance_from_prior_20d_high_pct": "-4.810996563573883161512027491",
           "close_breakout_prior_20d_high": false,
-          "volume_ratio_20d": "0.9397176747879998975226090744",
+          "volume_ratio_20d": "0.9553700496177738419263677445",
           "first_day_ignition": false,
           "volume_surge_2x": false,
           "long_upper_shadow": true,
@@ -402,8 +289,8 @@
             "max": 25,
             "status": "actual",
             "reasons": [
-              "投本比0.3867183063154793598822845758%",
-              "全市場正投本比排名7"
+              "投本比0.3578060245196299687921379843%",
+              "全市場正投本比排名8"
             ]
           },
           "sitc_continuity": {
@@ -417,11 +304,11 @@
             ]
           },
           "chip_position": {
-            "score": 5,
+            "score": 9,
             "max": 15,
             "status": "estimated",
             "reasons": [
-              "期間累計買超比例（估算）1.439908977094562772161276718%"
+              "期間累計買超比例（估算）2.450047723583198713807478947%"
             ]
           },
           "foreign_sync": {
@@ -457,7 +344,119 @@
             ]
           }
         },
-        "total_score": 53,
+        "total_score": 57,
+        "rating": "不列入",
+        "confidence": "中",
+        "confidence_reason": "期間累計買超比例為估算",
+        "trading_plan": null
+      },
+      {
+        "market": "TPEx",
+        "stock_code": "4979",
+        "stock_name": "華星光",
+        "trade_date": "2026-09-08",
+        "investment_ratio_pct": "0.8401278556585041548818129768",
+        "positive_ratio_rank": 3,
+        "volume_lots": "12827.066",
+        "paid_in_capital_twd": 1423592840,
+        "sitc_buy_streak": 1,
+        "sitc_net_shares_3d_sum": 1210000,
+        "foreign_net_shares_3d_sum": 18221,
+        "cumulative_buy_ratio_estimated_pct": "1.680255711317008309763625954",
+        "aggressive_passed": true,
+        "conservative_passed": false,
+        "technical": {
+          "trade_date": "2026-09-08",
+          "history_count": 120,
+          "close": "605.00",
+          "ma5": "604.00",
+          "ma10": "605.40",
+          "ma20": "579.90",
+          "ma5_up": true,
+          "ma10_up": true,
+          "ma20_up": true,
+          "bullish_alignment": false,
+          "close_above_ma5": true,
+          "close_above_ma10": false,
+          "close_above_ma20": true,
+          "red_candle": true,
+          "prior_20d_high": "654.00",
+          "distance_from_prior_20d_high_pct": "-7.492354740061162079510703364",
+          "close_breakout_prior_20d_high": false,
+          "volume_ratio_20d": "1.122946285092071409127231535",
+          "first_day_ignition": false,
+          "volume_surge_2x": false,
+          "long_upper_shadow": true,
+          "high_open_low_close": false,
+          "false_breakout": false,
+          "risk_flags": [
+            "長上影線",
+            "收盤跌破MA10"
+          ]
+        },
+        "technical_status": "actual",
+        "technical_error": null,
+        "sections": {
+          "investment_ratio": {
+            "score": 21,
+            "max": 25,
+            "status": "actual",
+            "reasons": [
+              "投本比0.8401278556585041548818129768%",
+              "全市場正投本比排名3"
+            ]
+          },
+          "sitc_continuity": {
+            "score": 9,
+            "max": 20,
+            "status": "actual",
+            "reasons": [
+              "連買1日",
+              "近3日2日買超",
+              "最新買盤未低於前兩日平均"
+            ]
+          },
+          "chip_position": {
+            "score": 5,
+            "max": 15,
+            "status": "estimated",
+            "reasons": [
+              "期間累計買超比例（估算）1.680255711317008309763625954%"
+            ]
+          },
+          "foreign_sync": {
+            "score": 7,
+            "max": 10,
+            "status": "actual",
+            "reasons": [
+              "當日同步買超",
+              "近3日外資累計買超"
+            ]
+          },
+          "moving_averages": {
+            "score": 7,
+            "max": 15,
+            "status": "actual",
+            "reasons": [
+              "MA5向上",
+              "MA10向上",
+              "MA20向上",
+              "站上MA5",
+              "站上MA20"
+            ]
+          },
+          "breakout_volume": {
+            "score": 2,
+            "max": 15,
+            "status": "actual",
+            "reasons": [
+              "收紅K",
+              "量比介於0.8至2.5",
+              "長上影-4分"
+            ]
+          }
+        },
+        "total_score": 51,
         "rating": "不列入",
         "confidence": "中",
         "confidence_reason": "期間累計買超比例為估算",
@@ -579,14 +578,14 @@
         "stock_code": "3105",
         "stock_name": "穩懋",
         "trade_date": "2026-09-08",
-        "investment_ratio_pct": "0.7411018432252021548388275272",
-        "positive_ratio_rank": 3,
+        "investment_ratio_pct": "0.7377994921097207856470687162",
+        "positive_ratio_rank": 5,
         "volume_lots": "17327.103",
         "paid_in_capital_twd": 4239403840,
         "sitc_buy_streak": 2,
-        "sitc_net_shares_3d_sum": 4837488,
+        "sitc_net_shares_3d_sum": 4823488,
         "foreign_net_shares_3d_sum": -8105395,
-        "cumulative_buy_ratio_estimated_pct": "3.344544548037207042771372307",
+        "cumulative_buy_ratio_estimated_pct": "3.788946655291985582576629454",
         "aggressive_passed": true,
         "conservative_passed": false,
         "technical": {
@@ -623,12 +622,12 @@
         "technical_error": null,
         "sections": {
           "investment_ratio": {
-            "score": 21,
+            "score": 19,
             "max": 25,
             "status": "actual",
             "reasons": [
-              "投本比0.7411018432252021548388275272%",
-              "全市場正投本比排名3"
+              "投本比0.7377994921097207856470687162%",
+              "全市場正投本比排名5"
             ]
           },
           "sitc_continuity": {
@@ -646,7 +645,7 @@
             "max": 15,
             "status": "estimated",
             "reasons": [
-              "期間累計買超比例（估算）3.344544548037207042771372307%"
+              "期間累計買超比例（估算）3.788946655291985582576629454%"
             ]
           },
           "foreign_sync": {
@@ -676,7 +675,7 @@
             ]
           }
         },
-        "total_score": 49,
+        "total_score": 47,
         "rating": "不列入",
         "confidence": "中",
         "confidence_reason": "期間累計買超比例為估算",
@@ -687,14 +686,14 @@
         "stock_code": "2360",
         "stock_name": "致茂",
         "trade_date": "2026-09-08",
-        "investment_ratio_pct": "0.1335540709541072841594731359",
-        "positive_ratio_rank": 18,
+        "investment_ratio_pct": "0.1328485965181045833963929497",
+        "positive_ratio_rank": 19,
         "volume_lots": "4951.555",
         "paid_in_capital_twd": 4252457420,
         "sitc_buy_streak": 2,
-        "sitc_net_shares_3d_sum": 568174,
+        "sitc_net_shares_3d_sum": 565174,
         "foreign_net_shares_3d_sum": 718587,
-        "cumulative_buy_ratio_estimated_pct": "0.01849377718166546627055938869",
+        "cumulative_buy_ratio_estimated_pct": "0.01731798645499429833209241164",
         "aggressive_passed": true,
         "conservative_passed": false,
         "technical": {
@@ -733,8 +732,8 @@
             "max": 25,
             "status": "actual",
             "reasons": [
-              "投本比0.1335540709541072841594731359%",
-              "全市場正投本比排名18"
+              "投本比0.1328485965181045833963929497%",
+              "全市場正投本比排名19"
             ]
           },
           "sitc_continuity": {
@@ -752,7 +751,7 @@
             "max": 15,
             "status": "estimated",
             "reasons": [
-              "期間累計買超比例（估算）0.01849377718166546627055938869%"
+              "期間累計買超比例（估算）0.01731798645499429833209241164%"
             ]
           },
           "foreign_sync": {
@@ -789,114 +788,6 @@
           }
         },
         "total_score": 46,
-        "rating": "不列入",
-        "confidence": "中",
-        "confidence_reason": "期間累計買超比例為估算",
-        "trading_plan": null
-      },
-      {
-        "market": "TWSE",
-        "stock_code": "2481",
-        "stock_name": "強茂",
-        "trade_date": "2026-09-08",
-        "investment_ratio_pct": "0.08897846589489554277475268586",
-        "positive_ratio_rank": 24,
-        "volume_lots": "26855.469",
-        "paid_in_capital_twd": 3821149270,
-        "sitc_buy_streak": 5,
-        "sitc_net_shares_3d_sum": 3529000,
-        "foreign_net_shares_3d_sum": -29811919,
-        "cumulative_buy_ratio_estimated_pct": "2.078693984126927341940766423",
-        "aggressive_passed": true,
-        "conservative_passed": true,
-        "technical": {
-          "trade_date": "2026-09-08",
-          "history_count": 120,
-          "close": "152.50",
-          "ma5": "154.10",
-          "ma10": "151.55",
-          "ma20": "145.15",
-          "ma5_up": false,
-          "ma10_up": true,
-          "ma20_up": true,
-          "bullish_alignment": false,
-          "close_above_ma5": false,
-          "close_above_ma10": true,
-          "close_above_ma20": true,
-          "red_candle": false,
-          "prior_20d_high": "168.00",
-          "distance_from_prior_20d_high_pct": "-9.226190476190476190476190476",
-          "close_breakout_prior_20d_high": false,
-          "volume_ratio_20d": "0.8166871180569810706797008167",
-          "first_day_ignition": false,
-          "volume_surge_2x": false,
-          "long_upper_shadow": false,
-          "high_open_low_close": true,
-          "false_breakout": false,
-          "risk_flags": [
-            "高開走低",
-            "收盤跌破MA5"
-          ]
-        },
-        "technical_status": "actual",
-        "technical_error": null,
-        "sections": {
-          "investment_ratio": {
-            "score": 10,
-            "max": 25,
-            "status": "actual",
-            "reasons": [
-              "投本比0.08897846589489554277475268586%",
-              "全市場正投本比排名24"
-            ]
-          },
-          "sitc_continuity": {
-            "score": 16,
-            "max": 20,
-            "status": "actual",
-            "reasons": [
-              "連買5日",
-              "近3日3日買超"
-            ]
-          },
-          "chip_position": {
-            "score": 9,
-            "max": 15,
-            "status": "estimated",
-            "reasons": [
-              "期間累計買超比例（估算）2.078693984126927341940766423%"
-            ]
-          },
-          "foreign_sync": {
-            "score": 0,
-            "max": 10,
-            "status": "actual",
-            "reasons": [
-              "法人分歧"
-            ]
-          },
-          "moving_averages": {
-            "score": 6,
-            "max": 15,
-            "status": "actual",
-            "reasons": [
-              "MA10向上",
-              "MA20向上",
-              "站上MA10",
-              "站上MA20"
-            ]
-          },
-          "breakout_volume": {
-            "score": 1,
-            "max": 15,
-            "status": "actual",
-            "reasons": [
-              "量比介於0.8至2.5",
-              "高開走低-3分"
-            ]
-          }
-        },
-        "total_score": 42,
         "rating": "不列入",
         "confidence": "中",
         "confidence_reason": "期間累計買超比例為估算",
@@ -1017,11 +908,119 @@
       },
       {
         "market": "TWSE",
+        "stock_code": "2481",
+        "stock_name": "強茂",
+        "trade_date": "2026-09-08",
+        "investment_ratio_pct": "0.08897846589489554277475268586",
+        "positive_ratio_rank": 24,
+        "volume_lots": "26855.469",
+        "paid_in_capital_twd": 3821149270,
+        "sitc_buy_streak": 5,
+        "sitc_net_shares_3d_sum": 3529000,
+        "foreign_net_shares_3d_sum": -29811919,
+        "cumulative_buy_ratio_estimated_pct": "2.078693984126927341940766423",
+        "aggressive_passed": true,
+        "conservative_passed": true,
+        "technical": {
+          "trade_date": "2026-09-08",
+          "history_count": 120,
+          "close": "152.50",
+          "ma5": "154.10",
+          "ma10": "152.95",
+          "ma20": "145.625",
+          "ma5_up": false,
+          "ma10_up": true,
+          "ma20_up": true,
+          "bullish_alignment": false,
+          "close_above_ma5": false,
+          "close_above_ma10": false,
+          "close_above_ma20": true,
+          "red_candle": false,
+          "prior_20d_high": "168.00",
+          "distance_from_prior_20d_high_pct": "-9.226190476190476190476190476",
+          "close_breakout_prior_20d_high": false,
+          "volume_ratio_20d": "0.8041322004716098364337313321",
+          "first_day_ignition": false,
+          "volume_surge_2x": false,
+          "long_upper_shadow": false,
+          "high_open_low_close": true,
+          "false_breakout": false,
+          "risk_flags": [
+            "高開走低",
+            "收盤跌破MA5",
+            "收盤跌破MA10"
+          ]
+        },
+        "technical_status": "actual",
+        "technical_error": null,
+        "sections": {
+          "investment_ratio": {
+            "score": 10,
+            "max": 25,
+            "status": "actual",
+            "reasons": [
+              "投本比0.08897846589489554277475268586%",
+              "全市場正投本比排名24"
+            ]
+          },
+          "sitc_continuity": {
+            "score": 16,
+            "max": 20,
+            "status": "actual",
+            "reasons": [
+              "連買5日",
+              "近3日3日買超"
+            ]
+          },
+          "chip_position": {
+            "score": 9,
+            "max": 15,
+            "status": "estimated",
+            "reasons": [
+              "期間累計買超比例（估算）2.078693984126927341940766423%"
+            ]
+          },
+          "foreign_sync": {
+            "score": 0,
+            "max": 10,
+            "status": "actual",
+            "reasons": [
+              "法人分歧"
+            ]
+          },
+          "moving_averages": {
+            "score": 4,
+            "max": 15,
+            "status": "actual",
+            "reasons": [
+              "MA10向上",
+              "MA20向上",
+              "站上MA20"
+            ]
+          },
+          "breakout_volume": {
+            "score": 1,
+            "max": 15,
+            "status": "actual",
+            "reasons": [
+              "量比介於0.8至2.5",
+              "高開走低-3分"
+            ]
+          }
+        },
+        "total_score": 40,
+        "rating": "不列入",
+        "confidence": "中",
+        "confidence_reason": "期間累計買超比例為估算",
+        "trading_plan": null
+      },
+      {
+        "market": "TWSE",
         "stock_code": "6278",
         "stock_name": "台表科",
         "trade_date": "2026-09-08",
         "investment_ratio_pct": "0.07489782269738024139964974427",
-        "positive_ratio_rank": 29,
+        "positive_ratio_rank": 30,
         "volume_lots": "3990.059",
         "paid_in_capital_twd": 2923983530,
         "sitc_buy_streak": 7,
@@ -1035,8 +1034,8 @@
           "history_count": 120,
           "close": "188.50",
           "ma5": "194.90",
-          "ma10": "188.80",
-          "ma20": "177.675",
+          "ma10": "198.10",
+          "ma20": "187.10",
           "ma5_up": false,
           "ma10_up": true,
           "ma20_up": true,
@@ -1045,10 +1044,10 @@
           "close_above_ma10": false,
           "close_above_ma20": true,
           "red_candle": false,
-          "prior_20d_high": "204.00",
-          "distance_from_prior_20d_high_pct": "-7.598039215686274509803921569",
+          "prior_20d_high": "210.00",
+          "distance_from_prior_20d_high_pct": "-10.23809523809523809523809524",
           "close_breakout_prior_20d_high": false,
-          "volume_ratio_20d": "0.7272197060136877694039167798",
+          "volume_ratio_20d": "0.5685299440019378464256707656",
           "first_day_ignition": false,
           "volume_surge_2x": false,
           "long_upper_shadow": false,
@@ -1069,7 +1068,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.07489782269738024139964974427%",
-              "全市場正投本比排名29"
+              "全市場正投本比排名30"
             ]
           },
           "sitc_continuity": {
@@ -1128,7 +1127,7 @@
         "stock_name": "宏致",
         "trade_date": "2026-09-08",
         "investment_ratio_pct": "0.1259320106469103917784348083",
-        "positive_ratio_rank": 19,
+        "positive_ratio_rank": 20,
         "volume_lots": "16952.861",
         "paid_in_capital_twd": 1746974410,
         "sitc_buy_streak": 2,
@@ -1174,7 +1173,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.1259320106469103917784348083%",
-              "全市場正投本比排名19"
+              "全市場正投本比排名20"
             ]
           },
           "sitc_continuity": {
@@ -1238,7 +1237,7 @@
         "stock_name": "同欣電",
         "trade_date": "2026-09-08",
         "investment_ratio_pct": "0.08466548980679163025093932773",
-        "positive_ratio_rank": 27,
+        "positive_ratio_rank": 28,
         "volume_lots": "4123.139",
         "paid_in_capital_twd": 2090580240,
         "sitc_buy_streak": 1,
@@ -1284,7 +1283,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.08466548980679163025093932773%",
-              "全市場正投本比排名27"
+              "全市場正投本比排名28"
             ]
           },
           "sitc_continuity": {
@@ -1446,7 +1445,7 @@
     "schema_version": "1.1",
     "trade_date": "2026-09-08",
     "requested_trading_days": 120,
-    "generated_at": "2026-09-08T09:32:25.191197+00:00",
+    "generated_at": "2026-09-08T14:12:50.785160+00:00",
     "requested_count": 13,
     "completed_count": 13,
     "failed_count": 0,
@@ -3643,60 +3642,6 @@
         "history_count": 120,
         "ohlcv_history": [
           {
-            "trade_date": "2026-03-10",
-            "open": "358.00",
-            "high": "358.00",
-            "low": "336.00",
-            "close": "349.00",
-            "change": "7.50",
-            "volume_shares": 4167000
-          },
-          {
-            "trade_date": "2026-03-11",
-            "open": "365.00",
-            "high": "383.50",
-            "low": "365.00",
-            "close": "383.50",
-            "change": "34.50",
-            "volume_shares": 2873000
-          },
-          {
-            "trade_date": "2026-03-12",
-            "open": "384.00",
-            "high": "412.00",
-            "low": "383.50",
-            "close": "387.50",
-            "change": "4.00",
-            "volume_shares": 3953000
-          },
-          {
-            "trade_date": "2026-03-13",
-            "open": "372.00",
-            "high": "402.00",
-            "low": "372.00",
-            "close": "401.50",
-            "change": "14.00",
-            "volume_shares": 3779000
-          },
-          {
-            "trade_date": "2026-03-16",
-            "open": "413.50",
-            "high": "428.00",
-            "low": "394.00",
-            "close": "427.00",
-            "change": "25.50",
-            "volume_shares": 4136000
-          },
-          {
-            "trade_date": "2026-03-17",
-            "open": "427.00",
-            "high": "445.50",
-            "low": "392.50",
-            "close": "395.00",
-            "change": "-32.00",
-            "volume_shares": 26633000
-          },
-          {
             "trade_date": "2026-03-18",
             "open": "397.00",
             "high": "398.50",
@@ -4669,6 +4614,60 @@
             "volume_shares": 19155000
           },
           {
+            "trade_date": "2026-08-24",
+            "open": "581.00",
+            "high": "605.00",
+            "low": "547.00",
+            "close": "547.00",
+            "change": "-30.00",
+            "volume_shares": 13488000
+          },
+          {
+            "trade_date": "2026-08-25",
+            "open": "536.00",
+            "high": "601.00",
+            "low": "520.00",
+            "close": "601.00",
+            "change": "54.00",
+            "volume_shares": 16037000
+          },
+          {
+            "trade_date": "2026-08-26",
+            "open": "611.00",
+            "high": "626.00",
+            "low": "590.00",
+            "close": "598.00",
+            "change": "-3.00",
+            "volume_shares": 27191000
+          },
+          {
+            "trade_date": "2026-08-27",
+            "open": "619.00",
+            "high": "654.00",
+            "low": "599.00",
+            "close": "617.00",
+            "change": "19.00",
+            "volume_shares": 29366000
+          },
+          {
+            "trade_date": "2026-08-28",
+            "open": "603.00",
+            "high": "621.00",
+            "low": "596.00",
+            "close": "610.00",
+            "change": "-7.00",
+            "volume_shares": 2541000
+          },
+          {
+            "trade_date": "2026-08-31",
+            "open": "606.00",
+            "high": "613.00",
+            "low": "589.00",
+            "close": "609.00",
+            "change": "-1.00",
+            "volume_shares": 2121000
+          },
+          {
             "trade_date": "2026-09-01",
             "open": "609.00",
             "high": "613.00",
@@ -4733,15 +4732,6 @@
         "trade_date": "2026-09-08",
         "history_count": 120,
         "ohlcv_history": [
-          {
-            "trade_date": "2026-03-17",
-            "open": "681.00",
-            "high": "705.00",
-            "low": "681.00",
-            "close": "681.00",
-            "change": "-51.00",
-            "volume_shares": 1911000
-          },
           {
             "trade_date": "2026-03-18",
             "open": "687.00",
@@ -5758,6 +5748,15 @@
             "close": "1365.00",
             "change": "-65.00",
             "volume_shares": 6213000
+          },
+          {
+            "trade_date": "2026-08-31",
+            "open": "1335.00",
+            "high": "1380.00",
+            "low": "1280.00",
+            "close": "1345.00",
+            "change": "-20.00",
+            "volume_shares": 2812000
           },
           {
             "trade_date": "2026-09-01",
@@ -8007,15 +8006,6 @@
         "history_count": 120,
         "ohlcv_history": [
           {
-            "trade_date": "2026-03-17",
-            "open": "102.00",
-            "high": "106.50",
-            "low": "98.40",
-            "close": "104.00",
-            "change": "4.50",
-            "volume_shares": 46186299
-          },
-          {
             "trade_date": "2026-03-18",
             "open": "105.00",
             "high": "105.50",
@@ -9031,6 +9021,15 @@
             "close": "154.00",
             "change": "7.50",
             "volume_shares": 42606146
+          },
+          {
+            "trade_date": "2026-08-31",
+            "open": "150.50",
+            "high": "155.50",
+            "low": "146.50",
+            "close": "151.00",
+            "change": "-3.00",
+            "volume_shares": 22082974
           },
           {
             "trade_date": "2026-09-01",
@@ -10189,42 +10188,6 @@
         "history_count": 120,
         "ohlcv_history": [
           {
-            "trade_date": "2026-03-12",
-            "open": "355.00",
-            "high": "355.00",
-            "low": "355.00",
-            "close": "355.00",
-            "change": "32.00",
-            "volume_shares": 1197889
-          },
-          {
-            "trade_date": "2026-03-13",
-            "open": "368.00",
-            "high": "390.50",
-            "low": "356.00",
-            "close": "390.50",
-            "change": "35.50",
-            "volume_shares": 8981729
-          },
-          {
-            "trade_date": "2026-03-16",
-            "open": "366.50",
-            "high": "380.00",
-            "low": "351.50",
-            "close": "367.00",
-            "change": "-23.50",
-            "volume_shares": 15891345
-          },
-          {
-            "trade_date": "2026-03-17",
-            "open": "355.00",
-            "high": "357.00",
-            "low": "330.50",
-            "close": "331.00",
-            "change": "-36.00",
-            "volume_shares": 1639074
-          },
-          {
             "trade_date": "2026-03-18",
             "open": "342.00",
             "high": "352.00",
@@ -11213,6 +11176,42 @@
             "close": "674.00",
             "change": "9.00",
             "volume_shares": 4245733
+          },
+          {
+            "trade_date": "2026-08-26",
+            "open": "671.00",
+            "high": "723.00",
+            "low": "670.00",
+            "close": "716.00",
+            "change": "42.00",
+            "volume_shares": 4154654
+          },
+          {
+            "trade_date": "2026-08-27",
+            "open": "722.00",
+            "high": "761.00",
+            "low": "710.00",
+            "close": "742.00",
+            "change": "26.00",
+            "volume_shares": 4258684
+          },
+          {
+            "trade_date": "2026-08-28",
+            "open": "745.00",
+            "high": "797.00",
+            "low": "740.00",
+            "close": "783.00",
+            "change": "41.00",
+            "volume_shares": 5596237
+          },
+          {
+            "trade_date": "2026-08-31",
+            "open": "764.00",
+            "high": "805.00",
+            "low": "763.00",
+            "close": "794.00",
+            "change": "11.00",
+            "volume_shares": 4296669
           },
           {
             "trade_date": "2026-09-01",
@@ -13462,60 +13461,6 @@
         "history_count": 120,
         "ohlcv_history": [
           {
-            "trade_date": "2026-03-10",
-            "open": "97.00",
-            "high": "97.20",
-            "low": "94.70",
-            "close": "95.60",
-            "change": "0.60",
-            "volume_shares": 912688
-          },
-          {
-            "trade_date": "2026-03-11",
-            "open": "96.50",
-            "high": "100.50",
-            "low": "96.50",
-            "close": "100.00",
-            "change": "4.40",
-            "volume_shares": 1306307
-          },
-          {
-            "trade_date": "2026-03-12",
-            "open": "99.10",
-            "high": "101.50",
-            "low": "99.10",
-            "close": "100.00",
-            "change": "0.00",
-            "volume_shares": 1368125
-          },
-          {
-            "trade_date": "2026-03-13",
-            "open": "99.40",
-            "high": "101.00",
-            "low": "99.00",
-            "close": "100.00",
-            "change": "0.00",
-            "volume_shares": 1043806
-          },
-          {
-            "trade_date": "2026-03-16",
-            "open": "100.00",
-            "high": "100.50",
-            "low": "99.30",
-            "close": "100.00",
-            "change": "0.00",
-            "volume_shares": 898095
-          },
-          {
-            "trade_date": "2026-03-17",
-            "open": "100.50",
-            "high": "101.00",
-            "low": "99.70",
-            "close": "101.00",
-            "change": "1.00",
-            "volume_shares": 918274
-          },
-          {
             "trade_date": "2026-03-18",
             "open": "101.50",
             "high": "102.00",
@@ -14486,6 +14431,60 @@
             "close": "187.00",
             "change": "7.00",
             "volume_shares": 17236125
+          },
+          {
+            "trade_date": "2026-08-24",
+            "open": "183.50",
+            "high": "188.00",
+            "low": "177.00",
+            "close": "179.00",
+            "change": "-8.00",
+            "volume_shares": 8596646
+          },
+          {
+            "trade_date": "2026-08-25",
+            "open": "177.00",
+            "high": "182.00",
+            "low": "172.00",
+            "close": "181.50",
+            "change": "2.50",
+            "volume_shares": 5422166
+          },
+          {
+            "trade_date": "2026-08-26",
+            "open": "180.00",
+            "high": "199.50",
+            "low": "179.00",
+            "close": "199.50",
+            "change": "18.00",
+            "volume_shares": 15168883
+          },
+          {
+            "trade_date": "2026-08-27",
+            "open": "202.50",
+            "high": "210.00",
+            "low": "197.50",
+            "close": "206.00",
+            "change": "6.50",
+            "volume_shares": 18913318
+          },
+          {
+            "trade_date": "2026-08-28",
+            "open": "208.50",
+            "high": "208.50",
+            "low": "199.50",
+            "close": "201.50",
+            "change": "-4.50",
+            "volume_shares": 7522509
+          },
+          {
+            "trade_date": "2026-08-31",
+            "open": "198.00",
+            "high": "203.00",
+            "low": "195.00",
+            "close": "199.50",
+            "change": "-2.00",
+            "volume_shares": 4088055
           },
           {
             "trade_date": "2026-09-01",
@@ -15664,14 +15663,14 @@
           {
             "trade_date": "2026-08-27",
             "foreign_net_shares": 3441239,
-            "sitc_net_shares": 832387,
+            "sitc_net_shares": 1294387,
             "missing": false,
             "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F27"
           },
           {
             "trade_date": "2026-08-28",
             "foreign_net_shares": 1382612,
-            "sitc_net_shares": 1339000,
+            "sitc_net_shares": 2775000,
             "missing": false,
             "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F28"
           },
@@ -15720,7 +15719,7 @@
           {
             "trade_date": "2026-09-08",
             "foreign_net_shares": -2825077,
-            "sitc_net_shares": 3141830,
+            "sitc_net_shares": 3127830,
             "missing": false,
             "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F08"
           }
@@ -15871,14 +15870,14 @@
           {
             "trade_date": "2026-09-07",
             "foreign_net_shares": -2074054,
-            "sitc_net_shares": -1712000,
+            "sitc_net_shares": -657000,
             "missing": false,
             "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F07"
           },
           {
             "trade_date": "2026-09-08",
             "foreign_net_shares": 973845,
-            "sitc_net_shares": 599000,
+            "sitc_net_shares": 1196000,
             "missing": false,
             "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F08"
           }
@@ -15901,21 +15900,21 @@
           {
             "trade_date": "2026-08-27",
             "foreign_net_shares": 529510,
-            "sitc_net_shares": 211894,
+            "sitc_net_shares": 376894,
             "missing": false,
             "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F27"
           },
           {
             "trade_date": "2026-08-28",
             "foreign_net_shares": 345107,
-            "sitc_net_shares": -146000,
+            "sitc_net_shares": 416000,
             "missing": false,
             "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F28"
           },
           {
             "trade_date": "2026-08-31",
             "foreign_net_shares": -36018,
-            "sitc_net_shares": -176000,
+            "sitc_net_shares": 93000,
             "missing": false,
             "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F08%2F31"
           },
@@ -15943,7 +15942,7 @@
           {
             "trade_date": "2026-09-04",
             "foreign_net_shares": -101815,
-            "sitc_net_shares": 13000,
+            "sitc_net_shares": 38000,
             "missing": false,
             "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F04"
           },
@@ -15957,7 +15956,7 @@
           {
             "trade_date": "2026-09-08",
             "foreign_net_shares": 127746,
-            "sitc_net_shares": 380000,
+            "sitc_net_shares": 351590,
             "missing": false,
             "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F08"
           }
@@ -16059,7 +16058,7 @@
           {
             "trade_date": "2026-08-27",
             "foreign_net_shares": 182324,
-            "sitc_net_shares": -267226,
+            "sitc_net_shares": -268226,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260827&selectType=ALLBUT0999"
           },
@@ -16073,7 +16072,7 @@
           {
             "trade_date": "2026-08-31",
             "foreign_net_shares": 300416,
-            "sitc_net_shares": -32205,
+            "sitc_net_shares": -33205,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260831&selectType=ALLBUT0999"
           },
@@ -16115,7 +16114,7 @@
           {
             "trade_date": "2026-09-08",
             "foreign_net_shares": 441059,
-            "sitc_net_shares": 567933,
+            "sitc_net_shares": 564933,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260908&selectType=ALLBUT0999"
           }
@@ -16296,7 +16295,7 @@
           {
             "trade_date": "2026-08-27",
             "foreign_net_shares": 384934,
-            "sitc_net_shares": 0,
+            "sitc_net_shares": -1000,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260827&selectType=ALLBUT0999"
           },
@@ -16324,7 +16323,7 @@
           {
             "trade_date": "2026-09-02",
             "foreign_net_shares": -175524,
-            "sitc_net_shares": 0,
+            "sitc_net_shares": -22000,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260902&selectType=ALLBUT0999"
           },
