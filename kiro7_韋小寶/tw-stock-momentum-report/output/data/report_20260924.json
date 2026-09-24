@@ -2,7 +2,7 @@
   "scores": {
     "schema_version": "2.0",
     "trade_date": "2026-09-24",
-    "generated_at": "2026-09-24T09:32:38.423094+00:00",
+    "generated_at": "2026-09-24T14:40:19.642023+00:00",
     "data_status": "official_with_explicit_degradation",
     "warnings": [
       "期間累計買超比例不是實際投信持股比例"
@@ -20,7 +20,7 @@
         "stock_name": "雙鴻",
         "trade_date": "2026-09-24",
         "investment_ratio_pct": "0.3577689259036595753678221790",
-        "positive_ratio_rank": 4,
+        "positive_ratio_rank": 5,
         "volume_lots": "6451.51",
         "paid_in_capital_twd": 930768370,
         "sitc_buy_streak": 7,
@@ -64,7 +64,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.3577689259036595753678221790%",
-              "全市場正投本比排名4"
+              "全市場正投本比排名5"
             ]
           },
           "sitc_continuity": {
@@ -127,11 +127,121 @@
       },
       {
         "market": "TWSE",
+        "stock_code": "8028",
+        "stock_name": "昇陽半導體",
+        "trade_date": "2026-09-24",
+        "investment_ratio_pct": "1.257966074251270469461606865",
+        "positive_ratio_rank": 1,
+        "volume_lots": "10321.779",
+        "paid_in_capital_twd": 1835502600,
+        "sitc_buy_streak": 1,
+        "sitc_net_shares_3d_sum": 5316000,
+        "foreign_net_shares_3d_sum": -5593762,
+        "cumulative_buy_ratio_estimated_pct": "6.900562276512166204504422930",
+        "aggressive_passed": true,
+        "conservative_passed": false,
+        "technical": {
+          "trade_date": "2026-09-24",
+          "history_count": 120,
+          "close": "269.00",
+          "ma5": "261.00",
+          "ma10": "245.55",
+          "ma20": "243.65",
+          "ma5_up": true,
+          "ma10_up": true,
+          "ma20_up": true,
+          "bullish_alignment": true,
+          "close_above_ma5": true,
+          "close_above_ma10": true,
+          "close_above_ma20": true,
+          "red_candle": true,
+          "prior_20d_high": "274.00",
+          "distance_from_prior_20d_high_pct": "-1.824817518248175182481751825",
+          "close_breakout_prior_20d_high": false,
+          "volume_ratio_20d": "2.135504495091091546745843722",
+          "first_day_ignition": false,
+          "volume_surge_2x": true,
+          "long_upper_shadow": false,
+          "high_open_low_close": false,
+          "false_breakout": false,
+          "risk_flags": []
+        },
+        "technical_status": "actual",
+        "technical_error": null,
+        "sections": {
+          "investment_ratio": {
+            "score": 23,
+            "max": 25,
+            "status": "actual",
+            "reasons": [
+              "投本比1.257966074251270469461606865%",
+              "全市場正投本比排名1"
+            ]
+          },
+          "sitc_continuity": {
+            "score": 9,
+            "max": 20,
+            "status": "actual",
+            "reasons": [
+              "連買1日",
+              "近3日2日買超",
+              "最新買盤未低於前兩日平均"
+            ]
+          },
+          "chip_position": {
+            "score": 11,
+            "max": 15,
+            "status": "estimated",
+            "reasons": [
+              "期間累計買超比例（估算）6.900562276512166204504422930%"
+            ]
+          },
+          "foreign_sync": {
+            "score": 0,
+            "max": 10,
+            "status": "actual",
+            "reasons": [
+              "法人分歧"
+            ]
+          },
+          "moving_averages": {
+            "score": 15,
+            "max": 15,
+            "status": "actual",
+            "reasons": [
+              "收盤站上多頭排列",
+              "MA5向上",
+              "MA10向上",
+              "MA20向上",
+              "站上MA5",
+              "站上MA10",
+              "站上MA20"
+            ]
+          },
+          "breakout_volume": {
+            "score": 9,
+            "max": 15,
+            "status": "actual",
+            "reasons": [
+              "距前20日高點3%內",
+              "收紅K",
+              "量比介於0.8至2.5"
+            ]
+          }
+        },
+        "total_score": 67,
+        "rating": "條件不足",
+        "confidence": "中",
+        "confidence_reason": "期間累計買超比例為估算",
+        "trading_plan": null
+      },
+      {
+        "market": "TWSE",
         "stock_code": "6213",
         "stock_name": "聯茂",
         "trade_date": "2026-09-24",
         "investment_ratio_pct": "0.1650177642448298380544814840",
-        "positive_ratio_rank": 9,
+        "positive_ratio_rank": 11,
         "volume_lots": "16800.143",
         "paid_in_capital_twd": 3635972180,
         "sitc_buy_streak": 3,
@@ -170,12 +280,12 @@
         "technical_error": null,
         "sections": {
           "investment_ratio": {
-            "score": 12,
+            "score": 10,
             "max": 25,
             "status": "actual",
             "reasons": [
               "投本比0.1650177642448298380544814840%",
-              "全市場正投本比排名9"
+              "全市場正投本比排名11"
             ]
           },
           "sitc_continuity": {
@@ -230,7 +340,115 @@
             ]
           }
         },
-        "total_score": 67,
+        "total_score": 65,
+        "rating": "條件不足",
+        "confidence": "中",
+        "confidence_reason": "期間累計買超比例為估算",
+        "trading_plan": null
+      },
+      {
+        "market": "TWSE",
+        "stock_code": "3605",
+        "stock_name": "宏致",
+        "trade_date": "2026-09-24",
+        "investment_ratio_pct": "0.5557129663565037093926086376",
+        "positive_ratio_rank": 4,
+        "volume_lots": "14851.996",
+        "paid_in_capital_twd": 1752703390,
+        "sitc_buy_streak": 3,
+        "sitc_net_shares_3d_sum": 5030100,
+        "foreign_net_shares_3d_sum": 1619818,
+        "cumulative_buy_ratio_estimated_pct": "2.869909437443377113568542821",
+        "aggressive_passed": true,
+        "conservative_passed": true,
+        "technical": {
+          "trade_date": "2026-09-24",
+          "history_count": 120,
+          "close": "183.50",
+          "ma5": "171.60",
+          "ma10": "151.45",
+          "ma20": "138.575",
+          "ma5_up": true,
+          "ma10_up": true,
+          "ma20_up": true,
+          "bullish_alignment": true,
+          "close_above_ma5": true,
+          "close_above_ma10": true,
+          "close_above_ma20": true,
+          "red_candle": true,
+          "prior_20d_high": "188.50",
+          "distance_from_prior_20d_high_pct": "-2.652519893899204244031830239",
+          "close_breakout_prior_20d_high": false,
+          "volume_ratio_20d": "0.6896119394668288809535971173",
+          "first_day_ignition": false,
+          "volume_surge_2x": false,
+          "long_upper_shadow": false,
+          "high_open_low_close": false,
+          "false_breakout": false,
+          "risk_flags": []
+        },
+        "technical_status": "actual",
+        "technical_error": null,
+        "sections": {
+          "investment_ratio": {
+            "score": 17,
+            "max": 25,
+            "status": "actual",
+            "reasons": [
+              "投本比0.5557129663565037093926086376%",
+              "全市場正投本比排名4"
+            ]
+          },
+          "sitc_continuity": {
+            "score": 14,
+            "max": 20,
+            "status": "actual",
+            "reasons": [
+              "連買3日",
+              "近3日3日買超"
+            ]
+          },
+          "chip_position": {
+            "score": 9,
+            "max": 15,
+            "status": "estimated",
+            "reasons": [
+              "期間累計買超比例（估算）2.869909437443377113568542821%"
+            ]
+          },
+          "foreign_sync": {
+            "score": 3,
+            "max": 10,
+            "status": "actual",
+            "reasons": [
+              "近3日外資累計買超"
+            ]
+          },
+          "moving_averages": {
+            "score": 15,
+            "max": 15,
+            "status": "actual",
+            "reasons": [
+              "收盤站上多頭排列",
+              "MA5向上",
+              "MA10向上",
+              "MA20向上",
+              "站上MA5",
+              "站上MA10",
+              "站上MA20"
+            ]
+          },
+          "breakout_volume": {
+            "score": 5,
+            "max": 15,
+            "status": "actual",
+            "reasons": [
+              "距前20日高點3%內",
+              "收紅K"
+            ]
+          }
+        },
+        "total_score": 63,
         "rating": "條件不足",
         "confidence": "中",
         "confidence_reason": "期間累計買超比例為估算",
@@ -242,7 +460,7 @@
         "stock_name": "禾伸堂",
         "trade_date": "2026-09-24",
         "investment_ratio_pct": "0.09886050131026935520130837292",
-        "positive_ratio_rank": 11,
+        "positive_ratio_rank": 15,
         "volume_lots": "13190.269",
         "paid_in_capital_twd": 1658903180,
         "sitc_buy_streak": 10,
@@ -286,7 +504,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.09886050131026935520130837292%",
-              "全市場正投本比排名11"
+              "全市場正投本比排名15"
             ]
           },
           "sitc_continuity": {
@@ -352,7 +570,7 @@
         "stock_name": "德微",
         "trade_date": "2026-09-24",
         "investment_ratio_pct": "0.2695167694370546694788636939",
-        "positive_ratio_rank": 7,
+        "positive_ratio_rank": 8,
         "volume_lots": "3602.789",
         "paid_in_capital_twd": 530579230,
         "sitc_buy_streak": 2,
@@ -396,7 +614,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.2695167694370546694788636939%",
-              "全市場正投本比排名7"
+              "全市場正投本比排名8"
             ]
           },
           "sitc_continuity": {
@@ -453,116 +671,6 @@
         },
         "total_score": 60,
         "rating": "條件不足",
-        "confidence": "中",
-        "confidence_reason": "期間累計買超比例為估算",
-        "trading_plan": null
-      },
-      {
-        "market": "TWSE",
-        "stock_code": "8028",
-        "stock_name": "昇陽半導體",
-        "trade_date": "2026-09-24",
-        "investment_ratio_pct": "1.257966074251270469461606865",
-        "positive_ratio_rank": 1,
-        "volume_lots": "10321.779",
-        "paid_in_capital_twd": 1835502600,
-        "sitc_buy_streak": 1,
-        "sitc_net_shares_3d_sum": 2309000,
-        "foreign_net_shares_3d_sum": -5593762,
-        "cumulative_buy_ratio_estimated_pct": "1.904110623433603417396412296",
-        "aggressive_passed": true,
-        "conservative_passed": false,
-        "technical": {
-          "trade_date": "2026-09-24",
-          "history_count": 120,
-          "close": "269.00",
-          "ma5": "261.00",
-          "ma10": "245.55",
-          "ma20": "243.65",
-          "ma5_up": true,
-          "ma10_up": true,
-          "ma20_up": true,
-          "bullish_alignment": true,
-          "close_above_ma5": true,
-          "close_above_ma10": true,
-          "close_above_ma20": true,
-          "red_candle": true,
-          "prior_20d_high": "274.00",
-          "distance_from_prior_20d_high_pct": "-1.824817518248175182481751825",
-          "close_breakout_prior_20d_high": false,
-          "volume_ratio_20d": "2.135504495091091546745843722",
-          "first_day_ignition": false,
-          "volume_surge_2x": true,
-          "long_upper_shadow": false,
-          "high_open_low_close": false,
-          "false_breakout": false,
-          "risk_flags": []
-        },
-        "technical_status": "actual",
-        "technical_error": null,
-        "sections": {
-          "investment_ratio": {
-            "score": 23,
-            "max": 25,
-            "status": "actual",
-            "reasons": [
-              "投本比1.257966074251270469461606865%",
-              "全市場正投本比排名1"
-            ]
-          },
-          "sitc_continuity": {
-            "score": 6,
-            "max": 20,
-            "status": "actual",
-            "reasons": [
-              "連買1日",
-              "近3日1日買超",
-              "最新買盤未低於前兩日平均"
-            ]
-          },
-          "chip_position": {
-            "score": 5,
-            "max": 15,
-            "status": "estimated",
-            "reasons": [
-              "期間累計買超比例（估算）1.904110623433603417396412296%"
-            ]
-          },
-          "foreign_sync": {
-            "score": 0,
-            "max": 10,
-            "status": "actual",
-            "reasons": [
-              "法人分歧"
-            ]
-          },
-          "moving_averages": {
-            "score": 15,
-            "max": 15,
-            "status": "actual",
-            "reasons": [
-              "收盤站上多頭排列",
-              "MA5向上",
-              "MA10向上",
-              "MA20向上",
-              "站上MA5",
-              "站上MA10",
-              "站上MA20"
-            ]
-          },
-          "breakout_volume": {
-            "score": 9,
-            "max": 15,
-            "status": "actual",
-            "reasons": [
-              "距前20日高點3%內",
-              "收紅K",
-              "量比介於0.8至2.5"
-            ]
-          }
-        },
-        "total_score": 58,
-        "rating": "不列入",
         "confidence": "中",
         "confidence_reason": "期間累計買超比例為估算",
         "trading_plan": null
@@ -685,7 +793,7 @@
         "stock_name": "晶技",
         "trade_date": "2026-09-24",
         "investment_ratio_pct": "0.3437388225661335782884017177",
-        "positive_ratio_rank": 5,
+        "positive_ratio_rank": 6,
         "volume_lots": "41859.153",
         "paid_in_capital_twd": 3429929710,
         "sitc_buy_streak": 1,
@@ -700,7 +808,7 @@
           "close": "203.00",
           "ma5": "190.50",
           "ma10": "185.15",
-          "ma20": "182.65",
+          "ma20": "182.425",
           "ma5_up": true,
           "ma10_up": true,
           "ma20_up": true,
@@ -709,10 +817,10 @@
           "close_above_ma10": true,
           "close_above_ma20": true,
           "red_candle": true,
-          "prior_20d_high": "202.00",
-          "distance_from_prior_20d_high_pct": "0.4950495049504950495049504950",
+          "prior_20d_high": "201.50",
+          "distance_from_prior_20d_high_pct": "0.7444168734491315136476426799",
           "close_breakout_prior_20d_high": true,
-          "volume_ratio_20d": "2.873954253190021249643836745",
+          "volume_ratio_20d": "3.432908651776158511331903604",
           "first_day_ignition": true,
           "volume_surge_2x": true,
           "long_upper_shadow": false,
@@ -729,7 +837,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.3437388225661335782884017177%",
-              "全市場正投本比排名5"
+              "全市場正投本比排名6"
             ]
           },
           "sitc_continuity": {
@@ -791,27 +899,27 @@
         "trading_plan": null
       },
       {
-        "market": "TWSE",
-        "stock_code": "3605",
-        "stock_name": "宏致",
+        "market": "TPEx",
+        "stock_code": "3105",
+        "stock_name": "穩懋",
         "trade_date": "2026-09-24",
-        "investment_ratio_pct": "0.08900536216798211361935004873",
-        "positive_ratio_rank": 15,
-        "volume_lots": "14851.996",
-        "paid_in_capital_twd": 1752703390,
-        "sitc_buy_streak": 3,
-        "sitc_net_shares_3d_sum": 1110100,
-        "foreign_net_shares_3d_sum": 1619818,
-        "cumulative_buy_ratio_estimated_pct": "0.6333644393761342585182082634",
+        "investment_ratio_pct": "0.1023728845799224449445231431",
+        "positive_ratio_rank": 14,
+        "volume_lots": "21692.103",
+        "paid_in_capital_twd": 4239403840,
+        "sitc_buy_streak": 10,
+        "sitc_net_shares_3d_sum": 1511000,
+        "foreign_net_shares_3d_sum": 5595335,
+        "cumulative_buy_ratio_estimated_pct": "1.367196950031540283739517488",
         "aggressive_passed": true,
         "conservative_passed": true,
         "technical": {
           "trade_date": "2026-09-24",
           "history_count": 120,
-          "close": "183.50",
-          "ma5": "171.60",
-          "ma10": "151.45",
-          "ma20": "138.575",
+          "close": "502.00",
+          "ma5": "498.10",
+          "ma10": "476.95",
+          "ma20": "466.55",
           "ma5_up": true,
           "ma10_up": true,
           "ma20_up": true,
@@ -820,10 +928,10 @@
           "close_above_ma10": true,
           "close_above_ma20": true,
           "red_candle": true,
-          "prior_20d_high": "188.50",
-          "distance_from_prior_20d_high_pct": "-2.652519893899204244031830239",
+          "prior_20d_high": "518.00",
+          "distance_from_prior_20d_high_pct": "-3.088803088803088803088803089",
           "close_breakout_prior_20d_high": false,
-          "volume_ratio_20d": "0.6896119394668288809535971173",
+          "volume_ratio_20d": "0.6557287848673322098199103708",
           "first_day_ignition": false,
           "volume_surge_2x": false,
           "long_upper_shadow": false,
@@ -839,16 +947,16 @@
             "max": 25,
             "status": "actual",
             "reasons": [
-              "投本比0.08900536216798211361935004873%",
-              "全市場正投本比排名15"
+              "投本比0.1023728845799224449445231431%",
+              "全市場正投本比排名14"
             ]
           },
           "sitc_continuity": {
-            "score": 14,
+            "score": 16,
             "max": 20,
             "status": "actual",
             "reasons": [
-              "連買3日",
+              "連買10日",
               "近3日3日買超"
             ]
           },
@@ -857,14 +965,15 @@
             "max": 15,
             "status": "estimated",
             "reasons": [
-              "期間累計買超比例（估算）0.6333644393761342585182082634%"
+              "期間累計買超比例（估算）1.367196950031540283739517488%"
             ]
           },
           "foreign_sync": {
-            "score": 3,
+            "score": 7,
             "max": 10,
             "status": "actual",
             "reasons": [
+              "當日同步買超",
               "近3日外資累計買超"
             ]
           },
@@ -883,127 +992,15 @@
             ]
           },
           "breakout_volume": {
-            "score": 5,
-            "max": 15,
-            "status": "actual",
-            "reasons": [
-              "距前20日高點3%內",
-              "收紅K"
-            ]
-          }
-        },
-        "total_score": 52,
-        "rating": "不列入",
-        "confidence": "中",
-        "confidence_reason": "期間累計買超比例為估算",
-        "trading_plan": null
-      },
-      {
-        "market": "TWSE",
-        "stock_code": "6531",
-        "stock_name": "愛普*",
-        "trade_date": "2026-09-24",
-        "investment_ratio_pct": "0.04045379795639916625457935461",
-        "positive_ratio_rank": 28,
-        "volume_lots": "3109.128",
-        "paid_in_capital_twd": 815745410,
-        "sitc_buy_streak": 4,
-        "sitc_net_shares_3d_sum": 83400,
-        "foreign_net_shares_3d_sum": 812536,
-        "cumulative_buy_ratio_estimated_pct": "0.1246712500656301578209309201",
-        "aggressive_passed": true,
-        "conservative_passed": true,
-        "technical": {
-          "trade_date": "2026-09-24",
-          "history_count": 120,
-          "close": "993.00",
-          "ma5": "966.00",
-          "ma10": "953.90",
-          "ma20": "948.10",
-          "ma5_up": true,
-          "ma10_up": false,
-          "ma20_up": true,
-          "bullish_alignment": true,
-          "close_above_ma5": true,
-          "close_above_ma10": true,
-          "close_above_ma20": true,
-          "red_candle": true,
-          "prior_20d_high": "1065.00",
-          "distance_from_prior_20d_high_pct": "-6.760563380281690140845070423",
-          "close_breakout_prior_20d_high": false,
-          "volume_ratio_20d": "0.8093298103580679170625675201",
-          "first_day_ignition": false,
-          "volume_surge_2x": false,
-          "long_upper_shadow": true,
-          "high_open_low_close": false,
-          "false_breakout": false,
-          "risk_flags": [
-            "長上影線"
-          ]
-        },
-        "technical_status": "actual",
-        "technical_error": null,
-        "sections": {
-          "investment_ratio": {
-            "score": 10,
-            "max": 25,
-            "status": "actual",
-            "reasons": [
-              "投本比0.04045379795639916625457935461%",
-              "全市場正投本比排名28"
-            ]
-          },
-          "sitc_continuity": {
-            "score": 18,
-            "max": 20,
-            "status": "actual",
-            "reasons": [
-              "連買4日",
-              "近3日3日買超",
-              "買盤逐日加速"
-            ]
-          },
-          "chip_position": {
-            "score": 5,
-            "max": 15,
-            "status": "estimated",
-            "reasons": [
-              "期間累計買超比例（估算）0.1246712500656301578209309201%"
-            ]
-          },
-          "foreign_sync": {
-            "score": 3,
-            "max": 10,
-            "status": "actual",
-            "reasons": [
-              "近3日外資累計買超"
-            ]
-          },
-          "moving_averages": {
-            "score": 14,
-            "max": 15,
-            "status": "actual",
-            "reasons": [
-              "收盤站上多頭排列",
-              "MA5向上",
-              "MA20向上",
-              "站上MA5",
-              "站上MA10",
-              "站上MA20"
-            ]
-          },
-          "breakout_volume": {
             "score": 2,
             "max": 15,
             "status": "actual",
             "reasons": [
-              "收紅K",
-              "量比介於0.8至2.5",
-              "長上影-4分"
+              "收紅K"
             ]
           }
         },
-        "total_score": 52,
+        "total_score": 55,
         "rating": "不列入",
         "confidence": "中",
         "confidence_reason": "期間累計買超比例為估算",
@@ -1015,7 +1012,7 @@
         "stock_name": "達發",
         "trade_date": "2026-09-24",
         "investment_ratio_pct": "0.05492355196771564959571430091",
-        "positive_ratio_rank": 21,
+        "positive_ratio_rank": 24,
         "volume_lots": "4581.078",
         "paid_in_capital_twd": 1675055540,
         "sitc_buy_streak": 1,
@@ -1063,7 +1060,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.05492355196771564959571430091%",
-              "全市場正投本比排名21"
+              "全市場正投本比排名24"
             ]
           },
           "sitc_continuity": {
@@ -1131,13 +1128,1104 @@
     "schema_version": "1.1",
     "trade_date": "2026-09-24",
     "requested_trading_days": 120,
-    "generated_at": "2026-09-24T09:32:38.236905+00:00",
+    "generated_at": "2026-09-24T14:40:19.480410+00:00",
     "requested_count": 10,
     "completed_count": 10,
     "failed_count": 0,
     "warnings": [],
     "failures": [],
     "records": [
+      {
+        "market": "TPEx",
+        "stock_code": "3105",
+        "stock_name": "穩懋",
+        "trade_date": "2026-09-24",
+        "history_count": 120,
+        "ohlcv_history": [
+          {
+            "trade_date": "2026-04-07",
+            "open": "396.50",
+            "high": "413.00",
+            "low": "391.00",
+            "close": "407.00",
+            "change": "31.00",
+            "volume_shares": 37458000
+          },
+          {
+            "trade_date": "2026-04-08",
+            "open": "430.50",
+            "high": "445.00",
+            "low": "424.50",
+            "close": "440.00",
+            "change": "33.00",
+            "volume_shares": 40094000
+          },
+          {
+            "trade_date": "2026-04-09",
+            "open": "443.50",
+            "high": "453.50",
+            "low": "431.50",
+            "close": "436.00",
+            "change": "-4.00",
+            "volume_shares": 33459000
+          },
+          {
+            "trade_date": "2026-04-10",
+            "open": "447.00",
+            "high": "474.00",
+            "low": "434.00",
+            "close": "464.00",
+            "change": "28.00",
+            "volume_shares": 48046000
+          },
+          {
+            "trade_date": "2026-04-13",
+            "open": "466.00",
+            "high": "481.00",
+            "low": "458.00",
+            "close": "458.00",
+            "change": "-6.00",
+            "volume_shares": 34579000
+          },
+          {
+            "trade_date": "2026-04-14",
+            "open": "468.00",
+            "high": "472.00",
+            "low": "437.00",
+            "close": "457.00",
+            "change": "-1.00",
+            "volume_shares": 34743000
+          },
+          {
+            "trade_date": "2026-04-15",
+            "open": "459.00",
+            "high": "472.00",
+            "low": "444.00",
+            "close": "446.50",
+            "change": "-10.50",
+            "volume_shares": 31849000
+          },
+          {
+            "trade_date": "2026-04-16",
+            "open": "448.00",
+            "high": "491.00",
+            "low": "447.50",
+            "close": "490.50",
+            "change": "44.00",
+            "volume_shares": 51230000
+          },
+          {
+            "trade_date": "2026-04-17",
+            "open": "511.00",
+            "high": "539.00",
+            "low": "503.00",
+            "close": "539.00",
+            "change": "48.50",
+            "volume_shares": 29148000
+          },
+          {
+            "trade_date": "2026-04-20",
+            "open": "546.00",
+            "high": "592.00",
+            "low": "539.00",
+            "close": "592.00",
+            "change": "53.00",
+            "volume_shares": 42870000
+          },
+          {
+            "trade_date": "2026-04-21",
+            "open": "625.00",
+            "high": "637.00",
+            "low": "585.00",
+            "close": "617.00",
+            "change": "25.00",
+            "volume_shares": 54738000
+          },
+          {
+            "trade_date": "2026-04-22",
+            "open": "615.00",
+            "high": "626.00",
+            "low": "598.00",
+            "close": "600.00",
+            "change": "-17.00",
+            "volume_shares": 28328000
+          },
+          {
+            "trade_date": "2026-04-23",
+            "open": "612.00",
+            "high": "622.00",
+            "low": "540.00",
+            "close": "560.00",
+            "change": "-40.00",
+            "volume_shares": 52014000
+          },
+          {
+            "trade_date": "2026-04-24",
+            "open": "576.00",
+            "high": "604.00",
+            "low": "533.00",
+            "close": "547.00",
+            "change": "-13.00",
+            "volume_shares": 51178000
+          },
+          {
+            "trade_date": "2026-04-27",
+            "open": "555.00",
+            "high": "560.00",
+            "low": "492.50",
+            "close": "492.50",
+            "change": "-54.50",
+            "volume_shares": 28694000
+          },
+          {
+            "trade_date": "2026-04-28",
+            "open": "493.50",
+            "high": "512.00",
+            "low": "484.00",
+            "close": "499.50",
+            "change": "7.00",
+            "volume_shares": 33028000
+          },
+          {
+            "trade_date": "2026-04-29",
+            "open": "499.50",
+            "high": "516.00",
+            "low": "491.00",
+            "close": "502.00",
+            "change": "2.50",
+            "volume_shares": 15832000
+          },
+          {
+            "trade_date": "2026-04-30",
+            "open": "530.00",
+            "high": "552.00",
+            "low": "528.00",
+            "close": "536.00",
+            "change": "34.00",
+            "volume_shares": 29263000
+          },
+          {
+            "trade_date": "2026-05-04",
+            "open": "553.00",
+            "high": "557.00",
+            "low": "510.00",
+            "close": "524.00",
+            "change": "-12.00",
+            "volume_shares": 42681000
+          },
+          {
+            "trade_date": "2026-05-05",
+            "open": "524.00",
+            "high": "566.00",
+            "low": "516.00",
+            "close": "555.00",
+            "change": "31.00",
+            "volume_shares": 35735000
+          },
+          {
+            "trade_date": "2026-05-06",
+            "open": "555.00",
+            "high": "556.00",
+            "low": "499.50",
+            "close": "500.00",
+            "change": "-55.00",
+            "volume_shares": 44322000
+          },
+          {
+            "trade_date": "2026-05-07",
+            "open": "496.00",
+            "high": "522.00",
+            "low": "473.00",
+            "close": "500.00",
+            "change": "0.00",
+            "volume_shares": 39372000
+          },
+          {
+            "trade_date": "2026-05-08",
+            "open": "494.50",
+            "high": "518.00",
+            "low": "481.50",
+            "close": "492.50",
+            "change": "-7.50",
+            "volume_shares": 25292000
+          },
+          {
+            "trade_date": "2026-05-11",
+            "open": "500.00",
+            "high": "538.00",
+            "low": "493.50",
+            "close": "526.00",
+            "change": "33.50",
+            "volume_shares": 25293000
+          },
+          {
+            "trade_date": "2026-05-12",
+            "open": "555.00",
+            "high": "559.00",
+            "low": "510.00",
+            "close": "512.00",
+            "change": "-14.00",
+            "volume_shares": 32043000
+          },
+          {
+            "trade_date": "2026-05-13",
+            "open": "506.00",
+            "high": "515.00",
+            "low": "488.00",
+            "close": "495.50",
+            "change": "-16.50",
+            "volume_shares": 21287000
+          },
+          {
+            "trade_date": "2026-05-14",
+            "open": "503.00",
+            "high": "504.00",
+            "low": "482.00",
+            "close": "483.50",
+            "change": "-12.00",
+            "volume_shares": 20779000
+          },
+          {
+            "trade_date": "2026-05-15",
+            "open": "490.00",
+            "high": "492.50",
+            "low": "452.00",
+            "close": "458.50",
+            "change": "-25.00",
+            "volume_shares": 28149000
+          },
+          {
+            "trade_date": "2026-05-18",
+            "open": "448.00",
+            "high": "461.00",
+            "low": "436.00",
+            "close": "450.50",
+            "change": "-8.00",
+            "volume_shares": 17645000
+          },
+          {
+            "trade_date": "2026-05-19",
+            "open": "450.50",
+            "high": "473.00",
+            "low": "446.50",
+            "close": "456.50",
+            "change": "6.00",
+            "volume_shares": 18529000
+          },
+          {
+            "trade_date": "2026-05-20",
+            "open": "459.50",
+            "high": "478.00",
+            "low": "442.50",
+            "close": "446.50",
+            "change": "-10.00",
+            "volume_shares": 28370000
+          },
+          {
+            "trade_date": "2026-05-21",
+            "open": "459.50",
+            "high": "489.00",
+            "low": "456.50",
+            "close": "483.00",
+            "change": "36.50",
+            "volume_shares": 24546000
+          },
+          {
+            "trade_date": "2026-05-22",
+            "open": "506.00",
+            "high": "531.00",
+            "low": "499.50",
+            "close": "531.00",
+            "change": "48.00",
+            "volume_shares": 28969000
+          },
+          {
+            "trade_date": "2026-05-25",
+            "open": "551.00",
+            "high": "565.00",
+            "low": "538.00",
+            "close": "543.00",
+            "change": "12.00",
+            "volume_shares": 42354000
+          },
+          {
+            "trade_date": "2026-05-26",
+            "open": "551.00",
+            "high": "562.00",
+            "low": "517.00",
+            "close": "562.00",
+            "change": "19.00",
+            "volume_shares": 33746000
+          },
+          {
+            "trade_date": "2026-05-27",
+            "open": "571.00",
+            "high": "588.00",
+            "low": "545.00",
+            "close": "560.00",
+            "change": "-2.00",
+            "volume_shares": 48184000
+          },
+          {
+            "trade_date": "2026-05-28",
+            "open": "558.00",
+            "high": "582.00",
+            "low": "520.00",
+            "close": "528.00",
+            "change": "-32.00",
+            "volume_shares": 48754000
+          },
+          {
+            "trade_date": "2026-05-29",
+            "open": "542.00",
+            "high": "544.00",
+            "low": "516.00",
+            "close": "527.00",
+            "change": "-1.00",
+            "volume_shares": 26012000
+          },
+          {
+            "trade_date": "2026-06-01",
+            "open": "528.00",
+            "high": "546.00",
+            "low": "522.00",
+            "close": "530.00",
+            "change": "3.00",
+            "volume_shares": 23733000
+          },
+          {
+            "trade_date": "2026-06-02",
+            "open": "538.00",
+            "high": "554.00",
+            "low": "515.00",
+            "close": "519.00",
+            "change": "-11.00",
+            "volume_shares": 33279000
+          },
+          {
+            "trade_date": "2026-06-03",
+            "open": "545.00",
+            "high": "564.00",
+            "low": "508.00",
+            "close": "515.00",
+            "change": "-4.00",
+            "volume_shares": 40451000
+          },
+          {
+            "trade_date": "2026-06-04",
+            "open": "515.00",
+            "high": "533.00",
+            "low": "486.00",
+            "close": "487.50",
+            "change": "-27.50",
+            "volume_shares": 28501000
+          },
+          {
+            "trade_date": "2026-06-05",
+            "open": "486.50",
+            "high": "498.00",
+            "low": "451.00",
+            "close": "483.50",
+            "change": "-4.00",
+            "volume_shares": 30445000
+          },
+          {
+            "trade_date": "2026-06-08",
+            "open": "435.50",
+            "high": "461.50",
+            "low": "435.50",
+            "close": "451.50",
+            "change": "-32.00",
+            "volume_shares": 20984000
+          },
+          {
+            "trade_date": "2026-06-09",
+            "open": "462.00",
+            "high": "496.50",
+            "low": "454.50",
+            "close": "496.50",
+            "change": "45.00",
+            "volume_shares": 15425000
+          },
+          {
+            "trade_date": "2026-06-10",
+            "open": "493.50",
+            "high": "524.00",
+            "low": "476.00",
+            "close": "478.00",
+            "change": "-18.50",
+            "volume_shares": 35497000
+          },
+          {
+            "trade_date": "2026-06-11",
+            "open": "497.50",
+            "high": "503.00",
+            "low": "460.50",
+            "close": "481.50",
+            "change": "5.50",
+            "volume_shares": 20256000
+          },
+          {
+            "trade_date": "2026-06-12",
+            "open": "513.00",
+            "high": "516.00",
+            "low": "496.50",
+            "close": "505.00",
+            "change": "23.50",
+            "volume_shares": 17932000
+          },
+          {
+            "trade_date": "2026-06-15",
+            "open": "524.00",
+            "high": "528.00",
+            "low": "499.50",
+            "close": "511.00",
+            "change": "6.00",
+            "volume_shares": 23767000
+          },
+          {
+            "trade_date": "2026-06-16",
+            "open": "515.00",
+            "high": "525.00",
+            "low": "493.00",
+            "close": "493.00",
+            "change": "-18.00",
+            "volume_shares": 21685000
+          },
+          {
+            "trade_date": "2026-06-17",
+            "open": "488.00",
+            "high": "520.00",
+            "low": "481.00",
+            "close": "519.00",
+            "change": "26.00",
+            "volume_shares": 22465000
+          },
+          {
+            "trade_date": "2026-06-18",
+            "open": "522.00",
+            "high": "557.00",
+            "low": "521.00",
+            "close": "528.00",
+            "change": "9.00",
+            "volume_shares": 40126000
+          },
+          {
+            "trade_date": "2026-06-22",
+            "open": "545.00",
+            "high": "550.00",
+            "low": "522.00",
+            "close": "541.00",
+            "change": "13.00",
+            "volume_shares": 28073000
+          },
+          {
+            "trade_date": "2026-06-23",
+            "open": "531.00",
+            "high": "573.00",
+            "low": "522.00",
+            "close": "522.00",
+            "change": "-19.00",
+            "volume_shares": 41748000
+          },
+          {
+            "trade_date": "2026-06-24",
+            "open": "516.00",
+            "high": "516.00",
+            "low": "472.00",
+            "close": "478.00",
+            "change": "-44.00",
+            "volume_shares": 38526000
+          },
+          {
+            "trade_date": "2026-06-25",
+            "open": "486.50",
+            "high": "486.50",
+            "low": "458.00",
+            "close": "463.00",
+            "change": "-15.00",
+            "volume_shares": 21420000
+          },
+          {
+            "trade_date": "2026-06-26",
+            "open": "458.00",
+            "high": "463.50",
+            "low": "421.00",
+            "close": "424.00",
+            "change": "-39.00",
+            "volume_shares": 33904000
+          },
+          {
+            "trade_date": "2026-06-29",
+            "open": "416.00",
+            "high": "427.50",
+            "low": "399.00",
+            "close": "412.00",
+            "change": "-12.00",
+            "volume_shares": 25732000
+          },
+          {
+            "trade_date": "2026-06-30",
+            "open": "423.00",
+            "high": "434.50",
+            "low": "412.50",
+            "close": "426.00",
+            "change": "14.00",
+            "volume_shares": 18517000
+          },
+          {
+            "trade_date": "2026-07-01",
+            "open": "436.00",
+            "high": "439.50",
+            "low": "415.50",
+            "close": "417.50",
+            "change": "-8.50",
+            "volume_shares": 16197000
+          },
+          {
+            "trade_date": "2026-07-02",
+            "open": "404.00",
+            "high": "411.00",
+            "low": "399.50",
+            "close": "411.00",
+            "change": "-6.50",
+            "volume_shares": 12888000
+          },
+          {
+            "trade_date": "2026-07-03",
+            "open": "408.00",
+            "high": "422.00",
+            "low": "400.50",
+            "close": "411.00",
+            "change": "0.00",
+            "volume_shares": 17409000
+          },
+          {
+            "trade_date": "2026-07-06",
+            "open": "422.00",
+            "high": "435.50",
+            "low": "407.00",
+            "close": "421.00",
+            "change": "10.00",
+            "volume_shares": 17274000
+          },
+          {
+            "trade_date": "2026-07-07",
+            "open": "424.00",
+            "high": "447.50",
+            "low": "400.50",
+            "close": "409.50",
+            "change": "-11.50",
+            "volume_shares": 35377000
+          },
+          {
+            "trade_date": "2026-07-08",
+            "open": "411.00",
+            "high": "421.50",
+            "low": "400.00",
+            "close": "413.50",
+            "change": "4.00",
+            "volume_shares": 16652000
+          },
+          {
+            "trade_date": "2026-07-09",
+            "open": "418.00",
+            "high": "427.00",
+            "low": "405.50",
+            "close": "406.00",
+            "change": "-7.50",
+            "volume_shares": 13207000
+          },
+          {
+            "trade_date": "2026-07-13",
+            "open": "412.00",
+            "high": "418.00",
+            "low": "400.50",
+            "close": "403.00",
+            "change": "-3.00",
+            "volume_shares": 13035000
+          },
+          {
+            "trade_date": "2026-07-14",
+            "open": "401.00",
+            "high": "404.50",
+            "low": "363.00",
+            "close": "378.50",
+            "change": "-24.50",
+            "volume_shares": 22302000
+          },
+          {
+            "trade_date": "2026-07-15",
+            "open": "387.00",
+            "high": "394.00",
+            "low": "379.00",
+            "close": "386.00",
+            "change": "7.50",
+            "volume_shares": 14873000
+          },
+          {
+            "trade_date": "2026-07-16",
+            "open": "380.50",
+            "high": "381.00",
+            "low": "364.50",
+            "close": "369.00",
+            "change": "-17.00",
+            "volume_shares": 11076000
+          },
+          {
+            "trade_date": "2026-07-17",
+            "open": "344.50",
+            "high": "350.00",
+            "low": "332.50",
+            "close": "332.50",
+            "change": "-36.50",
+            "volume_shares": 13974000
+          },
+          {
+            "trade_date": "2026-07-20",
+            "open": "325.50",
+            "high": "336.00",
+            "low": "302.50",
+            "close": "313.50",
+            "change": "-19.00",
+            "volume_shares": 19713000
+          },
+          {
+            "trade_date": "2026-07-21",
+            "open": "322.00",
+            "high": "340.00",
+            "low": "319.50",
+            "close": "339.50",
+            "change": "26.00",
+            "volume_shares": 11352000
+          },
+          {
+            "trade_date": "2026-07-22",
+            "open": "360.00",
+            "high": "373.00",
+            "low": "356.00",
+            "close": "359.00",
+            "change": "19.50",
+            "volume_shares": 15464000
+          },
+          {
+            "trade_date": "2026-07-23",
+            "open": "361.50",
+            "high": "385.00",
+            "low": "354.00",
+            "close": "364.50",
+            "change": "5.50",
+            "volume_shares": 22171000
+          },
+          {
+            "trade_date": "2026-07-24",
+            "open": "354.00",
+            "high": "371.50",
+            "low": "337.50",
+            "close": "341.50",
+            "change": "-23.00",
+            "volume_shares": 20818000
+          },
+          {
+            "trade_date": "2026-07-27",
+            "open": "313.50",
+            "high": "368.00",
+            "low": "307.50",
+            "close": "355.00",
+            "change": "13.50",
+            "volume_shares": 37398000
+          },
+          {
+            "trade_date": "2026-07-28",
+            "open": "336.00",
+            "high": "349.50",
+            "low": "322.50",
+            "close": "323.00",
+            "change": "-32.00",
+            "volume_shares": 23506000
+          },
+          {
+            "trade_date": "2026-07-29",
+            "open": "326.50",
+            "high": "333.00",
+            "low": "291.00",
+            "close": "291.00",
+            "change": "-32.00",
+            "volume_shares": 28296000
+          },
+          {
+            "trade_date": "2026-07-30",
+            "open": "276.50",
+            "high": "301.00",
+            "low": "262.00",
+            "close": "268.00",
+            "change": "-23.00",
+            "volume_shares": 25773000
+          },
+          {
+            "trade_date": "2026-07-31",
+            "open": "294.00",
+            "high": "294.50",
+            "low": "280.00",
+            "close": "294.50",
+            "change": "26.50",
+            "volume_shares": 14988000
+          },
+          {
+            "trade_date": "2026-08-03",
+            "open": "298.50",
+            "high": "320.50",
+            "low": "298.50",
+            "close": "311.00",
+            "change": "16.50",
+            "volume_shares": 18433000
+          },
+          {
+            "trade_date": "2026-08-04",
+            "open": "320.00",
+            "high": "342.00",
+            "low": "313.50",
+            "close": "342.00",
+            "change": "31.00",
+            "volume_shares": 19016000
+          },
+          {
+            "trade_date": "2026-08-05",
+            "open": "376.00",
+            "high": "376.00",
+            "low": "376.00",
+            "close": "376.00",
+            "change": "34.00",
+            "volume_shares": 2863000
+          },
+          {
+            "trade_date": "2026-08-06",
+            "open": "378.00",
+            "high": "394.00",
+            "low": "365.50",
+            "close": "382.00",
+            "change": "6.00",
+            "volume_shares": 41008000
+          },
+          {
+            "trade_date": "2026-08-07",
+            "open": "384.50",
+            "high": "394.50",
+            "low": "359.50",
+            "close": "366.00",
+            "change": "-16.00",
+            "volume_shares": 23873000
+          },
+          {
+            "trade_date": "2026-08-10",
+            "open": "379.00",
+            "high": "401.00",
+            "low": "374.00",
+            "close": "385.50",
+            "change": "19.50",
+            "volume_shares": 25703000
+          },
+          {
+            "trade_date": "2026-08-11",
+            "open": "377.50",
+            "high": "382.50",
+            "low": "361.50",
+            "close": "371.00",
+            "change": "-14.50",
+            "volume_shares": 16830000
+          },
+          {
+            "trade_date": "2026-08-12",
+            "open": "372.00",
+            "high": "408.00",
+            "low": "370.50",
+            "close": "400.00",
+            "change": "29.00",
+            "volume_shares": 30376000
+          },
+          {
+            "trade_date": "2026-08-13",
+            "open": "406.50",
+            "high": "417.50",
+            "low": "383.00",
+            "close": "387.00",
+            "change": "-13.00",
+            "volume_shares": 39600000
+          },
+          {
+            "trade_date": "2026-08-14",
+            "open": "389.00",
+            "high": "389.50",
+            "low": "375.00",
+            "close": "378.00",
+            "change": "-9.00",
+            "volume_shares": 15210000
+          },
+          {
+            "trade_date": "2026-08-17",
+            "open": "391.00",
+            "high": "404.50",
+            "low": "388.50",
+            "close": "398.00",
+            "change": "20.00",
+            "volume_shares": 25290000
+          },
+          {
+            "trade_date": "2026-08-18",
+            "open": "400.00",
+            "high": "406.00",
+            "low": "373.50",
+            "close": "374.50",
+            "change": "-23.50",
+            "volume_shares": 28852000
+          },
+          {
+            "trade_date": "2026-08-19",
+            "open": "353.50",
+            "high": "374.00",
+            "low": "351.00",
+            "close": "363.50",
+            "change": "-11.00",
+            "volume_shares": 17947000
+          },
+          {
+            "trade_date": "2026-08-20",
+            "open": "370.00",
+            "high": "379.00",
+            "low": "359.50",
+            "close": "379.00",
+            "change": "15.50",
+            "volume_shares": 15797000
+          },
+          {
+            "trade_date": "2026-08-21",
+            "open": "377.00",
+            "high": "385.50",
+            "low": "365.50",
+            "close": "373.00",
+            "change": "-6.00",
+            "volume_shares": 22049000
+          },
+          {
+            "trade_date": "2026-08-24",
+            "open": "370.50",
+            "high": "372.50",
+            "low": "355.00",
+            "close": "355.00",
+            "change": "-18.00",
+            "volume_shares": 12164000
+          },
+          {
+            "trade_date": "2026-08-25",
+            "open": "350.50",
+            "high": "381.50",
+            "low": "349.50",
+            "close": "379.00",
+            "change": "24.00",
+            "volume_shares": 16442000
+          },
+          {
+            "trade_date": "2026-08-26",
+            "open": "378.00",
+            "high": "405.00",
+            "low": "374.00",
+            "close": "405.00",
+            "change": "26.00",
+            "volume_shares": 32599000
+          },
+          {
+            "trade_date": "2026-08-27",
+            "open": "413.00",
+            "high": "445.50",
+            "low": "412.00",
+            "close": "445.50",
+            "change": "40.50",
+            "volume_shares": 37532000
+          },
+          {
+            "trade_date": "2026-08-28",
+            "open": "449.50",
+            "high": "461.50",
+            "low": "434.50",
+            "close": "439.00",
+            "change": "-6.50",
+            "volume_shares": 49191000
+          },
+          {
+            "trade_date": "2026-08-31",
+            "open": "434.50",
+            "high": "471.00",
+            "low": "425.00",
+            "close": "447.50",
+            "change": "8.50",
+            "volume_shares": 51771000
+          },
+          {
+            "trade_date": "2026-09-01",
+            "open": "448.50",
+            "high": "492.00",
+            "low": "444.00",
+            "close": "492.00",
+            "change": "44.50",
+            "volume_shares": 56845000
+          },
+          {
+            "trade_date": "2026-09-02",
+            "open": "484.00",
+            "high": "492.00",
+            "low": "468.00",
+            "close": "469.50",
+            "change": "-22.50",
+            "volume_shares": 41974000
+          },
+          {
+            "trade_date": "2026-09-03",
+            "open": "478.00",
+            "high": "490.00",
+            "low": "440.00",
+            "close": "446.50",
+            "change": "-23.00",
+            "volume_shares": 41028000
+          },
+          {
+            "trade_date": "2026-09-04",
+            "open": "465.00",
+            "high": "465.00",
+            "low": "438.50",
+            "close": "449.50",
+            "change": "3.00",
+            "volume_shares": 24241000
+          },
+          {
+            "trade_date": "2026-09-07",
+            "open": "453.50",
+            "high": "463.00",
+            "low": "446.50",
+            "close": "450.50",
+            "change": "1.00",
+            "volume_shares": 19649000
+          },
+          {
+            "trade_date": "2026-09-08",
+            "open": "457.00",
+            "high": "458.00",
+            "low": "440.00",
+            "close": "441.50",
+            "change": "-9.00",
+            "volume_shares": 17327000
+          },
+          {
+            "trade_date": "2026-09-09",
+            "open": "462.00",
+            "high": "478.00",
+            "low": "457.50",
+            "close": "464.00",
+            "change": "22.50",
+            "volume_shares": 36407000
+          },
+          {
+            "trade_date": "2026-09-10",
+            "open": "462.50",
+            "high": "465.00",
+            "low": "452.00",
+            "close": "461.50",
+            "change": "-2.50",
+            "volume_shares": 15187000
+          },
+          {
+            "trade_date": "2026-09-11",
+            "open": "449.50",
+            "high": "450.00",
+            "low": "435.00",
+            "close": "437.50",
+            "change": "-24.00",
+            "volume_shares": 14614000
+          },
+          {
+            "trade_date": "2026-09-14",
+            "open": "423.00",
+            "high": "451.00",
+            "low": "420.00",
+            "close": "444.00",
+            "change": "6.50",
+            "volume_shares": 13607000
+          },
+          {
+            "trade_date": "2026-09-15",
+            "open": "447.50",
+            "high": "476.00",
+            "low": "445.50",
+            "close": "454.00",
+            "change": "10.00",
+            "volume_shares": 35942000
+          },
+          {
+            "trade_date": "2026-09-16",
+            "open": "469.00",
+            "high": "473.00",
+            "low": "454.00",
+            "close": "472.50",
+            "change": "18.50",
+            "volume_shares": 29235000
+          },
+          {
+            "trade_date": "2026-09-17",
+            "open": "482.00",
+            "high": "507.00",
+            "low": "469.00",
+            "close": "471.00",
+            "change": "-1.50",
+            "volume_shares": 47614000
+          },
+          {
+            "trade_date": "2026-09-18",
+            "open": "487.50",
+            "high": "502.00",
+            "low": "467.00",
+            "close": "500.00",
+            "change": "29.00",
+            "volume_shares": 44393000
+          },
+          {
+            "trade_date": "2026-09-21",
+            "open": "497.00",
+            "high": "504.00",
+            "low": "486.00",
+            "close": "490.50",
+            "change": "-9.50",
+            "volume_shares": 23656000
+          },
+          {
+            "trade_date": "2026-09-22",
+            "open": "501.00",
+            "high": "515.00",
+            "low": "489.00",
+            "close": "501.00",
+            "change": "10.50",
+            "volume_shares": 33955000
+          },
+          {
+            "trade_date": "2026-09-23",
+            "open": "507.00",
+            "high": "518.00",
+            "low": "486.50",
+            "close": "497.00",
+            "change": "-4.00",
+            "volume_shares": 27447000
+          },
+          {
+            "trade_date": "2026-09-24",
+            "open": "495.50",
+            "high": "506.00",
+            "low": "482.00",
+            "close": "502.00",
+            "change": "5.00",
+            "volume_shares": 21692000
+          }
+        ],
+        "daily_fallback_applied": false,
+        "data_status": "actual"
+      },
       {
         "market": "TPEx",
         "stock_code": "3324",
@@ -4419,60 +5507,6 @@
         "history_count": 120,
         "ohlcv_history": [
           {
-            "trade_date": "2026-03-26",
-            "open": "92.10",
-            "high": "92.10",
-            "low": "90.00",
-            "close": "90.10",
-            "change": "-1.60",
-            "volume_shares": 1032792
-          },
-          {
-            "trade_date": "2026-03-27",
-            "open": "89.50",
-            "high": "91.90",
-            "low": "88.90",
-            "close": "91.10",
-            "change": "1.00",
-            "volume_shares": 906821
-          },
-          {
-            "trade_date": "2026-03-30",
-            "open": "89.70",
-            "high": "90.80",
-            "low": "89.70",
-            "close": "90.30",
-            "change": "-0.80",
-            "volume_shares": 822199
-          },
-          {
-            "trade_date": "2026-03-31",
-            "open": "91.20",
-            "high": "96.20",
-            "low": "91.20",
-            "close": "92.70",
-            "change": "2.40",
-            "volume_shares": 6086904
-          },
-          {
-            "trade_date": "2026-04-01",
-            "open": "95.50",
-            "high": "96.20",
-            "low": "93.60",
-            "close": "93.90",
-            "change": "1.20",
-            "volume_shares": 3351089
-          },
-          {
-            "trade_date": "2026-04-02",
-            "open": "94.00",
-            "high": "94.20",
-            "low": "91.40",
-            "close": "91.80",
-            "change": "-2.10",
-            "volume_shares": 1770224
-          },
-          {
             "trade_date": "2026-04-07",
             "open": "92.80",
             "high": "94.70",
@@ -5335,6 +6369,60 @@
             "close": "190.00",
             "change": "1.50",
             "volume_shares": 38491497
+          },
+          {
+            "trade_date": "2026-08-24",
+            "open": "186.50",
+            "high": "187.50",
+            "low": "177.50",
+            "close": "177.50",
+            "change": "-12.50",
+            "volume_shares": 12007976
+          },
+          {
+            "trade_date": "2026-08-25",
+            "open": "176.00",
+            "high": "185.50",
+            "low": "172.50",
+            "close": "185.00",
+            "change": "7.50",
+            "volume_shares": 7052684
+          },
+          {
+            "trade_date": "2026-08-26",
+            "open": "180.50",
+            "high": "188.50",
+            "low": "180.00",
+            "close": "185.50",
+            "change": "0.50",
+            "volume_shares": 12500262
+          },
+          {
+            "trade_date": "2026-08-27",
+            "open": "187.00",
+            "high": "197.00",
+            "low": "184.00",
+            "close": "192.00",
+            "change": "6.50",
+            "volume_shares": 17243496
+          },
+          {
+            "trade_date": "2026-08-28",
+            "open": "192.00",
+            "high": "197.00",
+            "low": "186.50",
+            "close": "188.50",
+            "change": "-3.50",
+            "volume_shares": 15750113
+          },
+          {
+            "trade_date": "2026-08-31",
+            "open": "186.00",
+            "high": "187.50",
+            "low": "182.00",
+            "close": "185.50",
+            "change": "-3.00",
+            "volume_shares": 13292309
           },
           {
             "trade_date": "2026-09-01",
@@ -9868,1097 +10956,6 @@
       },
       {
         "market": "TWSE",
-        "stock_code": "6531",
-        "stock_name": "愛普*",
-        "trade_date": "2026-09-24",
-        "history_count": 120,
-        "ohlcv_history": [
-          {
-            "trade_date": "2026-03-26",
-            "open": "514.00",
-            "high": "531.00",
-            "low": "509.00",
-            "close": "509.00",
-            "change": "-2.00",
-            "volume_shares": 4351415
-          },
-          {
-            "trade_date": "2026-03-27",
-            "open": "496.00",
-            "high": "509.00",
-            "low": "481.50",
-            "close": "507.00",
-            "change": "-2.00",
-            "volume_shares": 4059106
-          },
-          {
-            "trade_date": "2026-03-30",
-            "open": "490.00",
-            "high": "497.50",
-            "low": "484.50",
-            "close": "485.00",
-            "change": "-22.00",
-            "volume_shares": 2663945
-          },
-          {
-            "trade_date": "2026-03-31",
-            "open": "475.50",
-            "high": "489.50",
-            "low": "439.50",
-            "close": "442.00",
-            "change": "-43.00",
-            "volume_shares": 5201996
-          },
-          {
-            "trade_date": "2026-04-01",
-            "open": "462.00",
-            "high": "468.00",
-            "low": "452.00",
-            "close": "460.00",
-            "change": "18.00",
-            "volume_shares": 2947260
-          },
-          {
-            "trade_date": "2026-04-02",
-            "open": "465.50",
-            "high": "473.00",
-            "low": "440.00",
-            "close": "440.00",
-            "change": "-20.00",
-            "volume_shares": 2564980
-          },
-          {
-            "trade_date": "2026-04-07",
-            "open": "469.00",
-            "high": "484.00",
-            "low": "469.00",
-            "close": "471.50",
-            "change": "31.50",
-            "volume_shares": 3430653
-          },
-          {
-            "trade_date": "2026-04-08",
-            "open": "490.00",
-            "high": "496.50",
-            "low": "472.50",
-            "close": "478.00",
-            "change": "6.50",
-            "volume_shares": 4674502
-          },
-          {
-            "trade_date": "2026-04-09",
-            "open": "480.00",
-            "high": "502.00",
-            "low": "475.00",
-            "close": "480.50",
-            "change": "2.50",
-            "volume_shares": 4858724
-          },
-          {
-            "trade_date": "2026-04-10",
-            "open": "494.00",
-            "high": "528.00",
-            "low": "492.00",
-            "close": "516.00",
-            "change": "35.50",
-            "volume_shares": 5840743
-          },
-          {
-            "trade_date": "2026-04-13",
-            "open": "510.00",
-            "high": "567.00",
-            "low": "502.00",
-            "close": "567.00",
-            "change": "51.00",
-            "volume_shares": 7310112
-          },
-          {
-            "trade_date": "2026-04-14",
-            "open": "586.00",
-            "high": "614.00",
-            "low": "555.00",
-            "close": "606.00",
-            "change": "39.00",
-            "volume_shares": 15339630
-          },
-          {
-            "trade_date": "2026-04-15",
-            "open": "630.00",
-            "high": "652.00",
-            "low": "586.00",
-            "close": "591.00",
-            "change": "-15.00",
-            "volume_shares": 10652549
-          },
-          {
-            "trade_date": "2026-04-16",
-            "open": "594.00",
-            "high": "596.00",
-            "low": "573.00",
-            "close": "586.00",
-            "change": "-5.00",
-            "volume_shares": 6458080
-          },
-          {
-            "trade_date": "2026-04-17",
-            "open": "593.00",
-            "high": "644.00",
-            "low": "591.00",
-            "close": "644.00",
-            "change": "58.00",
-            "volume_shares": 8284093
-          },
-          {
-            "trade_date": "2026-04-20",
-            "open": "670.00",
-            "high": "708.00",
-            "low": "656.00",
-            "close": "682.00",
-            "change": "38.00",
-            "volume_shares": 12331581
-          },
-          {
-            "trade_date": "2026-04-21",
-            "open": "725.00",
-            "high": "750.00",
-            "low": "707.00",
-            "close": "720.00",
-            "change": "38.00",
-            "volume_shares": 9624264
-          },
-          {
-            "trade_date": "2026-04-22",
-            "open": "788.00",
-            "high": "792.00",
-            "low": "787.00",
-            "close": "792.00",
-            "change": "72.00",
-            "volume_shares": 3886992
-          },
-          {
-            "trade_date": "2026-04-23",
-            "open": "852.00",
-            "high": "871.00",
-            "low": "713.00",
-            "close": "785.00",
-            "change": "-7.00",
-            "volume_shares": 27381645
-          },
-          {
-            "trade_date": "2026-04-24",
-            "open": "850.00",
-            "high": "863.00",
-            "low": "785.00",
-            "close": "788.00",
-            "change": "3.00",
-            "volume_shares": 14535765
-          },
-          {
-            "trade_date": "2026-04-27",
-            "open": "792.00",
-            "high": "793.00",
-            "low": "710.00",
-            "close": "753.00",
-            "change": "-35.00",
-            "volume_shares": 4828896
-          },
-          {
-            "trade_date": "2026-04-28",
-            "open": "788.00",
-            "high": "822.00",
-            "low": "775.00",
-            "close": "800.00",
-            "change": "47.00",
-            "volume_shares": 2982782
-          },
-          {
-            "trade_date": "2026-04-29",
-            "open": "810.00",
-            "high": "835.00",
-            "low": "781.00",
-            "close": "820.00",
-            "change": "20.00",
-            "volume_shares": 1826020
-          },
-          {
-            "trade_date": "2026-04-30",
-            "open": "877.00",
-            "high": "902.00",
-            "low": "840.00",
-            "close": "840.00",
-            "change": "20.00",
-            "volume_shares": 4175617
-          },
-          {
-            "trade_date": "2026-05-04",
-            "open": "906.00",
-            "high": "924.00",
-            "low": "886.00",
-            "close": "924.00",
-            "change": "84.00",
-            "volume_shares": 2344431
-          },
-          {
-            "trade_date": "2026-05-05",
-            "open": "930.00",
-            "high": "990.00",
-            "low": "924.00",
-            "close": "935.00",
-            "change": "11.00",
-            "volume_shares": 2454556
-          },
-          {
-            "trade_date": "2026-05-06",
-            "open": "949.00",
-            "high": "999.00",
-            "low": "905.00",
-            "close": "965.00",
-            "change": "30.00",
-            "volume_shares": 2775296
-          },
-          {
-            "trade_date": "2026-05-07",
-            "open": "986.00",
-            "high": "986.00",
-            "low": "925.00",
-            "close": "925.00",
-            "change": "-40.00",
-            "volume_shares": 1653422
-          },
-          {
-            "trade_date": "2026-05-08",
-            "open": "894.00",
-            "high": "894.00",
-            "low": "833.00",
-            "close": "875.00",
-            "change": "-50.00",
-            "volume_shares": 3479516
-          },
-          {
-            "trade_date": "2026-05-11",
-            "open": "875.00",
-            "high": "962.00",
-            "low": "875.00",
-            "close": "962.00",
-            "change": "87.00",
-            "volume_shares": 2885959
-          },
-          {
-            "trade_date": "2026-05-12",
-            "open": "973.00",
-            "high": "1055.00",
-            "low": "903.00",
-            "close": "1055.00",
-            "change": "93.00",
-            "volume_shares": 9459691
-          },
-          {
-            "trade_date": "2026-05-13",
-            "open": "1025.00",
-            "high": "1105.00",
-            "low": "980.00",
-            "close": "1040.00",
-            "change": "-15.00",
-            "volume_shares": 11577676
-          },
-          {
-            "trade_date": "2026-05-14",
-            "open": "1115.00",
-            "high": "1140.00",
-            "low": "1020.00",
-            "close": "1050.00",
-            "change": "10.00",
-            "volume_shares": 10450275
-          },
-          {
-            "trade_date": "2026-05-15",
-            "open": "1080.00",
-            "high": "1145.00",
-            "low": "1045.00",
-            "close": "1080.00",
-            "change": "30.00",
-            "volume_shares": 9491595
-          },
-          {
-            "trade_date": "2026-05-18",
-            "open": "1030.00",
-            "high": "1150.00",
-            "low": "995.00",
-            "close": "1135.00",
-            "change": "55.00",
-            "volume_shares": 7996123
-          },
-          {
-            "trade_date": "2026-05-19",
-            "open": "1095.00",
-            "high": "1100.00",
-            "low": "1025.00",
-            "close": "1025.00",
-            "change": "-110.00",
-            "volume_shares": 5976731
-          },
-          {
-            "trade_date": "2026-05-20",
-            "open": "1000.00",
-            "high": "1025.00",
-            "low": "953.00",
-            "close": "973.00",
-            "change": "-52.00",
-            "volume_shares": 7417516
-          },
-          {
-            "trade_date": "2026-05-21",
-            "open": "995.00",
-            "high": "1010.00",
-            "low": "876.00",
-            "close": "876.00",
-            "change": "-97.00",
-            "volume_shares": 17381719
-          },
-          {
-            "trade_date": "2026-05-22",
-            "open": "919.00",
-            "high": "963.00",
-            "low": "906.00",
-            "close": "963.00",
-            "change": "87.00",
-            "volume_shares": 8159956
-          },
-          {
-            "trade_date": "2026-05-25",
-            "open": "1010.00",
-            "high": "1055.00",
-            "low": "981.00",
-            "close": "1055.00",
-            "change": "92.00",
-            "volume_shares": 4567035
-          },
-          {
-            "trade_date": "2026-05-26",
-            "open": "1055.00",
-            "high": "1125.00",
-            "low": "1045.00",
-            "close": "1080.00",
-            "change": "25.00",
-            "volume_shares": 10066961
-          },
-          {
-            "trade_date": "2026-05-27",
-            "open": "1135.00",
-            "high": "1145.00",
-            "low": "1055.00",
-            "close": "1080.00",
-            "change": "0.00",
-            "volume_shares": 6994229
-          },
-          {
-            "trade_date": "2026-05-28",
-            "open": "1085.00",
-            "high": "1185.00",
-            "low": "1070.00",
-            "close": "1095.00",
-            "change": "15.00",
-            "volume_shares": 14735180
-          },
-          {
-            "trade_date": "2026-05-29",
-            "open": "1160.00",
-            "high": "1200.00",
-            "low": "1140.00",
-            "close": "1190.00",
-            "change": "95.00",
-            "volume_shares": 13570160
-          },
-          {
-            "trade_date": "2026-06-01",
-            "open": "1240.00",
-            "high": "1305.00",
-            "low": "1115.00",
-            "close": "1125.00",
-            "change": "-65.00",
-            "volume_shares": 11967569
-          },
-          {
-            "trade_date": "2026-06-02",
-            "open": "1140.00",
-            "high": "1155.00",
-            "low": "1045.00",
-            "close": "1075.00",
-            "change": "-50.00",
-            "volume_shares": 6639528
-          },
-          {
-            "trade_date": "2026-06-03",
-            "open": "1110.00",
-            "high": "1165.00",
-            "low": "1090.00",
-            "close": "1100.00",
-            "change": "25.00",
-            "volume_shares": 5331477
-          },
-          {
-            "trade_date": "2026-06-04",
-            "open": "1060.00",
-            "high": "1150.00",
-            "low": "1055.00",
-            "close": "1055.00",
-            "change": "-45.00",
-            "volume_shares": 4002822
-          },
-          {
-            "trade_date": "2026-06-05",
-            "open": "1030.00",
-            "high": "1055.00",
-            "low": "999.00",
-            "close": "1010.00",
-            "change": "-45.00",
-            "volume_shares": 5307163
-          },
-          {
-            "trade_date": "2026-06-08",
-            "open": "909.00",
-            "high": "909.00",
-            "low": "909.00",
-            "close": "909.00",
-            "change": "-101.00",
-            "volume_shares": 933349
-          },
-          {
-            "trade_date": "2026-06-09",
-            "open": "921.00",
-            "high": "966.00",
-            "low": "890.00",
-            "close": "963.00",
-            "change": "54.00",
-            "volume_shares": 5978058
-          },
-          {
-            "trade_date": "2026-06-10",
-            "open": "928.00",
-            "high": "989.00",
-            "low": "892.00",
-            "close": "894.00",
-            "change": "-69.00",
-            "volume_shares": 5662890
-          },
-          {
-            "trade_date": "2026-06-11",
-            "open": "893.00",
-            "high": "917.00",
-            "low": "846.00",
-            "close": "890.00",
-            "change": "-4.00",
-            "volume_shares": 5544297
-          },
-          {
-            "trade_date": "2026-06-12",
-            "open": "940.00",
-            "high": "974.00",
-            "low": "920.00",
-            "close": "932.00",
-            "change": "42.00",
-            "volume_shares": 4366481
-          },
-          {
-            "trade_date": "2026-06-15",
-            "open": "954.00",
-            "high": "969.00",
-            "low": "931.00",
-            "close": "931.00",
-            "change": "-1.00",
-            "volume_shares": 2772853
-          },
-          {
-            "trade_date": "2026-06-16",
-            "open": "945.00",
-            "high": "974.00",
-            "low": "920.00",
-            "close": "924.00",
-            "change": "-7.00",
-            "volume_shares": 3865709
-          },
-          {
-            "trade_date": "2026-06-17",
-            "open": "924.00",
-            "high": "953.00",
-            "low": "921.00",
-            "close": "933.00",
-            "change": "9.00",
-            "volume_shares": 2679540
-          },
-          {
-            "trade_date": "2026-06-18",
-            "open": "942.00",
-            "high": "1025.00",
-            "low": "942.00",
-            "close": "1025.00",
-            "change": "92.00",
-            "volume_shares": 5511532
-          },
-          {
-            "trade_date": "2026-06-22",
-            "open": "1115.00",
-            "high": "1115.00",
-            "low": "1070.00",
-            "close": "1115.00",
-            "change": "0.00",
-            "volume_shares": 5550124
-          },
-          {
-            "trade_date": "2026-06-23",
-            "open": "1135.00",
-            "high": "1210.00",
-            "low": "1040.00",
-            "close": "1050.00",
-            "change": "-65.00",
-            "volume_shares": 7925578
-          },
-          {
-            "trade_date": "2026-06-24",
-            "open": "1080.00",
-            "high": "1095.00",
-            "low": "1015.00",
-            "close": "1070.00",
-            "change": "20.00",
-            "volume_shares": 4954383
-          },
-          {
-            "trade_date": "2026-06-25",
-            "open": "1105.00",
-            "high": "1175.00",
-            "low": "1080.00",
-            "close": "1100.00",
-            "change": "30.00",
-            "volume_shares": 6587069
-          },
-          {
-            "trade_date": "2026-06-26",
-            "open": "1070.00",
-            "high": "1080.00",
-            "low": "990.00",
-            "close": "990.00",
-            "change": "-110.00",
-            "volume_shares": 4499042
-          },
-          {
-            "trade_date": "2026-06-29",
-            "open": "975.00",
-            "high": "1005.00",
-            "low": "954.00",
-            "close": "980.00",
-            "change": "-10.00",
-            "volume_shares": 3044513
-          },
-          {
-            "trade_date": "2026-06-30",
-            "open": "1010.00",
-            "high": "1030.00",
-            "low": "972.00",
-            "close": "998.00",
-            "change": "18.00",
-            "volume_shares": 3396035
-          },
-          {
-            "trade_date": "2026-07-01",
-            "open": "1020.00",
-            "high": "1030.00",
-            "low": "910.00",
-            "close": "961.00",
-            "change": "-37.00",
-            "volume_shares": 6973164
-          },
-          {
-            "trade_date": "2026-07-02",
-            "open": "929.00",
-            "high": "978.00",
-            "low": "921.00",
-            "close": "961.00",
-            "change": "0.00",
-            "volume_shares": 2667746
-          },
-          {
-            "trade_date": "2026-07-03",
-            "open": "951.00",
-            "high": "993.00",
-            "low": "949.00",
-            "close": "987.00",
-            "change": "26.00",
-            "volume_shares": 3742648
-          },
-          {
-            "trade_date": "2026-07-06",
-            "open": "1005.00",
-            "high": "1020.00",
-            "low": "954.00",
-            "close": "954.00",
-            "change": "-33.00",
-            "volume_shares": 3675138
-          },
-          {
-            "trade_date": "2026-07-07",
-            "open": "960.00",
-            "high": "969.00",
-            "low": "892.00",
-            "close": "895.00",
-            "change": "-59.00",
-            "volume_shares": 3294542
-          },
-          {
-            "trade_date": "2026-07-08",
-            "open": "908.00",
-            "high": "948.00",
-            "low": "894.00",
-            "close": "926.00",
-            "change": "31.00",
-            "volume_shares": 2916923
-          },
-          {
-            "trade_date": "2026-07-09",
-            "open": "926.00",
-            "high": "957.00",
-            "low": "914.00",
-            "close": "922.00",
-            "change": "-4.00",
-            "volume_shares": 3006479
-          },
-          {
-            "trade_date": "2026-07-13",
-            "open": "931.00",
-            "high": "947.00",
-            "low": "888.00",
-            "close": "893.00",
-            "change": "-29.00",
-            "volume_shares": 2260805
-          },
-          {
-            "trade_date": "2026-07-14",
-            "open": "899.00",
-            "high": "915.00",
-            "low": "814.00",
-            "close": "858.00",
-            "change": "-35.00",
-            "volume_shares": 3764323
-          },
-          {
-            "trade_date": "2026-07-15",
-            "open": "895.00",
-            "high": "943.00",
-            "low": "883.00",
-            "close": "943.00",
-            "change": "85.00",
-            "volume_shares": 2036006
-          },
-          {
-            "trade_date": "2026-07-16",
-            "open": "944.00",
-            "high": "958.00",
-            "low": "903.00",
-            "close": "909.00",
-            "change": "-34.00",
-            "volume_shares": 3720503
-          },
-          {
-            "trade_date": "2026-07-17",
-            "open": "863.00",
-            "high": "877.00",
-            "low": "819.00",
-            "close": "819.00",
-            "change": "-90.00",
-            "volume_shares": 3134508
-          },
-          {
-            "trade_date": "2026-07-20",
-            "open": "805.00",
-            "high": "820.00",
-            "low": "757.00",
-            "close": "780.00",
-            "change": "-39.00",
-            "volume_shares": 3373745
-          },
-          {
-            "trade_date": "2026-07-21",
-            "open": "810.00",
-            "high": "858.00",
-            "low": "805.00",
-            "close": "858.00",
-            "change": "78.00",
-            "volume_shares": 2388062
-          },
-          {
-            "trade_date": "2026-07-22",
-            "open": "900.00",
-            "high": "930.00",
-            "low": "899.00",
-            "close": "908.00",
-            "change": "50.00",
-            "volume_shares": 2632186
-          },
-          {
-            "trade_date": "2026-07-23",
-            "open": "925.00",
-            "high": "925.00",
-            "low": "865.00",
-            "close": "904.00",
-            "change": "-4.00",
-            "volume_shares": 2223208
-          },
-          {
-            "trade_date": "2026-07-24",
-            "open": "870.00",
-            "high": "910.00",
-            "low": "850.00",
-            "close": "858.00",
-            "change": "-46.00",
-            "volume_shares": 2231391
-          },
-          {
-            "trade_date": "2026-07-27",
-            "open": "823.00",
-            "high": "826.00",
-            "low": "773.00",
-            "close": "773.00",
-            "change": "-85.00",
-            "volume_shares": 4339503
-          },
-          {
-            "trade_date": "2026-07-28",
-            "open": "696.00",
-            "high": "696.00",
-            "low": "696.00",
-            "close": "696.00",
-            "change": "-77.00",
-            "volume_shares": 776945
-          },
-          {
-            "trade_date": "2026-07-29",
-            "open": "655.00",
-            "high": "666.00",
-            "low": "627.00",
-            "close": "627.00",
-            "change": "-69.00",
-            "volume_shares": 4299365
-          },
-          {
-            "trade_date": "2026-07-30",
-            "open": "570.00",
-            "high": "672.00",
-            "low": "570.00",
-            "close": "607.00",
-            "change": "-20.00",
-            "volume_shares": 9513602
-          },
-          {
-            "trade_date": "2026-07-31",
-            "open": "667.00",
-            "high": "667.00",
-            "low": "645.00",
-            "close": "667.00",
-            "change": "60.00",
-            "volume_shares": 5029523
-          },
-          {
-            "trade_date": "2026-08-03",
-            "open": "659.00",
-            "high": "733.00",
-            "low": "659.00",
-            "close": "733.00",
-            "change": "66.00",
-            "volume_shares": 1943978
-          },
-          {
-            "trade_date": "2026-08-04",
-            "open": "740.00",
-            "high": "806.00",
-            "low": "740.00",
-            "close": "806.00",
-            "change": "73.00",
-            "volume_shares": 1695350
-          },
-          {
-            "trade_date": "2026-08-05",
-            "open": "866.00",
-            "high": "880.00",
-            "low": "819.00",
-            "close": "855.00",
-            "change": "49.00",
-            "volume_shares": 2047212
-          },
-          {
-            "trade_date": "2026-08-06",
-            "open": "858.00",
-            "high": "908.00",
-            "low": "858.00",
-            "close": "900.00",
-            "change": "45.00",
-            "volume_shares": 1832858
-          },
-          {
-            "trade_date": "2026-08-07",
-            "open": "969.00",
-            "high": "975.00",
-            "low": "950.00",
-            "close": "951.00",
-            "change": "51.00",
-            "volume_shares": 2226625
-          },
-          {
-            "trade_date": "2026-08-10",
-            "open": "980.00",
-            "high": "1010.00",
-            "low": "915.00",
-            "close": "923.00",
-            "change": "-28.00",
-            "volume_shares": 5773012
-          },
-          {
-            "trade_date": "2026-08-11",
-            "open": "905.00",
-            "high": "920.00",
-            "low": "831.00",
-            "close": "831.00",
-            "change": "-92.00",
-            "volume_shares": 1368256
-          },
-          {
-            "trade_date": "2026-08-12",
-            "open": "831.00",
-            "high": "885.00",
-            "low": "828.00",
-            "close": "878.00",
-            "change": "47.00",
-            "volume_shares": 1349993
-          },
-          {
-            "trade_date": "2026-08-13",
-            "open": "880.00",
-            "high": "903.00",
-            "low": "860.00",
-            "close": "865.00",
-            "change": "-13.00",
-            "volume_shares": 918703
-          },
-          {
-            "trade_date": "2026-08-14",
-            "open": "882.00",
-            "high": "932.00",
-            "low": "870.00",
-            "close": "932.00",
-            "change": "67.00",
-            "volume_shares": 945306
-          },
-          {
-            "trade_date": "2026-08-17",
-            "open": "906.00",
-            "high": "927.00",
-            "low": "873.00",
-            "close": "873.00",
-            "change": "-59.00",
-            "volume_shares": 1236567
-          },
-          {
-            "trade_date": "2026-08-18",
-            "open": "893.00",
-            "high": "925.00",
-            "low": "847.00",
-            "close": "863.00",
-            "change": "-10.00",
-            "volume_shares": 7561123
-          },
-          {
-            "trade_date": "2026-08-19",
-            "open": "833.00",
-            "high": "870.00",
-            "low": "829.00",
-            "close": "837.00",
-            "change": "-26.00",
-            "volume_shares": 4111029
-          },
-          {
-            "trade_date": "2026-08-20",
-            "open": "854.00",
-            "high": "897.00",
-            "low": "854.00",
-            "close": "882.00",
-            "change": "45.00",
-            "volume_shares": 4544730
-          },
-          {
-            "trade_date": "2026-08-21",
-            "open": "885.00",
-            "high": "924.00",
-            "low": "870.00",
-            "close": "883.00",
-            "change": "1.00",
-            "volume_shares": 4142975
-          },
-          {
-            "trade_date": "2026-09-01",
-            "open": "936.00",
-            "high": "980.00",
-            "low": "923.00",
-            "close": "958.00",
-            "change": "31.00",
-            "volume_shares": 4604911
-          },
-          {
-            "trade_date": "2026-09-02",
-            "open": "950.00",
-            "high": "977.00",
-            "low": "920.00",
-            "close": "957.00",
-            "change": "-1.00",
-            "volume_shares": 3252360
-          },
-          {
-            "trade_date": "2026-09-03",
-            "open": "967.00",
-            "high": "995.00",
-            "low": "907.00",
-            "close": "912.00",
-            "change": "-45.00",
-            "volume_shares": 8083032
-          },
-          {
-            "trade_date": "2026-09-04",
-            "open": "942.00",
-            "high": "949.00",
-            "low": "901.00",
-            "close": "911.00",
-            "change": "-1.00",
-            "volume_shares": 2888036
-          },
-          {
-            "trade_date": "2026-09-07",
-            "open": "939.00",
-            "high": "968.00",
-            "low": "936.00",
-            "close": "960.00",
-            "change": "49.00",
-            "volume_shares": 2887072
-          },
-          {
-            "trade_date": "2026-09-08",
-            "open": "979.00",
-            "high": "979.00",
-            "low": "924.00",
-            "close": "931.00",
-            "change": "-29.00",
-            "volume_shares": 2388928
-          },
-          {
-            "trade_date": "2026-09-09",
-            "open": "941.00",
-            "high": "1015.00",
-            "low": "936.00",
-            "close": "999.00",
-            "change": "68.00",
-            "volume_shares": 5337019
-          },
-          {
-            "trade_date": "2026-09-10",
-            "open": "993.00",
-            "high": "1065.00",
-            "low": "991.00",
-            "close": "1030.00",
-            "change": "31.00",
-            "volume_shares": 6397932
-          },
-          {
-            "trade_date": "2026-09-11",
-            "open": "1005.00",
-            "high": "1015.00",
-            "low": "973.00",
-            "close": "988.00",
-            "change": "-42.00",
-            "volume_shares": 3956907
-          },
-          {
-            "trade_date": "2026-09-14",
-            "open": "957.00",
-            "high": "994.00",
-            "low": "933.00",
-            "close": "962.00",
-            "change": "-26.00",
-            "volume_shares": 2627923
-          },
-          {
-            "trade_date": "2026-09-15",
-            "open": "953.00",
-            "high": "964.00",
-            "low": "887.00",
-            "close": "890.00",
-            "change": "-72.00",
-            "volume_shares": 4824312
-          },
-          {
-            "trade_date": "2026-09-16",
-            "open": "905.00",
-            "high": "950.00",
-            "low": "898.00",
-            "close": "949.00",
-            "change": "59.00",
-            "volume_shares": 3297045
-          },
-          {
-            "trade_date": "2026-09-17",
-            "open": "950.00",
-            "high": "951.00",
-            "low": "915.00",
-            "close": "920.00",
-            "change": "-29.00",
-            "volume_shares": 3045428
-          },
-          {
-            "trade_date": "2026-09-18",
-            "open": "940.00",
-            "high": "969.00",
-            "low": "939.00",
-            "close": "968.00",
-            "change": "48.00",
-            "volume_shares": 2693087
-          },
-          {
-            "trade_date": "2026-09-21",
-            "open": "965.00",
-            "high": "975.00",
-            "low": "932.00",
-            "close": "948.00",
-            "change": "-20.00",
-            "volume_shares": 1894948
-          },
-          {
-            "trade_date": "2026-09-22",
-            "open": "969.00",
-            "high": "978.00",
-            "low": "934.00",
-            "close": "934.00",
-            "change": "-14.00",
-            "volume_shares": 1936612
-          },
-          {
-            "trade_date": "2026-09-23",
-            "open": "940.00",
-            "high": "999.00",
-            "low": "940.00",
-            "close": "987.00",
-            "change": "53.00",
-            "volume_shares": 3924896
-          },
-          {
-            "trade_date": "2026-09-24",
-            "open": "990.00",
-            "high": "1005.00",
-            "low": "951.00",
-            "close": "993.00",
-            "change": "6.00",
-            "volume_shares": 3109128
-          }
-        ],
-        "daily_fallback_applied": false,
-        "data_status": "actual"
-      },
-      {
-        "market": "TWSE",
         "stock_code": "8028",
         "stock_name": "昇陽半導體",
         "trade_date": "2026-09-24",
@@ -12062,6 +12059,85 @@
     "records": [
       {
         "market": "TPEx",
+        "stock_code": "3105",
+        "stock_name": "穩懋",
+        "trade_date": "2026-09-24",
+        "sitc_history": [
+          {
+            "trade_date": "2026-09-11",
+            "foreign_net_shares": -3001020,
+            "sitc_net_shares": 60000,
+            "missing": false,
+            "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F11"
+          },
+          {
+            "trade_date": "2026-09-14",
+            "foreign_net_shares": 2655117,
+            "sitc_net_shares": 24000,
+            "missing": false,
+            "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F14"
+          },
+          {
+            "trade_date": "2026-09-15",
+            "foreign_net_shares": 3170112,
+            "sitc_net_shares": 1866000,
+            "missing": false,
+            "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F15"
+          },
+          {
+            "trade_date": "2026-09-16",
+            "foreign_net_shares": 410378,
+            "sitc_net_shares": 26000,
+            "missing": false,
+            "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F16"
+          },
+          {
+            "trade_date": "2026-09-17",
+            "foreign_net_shares": -567889,
+            "sitc_net_shares": 1366200,
+            "missing": false,
+            "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F17"
+          },
+          {
+            "trade_date": "2026-09-18",
+            "foreign_net_shares": 8879551,
+            "sitc_net_shares": 235900,
+            "missing": false,
+            "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F18"
+          },
+          {
+            "trade_date": "2026-09-21",
+            "foreign_net_shares": -2854952,
+            "sitc_net_shares": 707000,
+            "missing": false,
+            "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F21"
+          },
+          {
+            "trade_date": "2026-09-22",
+            "foreign_net_shares": 6516699,
+            "sitc_net_shares": 282000,
+            "missing": false,
+            "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F22"
+          },
+          {
+            "trade_date": "2026-09-23",
+            "foreign_net_shares": -3921900,
+            "sitc_net_shares": 795000,
+            "missing": false,
+            "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F23"
+          },
+          {
+            "trade_date": "2026-09-24",
+            "foreign_net_shares": 3000536,
+            "sitc_net_shares": 434000,
+            "missing": false,
+            "source_url": "https://www.tpex.org.tw/www/zh-tw/insti/dailyTrade?type=Daily&sect=EW&date=2026%2F09%2F24"
+          }
+        ],
+        "history_count": 10
+      },
+      {
+        "market": "TPEx",
         "stock_code": "3324",
         "stock_name": "雙鴻",
         "trade_date": "2026-09-24",
@@ -12434,21 +12510,21 @@
           {
             "trade_date": "2026-09-22",
             "foreign_net_shares": -762733,
-            "sitc_net_shares": 420000,
+            "sitc_net_shares": 2487000,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260922&selectType=ALLBUT0999"
           },
           {
             "trade_date": "2026-09-23",
             "foreign_net_shares": 2398682,
-            "sitc_net_shares": 534100,
+            "sitc_net_shares": 1569100,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260923&selectType=ALLBUT0999"
           },
           {
             "trade_date": "2026-09-24",
             "foreign_net_shares": -16131,
-            "sitc_net_shares": 156000,
+            "sitc_net_shares": 974000,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260924&selectType=ALLBUT0999"
           }
@@ -12694,85 +12770,6 @@
       },
       {
         "market": "TWSE",
-        "stock_code": "6531",
-        "stock_name": "愛普*",
-        "trade_date": "2026-09-24",
-        "sitc_history": [
-          {
-            "trade_date": "2026-09-11",
-            "foreign_net_shares": -591330,
-            "sitc_net_shares": 211000,
-            "missing": false,
-            "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260911&selectType=ALLBUT0999"
-          },
-          {
-            "trade_date": "2026-09-14",
-            "foreign_net_shares": 353401,
-            "sitc_net_shares": -6000,
-            "missing": false,
-            "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260914&selectType=ALLBUT0999"
-          },
-          {
-            "trade_date": "2026-09-15",
-            "foreign_net_shares": -665198,
-            "sitc_net_shares": 0,
-            "missing": false,
-            "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260915&selectType=ALLBUT0999"
-          },
-          {
-            "trade_date": "2026-09-16",
-            "foreign_net_shares": 405547,
-            "sitc_net_shares": -8000,
-            "missing": false,
-            "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260916&selectType=ALLBUT0999"
-          },
-          {
-            "trade_date": "2026-09-17",
-            "foreign_net_shares": -531350,
-            "sitc_net_shares": 9000,
-            "missing": false,
-            "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260917&selectType=ALLBUT0999"
-          },
-          {
-            "trade_date": "2026-09-18",
-            "foreign_net_shares": 1042411,
-            "sitc_net_shares": -138000,
-            "missing": false,
-            "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260918&selectType=ALLBUT0999"
-          },
-          {
-            "trade_date": "2026-09-21",
-            "foreign_net_shares": -409732,
-            "sitc_net_shares": 52000,
-            "missing": false,
-            "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260921&selectType=ALLBUT0999"
-          },
-          {
-            "trade_date": "2026-09-22",
-            "foreign_net_shares": -108070,
-            "sitc_net_shares": 4000,
-            "missing": false,
-            "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260922&selectType=ALLBUT0999"
-          },
-          {
-            "trade_date": "2026-09-23",
-            "foreign_net_shares": 1032914,
-            "sitc_net_shares": 13400,
-            "missing": false,
-            "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260923&selectType=ALLBUT0999"
-          },
-          {
-            "trade_date": "2026-09-24",
-            "foreign_net_shares": -112308,
-            "sitc_net_shares": 66000,
-            "missing": false,
-            "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260924&selectType=ALLBUT0999"
-          }
-        ],
-        "history_count": 10
-      },
-      {
-        "market": "TWSE",
         "stock_code": "8028",
         "stock_name": "昇陽半導體",
         "trade_date": "2026-09-24",
@@ -12801,14 +12798,14 @@
           {
             "trade_date": "2026-09-16",
             "foreign_net_shares": -1447130,
-            "sitc_net_shares": -2000,
+            "sitc_net_shares": 1590000,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260916&selectType=ALLBUT0999"
           },
           {
             "trade_date": "2026-09-17",
             "foreign_net_shares": -1870975,
-            "sitc_net_shares": 390000,
+            "sitc_net_shares": 1971000,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260917&selectType=ALLBUT0999"
           },
@@ -12822,14 +12819,14 @@
           {
             "trade_date": "2026-09-21",
             "foreign_net_shares": -3620962,
-            "sitc_net_shares": -56000,
+            "sitc_net_shares": 2935000,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260921&selectType=ALLBUT0999"
           },
           {
             "trade_date": "2026-09-22",
             "foreign_net_shares": -3025665,
-            "sitc_net_shares": 0,
+            "sitc_net_shares": 3007000,
             "missing": false,
             "source_url": "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date=20260922&selectType=ALLBUT0999"
           },
