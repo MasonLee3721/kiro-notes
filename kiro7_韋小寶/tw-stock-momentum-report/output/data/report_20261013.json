@@ -2,7 +2,7 @@
   "scores": {
     "schema_version": "2.0",
     "trade_date": "2026-10-13",
-    "generated_at": "2026-10-13T09:35:18.612073+00:00",
+    "generated_at": "2026-10-13T13:16:25.523926+00:00",
     "data_status": "official_with_explicit_degradation",
     "warnings": [
       "期間累計買超比例不是實際投信持股比例"
@@ -20,7 +20,7 @@
         "stock_name": "長科*",
         "trade_date": "2026-10-13",
         "investment_ratio_pct": "0.4152705513418857112736538243",
-        "positive_ratio_rank": 5,
+        "positive_ratio_rank": 6,
         "volume_lots": "20900.241",
         "paid_in_capital_twd": 380185880,
         "sitc_buy_streak": 7,
@@ -64,7 +64,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.4152705513418857112736538243%",
-              "全市場正投本比排名5"
+              "全市場正投本比排名6"
             ]
           },
           "sitc_continuity": {
@@ -130,8 +130,8 @@
         "stock_code": "3406",
         "stock_name": "玉晶光",
         "trade_date": "2026-10-13",
-        "investment_ratio_pct": "0.4230858975332256140672708174",
-        "positive_ratio_rank": 4,
+        "investment_ratio_pct": "0.4190945211414027309156927908",
+        "positive_ratio_rank": 5,
         "volume_lots": "13744.467",
         "paid_in_capital_twd": 1127430630,
         "sitc_buy_streak": 9,
@@ -174,8 +174,8 @@
             "max": 25,
             "status": "actual",
             "reasons": [
-              "投本比0.4230858975332256140672708174%",
-              "全市場正投本比排名4"
+              "投本比0.4190945211414027309156927908%",
+              "全市場正投本比排名5"
             ]
           },
           "sitc_continuity": {
@@ -243,8 +243,8 @@
         "stock_code": "3008",
         "stock_name": "大立光",
         "trade_date": "2026-10-13",
-        "investment_ratio_pct": "0.4537524320767204459248012417",
-        "positive_ratio_rank": 3,
+        "investment_ratio_pct": "0.4538640544104747865905215804",
+        "positive_ratio_rank": 4,
         "volume_lots": "5415.934",
         "paid_in_capital_twd": 1307981970,
         "sitc_buy_streak": 7,
@@ -285,12 +285,12 @@
         "technical_error": null,
         "sections": {
           "investment_ratio": {
-            "score": 19,
+            "score": 17,
             "max": 25,
             "status": "actual",
             "reasons": [
-              "投本比0.4537524320767204459248012417%",
-              "全市場正投本比排名3"
+              "投本比0.4538640544104747865905215804%",
+              "全市場正投本比排名4"
             ]
           },
           "sitc_continuity": {
@@ -345,7 +345,7 @@
             ]
           }
         },
-        "total_score": 62,
+        "total_score": 60,
         "rating": "條件不足",
         "confidence": "中",
         "confidence_reason": "期間累計買超比例為估算",
@@ -357,7 +357,7 @@
         "stock_name": "欣銓",
         "trade_date": "2026-10-13",
         "investment_ratio_pct": "0.3925402822835721207918045164",
-        "positive_ratio_rank": 6,
+        "positive_ratio_rank": 7,
         "volume_lots": "22938.541",
         "paid_in_capital_twd": 4901700760,
         "sitc_buy_streak": 4,
@@ -401,7 +401,7 @@
             "status": "actual",
             "reasons": [
               "投本比0.3925402822835721207918045164%",
-              "全市場正投本比排名6"
+              "全市場正投本比排名7"
             ]
           },
           "sitc_continuity": {
@@ -572,10 +572,122 @@
       },
       {
         "market": "TWSE",
+        "stock_code": "3605",
+        "stock_name": "宏致",
+        "trade_date": "2026-10-13",
+        "investment_ratio_pct": "0.7434229929800044490129045737",
+        "positive_ratio_rank": 2,
+        "volume_lots": "42895.659",
+        "paid_in_capital_twd": 1752703390,
+        "sitc_buy_streak": 2,
+        "sitc_net_shares_3d_sum": 856000,
+        "foreign_net_shares_3d_sum": 2244580,
+        "cumulative_buy_ratio_estimated_pct": "0.4028063185294575142003918872",
+        "aggressive_passed": true,
+        "conservative_passed": false,
+        "technical": {
+          "trade_date": "2026-10-13",
+          "history_count": 120,
+          "close": "183.00",
+          "ma5": "172.80",
+          "ma10": "174.40",
+          "ma20": "157.625",
+          "ma5_up": true,
+          "ma10_up": true,
+          "ma20_up": true,
+          "bullish_alignment": false,
+          "close_above_ma5": true,
+          "close_above_ma10": true,
+          "close_above_ma20": true,
+          "red_candle": true,
+          "prior_20d_high": "188.50",
+          "distance_from_prior_20d_high_pct": "-2.917771883289124668435013263",
+          "close_breakout_prior_20d_high": false,
+          "volume_ratio_20d": "2.057476970599591814220310001",
+          "first_day_ignition": false,
+          "volume_surge_2x": true,
+          "long_upper_shadow": false,
+          "high_open_low_close": false,
+          "false_breakout": true,
+          "risk_flags": [
+            "假突破"
+          ]
+        },
+        "technical_status": "actual",
+        "technical_error": null,
+        "sections": {
+          "investment_ratio": {
+            "score": 21,
+            "max": 25,
+            "status": "actual",
+            "reasons": [
+              "投本比0.7434229929800044490129045737%",
+              "全市場正投本比排名2"
+            ]
+          },
+          "sitc_continuity": {
+            "score": 13,
+            "max": 20,
+            "status": "actual",
+            "reasons": [
+              "連買2日",
+              "近3日2日買超",
+              "買盤逐日加速"
+            ]
+          },
+          "chip_position": {
+            "score": 5,
+            "max": 15,
+            "status": "estimated",
+            "reasons": [
+              "期間累計買超比例（估算）0.4028063185294575142003918872%"
+            ]
+          },
+          "foreign_sync": {
+            "score": 3,
+            "max": 10,
+            "status": "actual",
+            "reasons": [
+              "近3日外資累計買超"
+            ]
+          },
+          "moving_averages": {
+            "score": 9,
+            "max": 15,
+            "status": "actual",
+            "reasons": [
+              "MA5向上",
+              "MA10向上",
+              "MA20向上",
+              "站上MA5",
+              "站上MA10",
+              "站上MA20"
+            ]
+          },
+          "breakout_volume": {
+            "score": 3,
+            "max": 15,
+            "status": "actual",
+            "reasons": [
+              "距前20日高點3%內",
+              "收紅K",
+              "量比介於0.8至2.5",
+              "假突破-6分"
+            ]
+          }
+        },
+        "total_score": 54,
+        "rating": "不列入",
+        "confidence": "中",
+        "confidence_reason": "期間累計買超比例為估算",
+        "trading_plan": null
+      },
+      {
+        "market": "TWSE",
         "stock_code": "8996",
         "stock_name": "高力",
         "trade_date": "2026-10-13",
-        "investment_ratio_pct": "0.5903646268403053096335731893",
+        "investment_ratio_pct": "1.034207598106114555100842888",
         "positive_ratio_rank": 1,
         "volume_lots": "7004.529",
         "paid_in_capital_twd": 935015370,
@@ -618,11 +730,11 @@
         "technical_error": null,
         "sections": {
           "investment_ratio": {
-            "score": 19,
+            "score": 23,
             "max": 25,
             "status": "actual",
             "reasons": [
-              "投本比0.5903646268403053096335731893%",
+              "投本比1.034207598106114555100842888%",
               "全市場正投本比排名1"
             ]
           },
@@ -679,7 +791,7 @@
             ]
           }
         },
-        "total_score": 47,
+        "total_score": 51,
         "rating": "不列入",
         "confidence": "中",
         "confidence_reason": "期間累計買超比例為估算",
@@ -690,8 +802,8 @@
         "stock_code": "3661",
         "stock_name": "世芯-KY",
         "trade_date": "2026-10-13",
-        "investment_ratio_pct": "0.1934995416378222963705256215",
-        "positive_ratio_rank": 24,
+        "investment_ratio_pct": "0.1938239720070354115979732093",
+        "positive_ratio_rank": 23,
         "volume_lots": "5721.514",
         "paid_in_capital_twd": 863051140,
         "sitc_buy_streak": 7,
@@ -736,8 +848,8 @@
             "max": 25,
             "status": "actual",
             "reasons": [
-              "投本比0.1934995416378222963705256215%",
-              "全市場正投本比排名24"
+              "投本比0.1938239720070354115979732093%",
+              "全市場正投本比排名23"
             ]
           },
           "sitc_continuity": {
@@ -786,118 +898,6 @@
           }
         },
         "total_score": 45,
-        "rating": "不列入",
-        "confidence": "中",
-        "confidence_reason": "期間累計買超比例為估算",
-        "trading_plan": null
-      },
-      {
-        "market": "TWSE",
-        "stock_code": "3605",
-        "stock_name": "宏致",
-        "trade_date": "2026-10-13",
-        "investment_ratio_pct": "0.2995372765268628823728126640",
-        "positive_ratio_rank": 11,
-        "volume_lots": "42895.659",
-        "paid_in_capital_twd": 1752703390,
-        "sitc_buy_streak": 2,
-        "sitc_net_shares_3d_sum": 856000,
-        "foreign_net_shares_3d_sum": 2244580,
-        "cumulative_buy_ratio_estimated_pct": "0.4028063185294575142003918872",
-        "aggressive_passed": true,
-        "conservative_passed": false,
-        "technical": {
-          "trade_date": "2026-10-13",
-          "history_count": 120,
-          "close": "183.00",
-          "ma5": "172.80",
-          "ma10": "174.40",
-          "ma20": "157.625",
-          "ma5_up": true,
-          "ma10_up": true,
-          "ma20_up": true,
-          "bullish_alignment": false,
-          "close_above_ma5": true,
-          "close_above_ma10": true,
-          "close_above_ma20": true,
-          "red_candle": true,
-          "prior_20d_high": "188.50",
-          "distance_from_prior_20d_high_pct": "-2.917771883289124668435013263",
-          "close_breakout_prior_20d_high": false,
-          "volume_ratio_20d": "2.057476970599591814220310001",
-          "first_day_ignition": false,
-          "volume_surge_2x": true,
-          "long_upper_shadow": false,
-          "high_open_low_close": false,
-          "false_breakout": true,
-          "risk_flags": [
-            "假突破"
-          ]
-        },
-        "technical_status": "actual",
-        "technical_error": null,
-        "sections": {
-          "investment_ratio": {
-            "score": 10,
-            "max": 25,
-            "status": "actual",
-            "reasons": [
-              "投本比0.2995372765268628823728126640%",
-              "全市場正投本比排名11"
-            ]
-          },
-          "sitc_continuity": {
-            "score": 13,
-            "max": 20,
-            "status": "actual",
-            "reasons": [
-              "連買2日",
-              "近3日2日買超",
-              "買盤逐日加速"
-            ]
-          },
-          "chip_position": {
-            "score": 5,
-            "max": 15,
-            "status": "estimated",
-            "reasons": [
-              "期間累計買超比例（估算）0.4028063185294575142003918872%"
-            ]
-          },
-          "foreign_sync": {
-            "score": 3,
-            "max": 10,
-            "status": "actual",
-            "reasons": [
-              "近3日外資累計買超"
-            ]
-          },
-          "moving_averages": {
-            "score": 9,
-            "max": 15,
-            "status": "actual",
-            "reasons": [
-              "MA5向上",
-              "MA10向上",
-              "MA20向上",
-              "站上MA5",
-              "站上MA10",
-              "站上MA20"
-            ]
-          },
-          "breakout_volume": {
-            "score": 3,
-            "max": 15,
-            "status": "actual",
-            "reasons": [
-              "距前20日高點3%內",
-              "收紅K",
-              "量比介於0.8至2.5",
-              "假突破-6分"
-            ]
-          }
-        },
-        "total_score": 43,
         "rating": "不列入",
         "confidence": "中",
         "confidence_reason": "期間累計買超比例為估算",
@@ -1122,7 +1122,7 @@
     "schema_version": "1.1",
     "trade_date": "2026-10-13",
     "requested_trading_days": 120,
-    "generated_at": "2026-10-13T09:35:18.433749+00:00",
+    "generated_at": "2026-10-13T13:16:25.339191+00:00",
     "requested_count": 10,
     "completed_count": 10,
     "failed_count": 0,
