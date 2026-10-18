@@ -1,24 +1,25 @@
 ---
 name: catalyst-analysis
-version: 1.1.0
+version: 1.2.0
 owner: suquan
 entrypoint: SKILL.md
 supported_platforms: [linux]
 required_tools: [bash]
 required_secrets: []
-network_access: false
-external_side_effects: false
-side_effects: []
-writes_to: []
-last_verified: 2026-10-05
-description: 執行台股個股催化劑分析 (Catalyst Analysis) 的標準三層 (Layer 1-3) 評估架構知識庫。當使用者詢問或輸入「催化劑分析」、「Catalyst」、「個股戰略研報」、「Layer 1-3 分析」、「反共識推理」、「技術點位對照」或要求對指定個股進行深度評估時自動觸發。
+network_access: true
+external_side_effects: true
+side_effects: [git_commit, git_push]
+writes_to: ["notes/uanalyze/", "notes/market-catalyst/"]
+last_verified: 2026-10-18
+description: 執行台股個股催化劑分析 (Catalyst Analysis) 的標準三層 (Layer 1-3) 評估架構知識庫與自動化執行腳本。當使用者詢問或輸入「催化劑分析」、「Catalyst」、「個股戰略研報」、「Layer 1-3 分析」、「反共識推理」、「技術點位對照」或要求對指定個股進行深度評估時自動觸發。
 ---
 
-
-# 台股催化劑分析知識庫 (Catalyst Analysis Knowledge Base)
+# 台股催化劑分析知識庫與執行管線 (Catalyst Analysis Knowledge Base & Pipeline)
 
 ## 一、技能簡介
-本技能定義台股個股 **Layer 1 (基礎數據事實)**、**Layer 2 (市場共識與多空論述)** 及 **Layer 3 (反共識推理與戰略決策)** 的純知識評估標準，包含 **技術面點位與最新收盤價對照 SOP** 及 **防數據幻覺實聯網校驗條款**。
+本技能定義台股個股 **Layer 1 (基礎數據事實)**、**Layer 2 (市場共識與多空論述)** 及 **Layer 3 (反共識推理與戰略決策)** 的評估標準與自動化執行程式庫，內含 **技術面點位與最新收盤價對照 SOP**、**防數據幻覺 TWSE 實聯網校驗條款** 及 **三順位協同自動化 Script**。
+
+---
 
 ## 二、三層分析架構說明
 
@@ -40,4 +41,50 @@ description: 執行台股個股催化劑分析 (Catalyst Analysis) 的標準三�
     3. **估值與點位安全邊際比對**：計算最新收盤價對應 2026/2027 年 EPS 之預估 PE 倍數，劃定便宜/合理/昂貴價區間。
     4. **戰術點位標示**：報告中必須明確給出「建倉區間」、「拉回 MA20/MA60 加碼點位」與「硬性停損點」。未對照最新技術點位前，禁止給予無條件「強力買進」結論。
 
+---
 
+## 三、執行腳本與程式庫清單 (Scripts Directory)
+
+本 Skill 目錄內附帶端到端自動化執行程式 (`scripts/`)，由三大核心角色分工調用：
+
+```
+.agents/skills/catalyst-analysis/
+├── SKILL.md
+└── scripts/
+    ├── run_catalyst_pipeline.sh        # 一鍵端到端主調度腳本
+    ├── step1_uanalyze/                 # 第一順位：沐劍屏
+    │   ├── run_step1_fetch.sh          # 實聯網與優分析數據抓取
+    │   ├── uanalyze_basic.js           # 5 大屬性評分與 5 步驟拆解
+    │   ├── uanalyze_advance.js         # 17 主題 Full Raw Text 自動抓取
+    │   ├── setup_env.sh                # Node.js 與 Playwright 環境
+    │   └── setup_playwright_libs.sh    # 底層動態庫配置
+    ├── step2_layer1/                   # 第二順位：曾柔
+    │   └── run_step2_layer1.sh         # Layer 1 事實數據與技術面事實對照表整理
+    └── step3_synthesis/                # 第三順位：蘇荃
+        ├── run_step3_synthesis.sh      # Layer 1-3 戰略總研報合成
+        └── publish_catalyst.sh         # GitHub 遠端庫自動 Commit & Push
+```
+
+---
+
+## 四、指令執行範例
+
+### 1. 一鍵全自動流水線執行
+```bash
+bash .agents/skills/catalyst-analysis/scripts/run_catalyst_pipeline.sh 2313 華通 20261016
+```
+
+### 2. 角色分工單步執行
+- **沐劍屏 (<@1496877381171023973>)**：
+  ```bash
+  bash .agents/skills/catalyst-analysis/scripts/step1_uanalyze/run_step1_fetch.sh 2313 華通 20261016
+  ```
+- **曾柔 (<@1496877634536214620>)**：
+  ```bash
+  bash .agents/skills/catalyst-analysis/scripts/step2_layer1/run_step2_layer1.sh 2313 華通 20261016
+  ```
+- **蘇荃 (<@1490606333211443251>)**：
+  ```bash
+  bash .agents/skills/catalyst-analysis/scripts/step3_synthesis/run_step3_synthesis.sh 2313 華通 20261016
+  bash .agents/skills/catalyst-analysis/scripts/step3_synthesis/publish_catalyst.sh 2313 華通 20261016
+  ```
