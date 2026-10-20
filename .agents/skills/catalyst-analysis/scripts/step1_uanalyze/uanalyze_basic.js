@@ -12,7 +12,7 @@
  *   v1.0.0 - 基本 guides + EPS API
  */
 
-const { chromium } = require('/home/agent/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require('/tmp/agent_skills/kiro/kiro5_劍屏/stock-analysis-reports/skills/node_modules/playwright');
 const fs = require('fs');
 const { execSync } = require('child_process');
 
