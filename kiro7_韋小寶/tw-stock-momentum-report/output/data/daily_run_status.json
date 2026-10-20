@@ -1,6 +1,6 @@
 {
-  "status": "completed",
-  "completed_at": "2026-10-19T16:53:40.636352+00:00",
+  "status": "publish_pending",
+  "screen_completed_at": "2026-10-20T09:31:37.370888+00:00",
   "attempts_used": 1,
-  "log_path": "output/logs/daily_20261019T164736Z.log"
+  "log_path": "output/logs/daily_20261020T093028Z.log"
 }
