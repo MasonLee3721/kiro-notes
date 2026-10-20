@@ -135,6 +135,7 @@ async function run() {
             if (step.metadata?.ref) step.metadata.ref.forEach(r => { if (r.content) report += r.content + '\n\n'; });
             if (step.metadata?.why) report += `> **為什麼看這個？** ${step.metadata.why}\n\n`;
             if (step.metadata?.guide) report += `> **指引：** ${step.metadata.guide}\n\n`;
+            if (step.description) report += `> ${step.description}\n\n`;
           });
           report += `---\n\n`;
         });
