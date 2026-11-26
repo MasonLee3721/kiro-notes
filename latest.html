@@ -3,157 +3,987 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ 台股動能量價與法人籌碼每日報告 (tw-stock-momentum-report)</title>
+    <title>J Law 動能收斂 × 法人籌碼選股雷達 | MasonLee</title>
     <style>
+        :root {
+            --bg-base: #0a0e17;
+            --bg-card: #131b2e;
+            --bg-card-hover: #1c2742;
+            --border-color: #233152;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent-cyan: #06b6d4;
+            --accent-emerald: #10b981;
+            --accent-rose: #f43f5e;
+            --accent-amber: #f59e0b;
+            --accent-violet: #8b5cf6;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background-color: #050811;
-            color: #f8fafc;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            line-height: 1.5;
+            padding: 24px;
         }
+        .container { max-width: 1440px; margin: 0 auto; }
         .header {
-            text-align: center;
-            padding: 25px 0;
-            border-bottom: 1px solid #1e293b;
-            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
         }
-        .header h1 {
-            color: #facc15;
-            margin: 0 0 10px 0;
-            font-size: 28px;
-        }
-        .header p {
-            color: #94a3b8;
-            margin: 0;
-            font-size: 14px;
-        }
-        .badge {
-            display: inline-block;
-            background-color: #0284c7;
-            color: #ffffff;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-top: 12px;
-        }
-        .section-container {
-            max-width: 1100px;
-            margin: 0 auto 40px auto;
-        }
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
+        .header-title h1 {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: flex;
             align-items: center;
             gap: 10px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #1e293b;
         }
-        .title-momentum { color: #facc15; border-color: #facc15; }
-        .title-sitc { color: #ff334b; border-color: #ff334b; }
+        .header-title p { color: var(--text-muted); font-size: 14px; margin-top: 4px; }
+        .header-meta { text-align: right; font-size: 13px; color: var(--text-muted); }
+        .regime-box {
+            background: rgba(19, 27, 46, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .regime-info { display: flex; align-items: center; gap: 12px; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            transition: all 0.2s ease;
+        }
+        .stat-card:hover { border-color: var(--accent-cyan); background: var(--bg-card-hover); }
+        .stat-label { font-size: 13px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+        .stat-val { font-size: 28px; font-weight: 800; margin-top: 6px; }
+        .stat-desc { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Tabs & Controls */
+        .controls-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tab-btn:hover { color: var(--text-main); border-color: var(--accent-cyan); }
+        .tab-btn.active {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+        .search-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            width: 260px;
+        }
+        .search-input:focus { border-color: var(--accent-cyan); }
+
+        /* Table */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+        }
         table {
             width: 100%;
             border-collapse: collapse;
-            background-color: #0f172a;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #1e293b;
-            margin-bottom: 25px;
+            font-size: 13.5px;
+            text-align: left;
         }
         th {
-            background-color: #1e293b;
-            color: #facc15;
-            padding: 12px 15px;
-            text-align: left;
-            font-size: 14px;
+            background: #0f1626;
+            color: var(--text-muted);
+            font-weight: 700;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
         }
         td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #1e293b;
-            font-size: 14px;
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(35, 49, 82, 0.5);
+            white-space: nowrap;
         }
-        tr:hover {
-            background-color: #1e293b;
+        tr:hover td { background: rgba(28, 39, 66, 0.6); }
+        .code-pill {
+            background: #1e293b;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-family: monospace;
+            color: #38bdf8;
         }
-        .buy-val { color: #ff334b; font-weight: bold; }
-        .foreign-val { color: #38bdf8; font-weight: bold; }
-        .sitc-val { color: #facc15; font-weight: bold; }
-        .score-val { color: #facc15; font-weight: bold; font-size: 15px; }
+        .name-text { font-weight: 700; margin-left: 6px; }
+        .market-tag {
+            font-size: 11px;
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 2px 5px;
+            border-radius: 4px;
+            margin-left: 4px;
+        }
+        .bull { color: #34d399; font-weight: 700; }
+        .bear { color: #f87171; font-weight: 700; }
+        .flat { color: #94a3b8; }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .badge.bull { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+        .badge.bear { background: rgba(248, 113, 113, 0.15); color: #f87171; }
+        .badge-contract { background: rgba(6, 182, 212, 0.15); color: #06b6d4; }
+        .badge-expand { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+        .badge-neutral { background: #1e293b; color: #94a3b8; }
+        .badge-bull { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981; }
+        .badge-bear { background: rgba(244, 63, 94, 0.2); color: #f43f5e; border: 1px solid #f43f5e; }
+        .text-pivot { color: #f59e0b; font-weight: 700; font-family: monospace; }
+        .text-stop { color: #f43f5e; font-size: 12px; }
+        .text-target { color: #10b981; font-size: 12px; }
+        .desc-text { font-size: 12px; color: #cbd5e1; }
+        .empty-state { text-align: center; padding: 48px; color: var(--text-muted); font-size: 15px; }
+        .footer {
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* Mobile Responsive Enhancements */
+        @media (max-width: 768px) {
+            body { padding: 12px; }
+            .header { flex-direction: column; align-items: flex-start; gap: 10px; padding-bottom: 16px; margin-bottom: 16px; }
+            .header-title h1 { font-size: 20px; }
+            .header-meta { text-align: left; }
+            .regime-box { padding: 12px 14px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .stat-card { padding: 12px; }
+            .stat-val { font-size: 22px; }
+            .controls-bar { flex-direction: column; align-items: stretch; gap: 12px; }
+            .tabs { width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+            .tab-btn { justify-content: center; padding: 8px 10px; font-size: 12.5px; }
+            .search-input { width: 100%; }
+            th, td { padding: 10px 12px; font-size: 12px; }
+            .table-wrap { -webkit-overflow-scrolling: touch; }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>⚡ 台股動能量價與法人籌碼每日報告 (tw-stock-momentum-report)</h1>
-        <p>100% 台灣證券交易所 (TWSE) 官方 API | 高階動能評分選股系統</p>
-        <div class="badge">最新交易日：2026/08/21 盤後即時</div>
-    </div>
-    
-    <div class="section-container">
-        <div class="section-title title-momentum">🚀 全市場法人籌碼動能強勢 TOP 15 (2026/08/21)</div>
-        <table>
-            <thead>
-                <tr>
-                    <th>名次</th>
-                    <th>代號</th>
-                    <th>股票名稱</th>
-                    <th>投信買超 (張 / %)</th>
-                    <th>外資買超 (張 / %)</th>
-                    <th>動能綜合評分</th>
-                </tr>
-            </thead>
-            <tbody>
-<tr><td>1</td><td><b>2484</b></td><td><b>希華</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+438,4張 (+3.03%)</td><td class="score-val">🔥 4.55</td></tr>
-<tr><td>2</td><td><b>2451</b></td><td><b>創見</b></td><td class="sitc-val">9-張 (-0.00%)</td><td class="foreign-val">+541,9張 (+2.12%)</td><td class="score-val">🔥 3.17</td></tr>
-<tr><td>3</td><td><b>2426</b></td><td><b>鼎元</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+272,6張 (+2.09%)</td><td class="score-val">🔥 3.13</td></tr>
-<tr><td>4</td><td><b>3450</b></td><td><b>聯鈞</b></td><td class="sitc-val">+419張 (+0.63%)</td><td class="foreign-val">+104張 (+0.28%)</td><td class="score-val">🔥 2.30</td></tr>
-<tr><td>5</td><td><b>4967</b></td><td><b>十銓</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+252,1張 (+1.47%)</td><td class="score-val">🔥 2.21</td></tr>
-<tr><td>6</td><td><b>2455</b></td><td><b>全新</b></td><td class="sitc-val">+215,1張 (+0.82%)</td><td class="foreign-val">200,1-張 (-0.54%)</td><td class="score-val">🔥 1.64</td></tr>
-<tr><td>7</td><td><b>2609</b></td><td><b>陽明</b></td><td class="sitc-val">+7張 (+0.00%)</td><td class="foreign-val">+851,73張 (+1.06%)</td><td class="score-val">🔥 1.60</td></tr>
-<tr><td>8</td><td><b>6919</b></td><td><b>康霈*</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+808張 (+1.04%)</td><td class="score-val">🔥 1.56</td></tr>
-<tr><td>9</td><td><b>1709</b></td><td><b>和益</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+583,3張 (+0.71%)</td><td class="score-val">🔥 1.06</td></tr>
-<tr><td>10</td><td><b>1402</b></td><td><b>遠東新</b></td><td class="sitc-val">+011,11張 (+0.21%)</td><td class="foreign-val">+090,51張 (+0.28%)</td><td class="score-val">🔥 1.05</td></tr>
-<tr><td>11</td><td><b>6278</b></td><td><b>台表科</b></td><td class="sitc-val">+158,2張 (+0.98%)</td><td class="foreign-val">087,3-張 (-1.29%)</td><td class="score-val">🔥 0.99</td></tr>
-<tr><td>12</td><td><b>2615</b></td><td><b>萬海</b></td><td class="sitc-val">+928張 (+0.03%)</td><td class="foreign-val">+832,61張 (+0.58%)</td><td class="score-val">🔥 0.96</td></tr>
-<tr><td>13</td><td><b>6213</b></td><td><b>聯茂</b></td><td class="sitc-val">+131張 (+0.04%)</td><td class="foreign-val">+930,2張 (+0.56%)</td><td class="score-val">🔥 0.95</td></tr>
-<tr><td>14</td><td><b>4956</b></td><td><b>光鋐</b></td><td class="sitc-val">+0張 (+0.00%)</td><td class="foreign-val">+026張 (+0.62%)</td><td class="score-val">🔥 0.93</td></tr>
-<tr><td>15</td><td><b>6531</b></td><td><b>愛普*</b></td><td class="sitc-val">+622張 (+0.28%)</td><td class="foreign-val">+73張 (+0.05%)</td><td class="score-val">🔥 0.90</td></tr>
-            </tbody>
-        </table>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-title">
+                <h1>⚡ J Law 動能收斂 × 法人籌碼選股雷達</h1>
+                <p>結合美股冠軍 J Law METS / VCP 波動收窄戰法 與 TWSE/TPEx 官方投本比數據</p>
+            </div>
+            <div class="header-meta">
+                <div>交易日期：<strong>20261126</strong></div>
+                <div>產生時間：2026-11-26 15:00:22</div>
+                <div>全市場掃描：<strong>1,975</strong> 檔標的</div>
+            </div>
+        </header>
+
+        <!-- Market Regime Indicator -->
+        <div class="regime-box">
+            <div class="regime-info">
+                <span style="font-weight: 700; font-size: 15px;">大盤多空水溫計 (Market Regime)：</span>
+                <span class="badge badge-bear" style="font-size: 14px; padding: 4px 12px;">DEFENSIVE</span>
+                <span style="color: var(--text-muted); font-size: 14px;">防禦減風控 (下跌家數居多，大盤偏弱，收緊停損與進場門檻)</span>
+            </div>
+            <div style="font-size: 13px; color: var(--accent-cyan); font-weight: 600;">
+                核心心法：先想怎麼輸，才能真的贏。嚴格控制 1% 帳戶風險。
+            </div>
+        </div>
+
+        <!-- Metric Stat Cards -->
+        <div class="stats-grid">
+            <div class="stat-card" style="border-top: 3px solid #10b981;">
+                <div class="stat-label">⚡ 板機發動 (TRIGGER)</div>
+                <div class="stat-val" style="color: #10b981;">1 <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">檔</span></div>
+                <div class="stat-desc">VCP收斂完成 + 帶量突破關鍵樞紐Pivot</div>
+            </div>
+            <div class="stat-card" style="border-top: 3px solid #06b6d4;">
+                <div class="stat-label">👀 沉澱觀察池 (WATCHING)</div>
+                <div class="stat-val" style="color: #06b6d4;">0 <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">檔</span></div>
+                <div class="stat-desc">守住短均線 + 極致量縮浮額洗淨 + 波動收窄</div>
+            </div>
+            <div class="stat-card" style="border-top: 3px solid #8b5cf6;">
+                <div class="stat-label">🔥 籌碼燃料池 (FUEL)</div>
+                <div class="stat-val" style="color: #8b5cf6;">16 <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">檔</span></div>
+                <div class="stat-desc">投本比集中大買 / 外資投信法人同買</div>
+            </div>
+            <div class="stat-card" style="border-top: 3px solid #f43f5e;">
+                <div class="stat-label">⚠️ 結帳警戒池 (EXIT)</div>
+                <div class="stat-val" style="color: #f43f5e;">23 <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">檔</span></div>
+                <div class="stat-desc">投賣比劇烈擴大 / 主力出貨獲利了結</div>
+            </div>
+        </div>
+
+        <!-- Controls & Tabs -->
+        <div class="controls-bar">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('trigger', this)">
+                    ⚡ 板機發動 (1)
+                </button>
+                <button class="tab-btn" onclick="switchTab('watching', this)">
+                    👀 沉澱觀察池 (0)
+                </button>
+                <button class="tab-btn" onclick="switchTab('fuel', this)">
+                    🔥 籌碼燃料池 (16)
+                </button>
+                <button class="tab-btn" onclick="switchTab('exit', this)">
+                    ⚠️ 結帳警戒池 (23)
+                </button>
+            </div>
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜尋代號、名稱、市場..." onkeyup="filterTable()">
+        </div>
+
+        <!-- Tab 1: TRIGGER -->
+        <div id="tab-trigger" class="tab-content active">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>名次</th>
+                            <th>證券名稱</th>
+                            <th>收盤價</th>
+                            <th>漲跌幅</th>
+                            <th>投信買超(投本比)</th>
+                            <th>外資買超</th>
+                            <th>量縮比 / 5日振幅</th>
+                            <th>樞紐突破位(Pivot)</th>
+                            <th>防守停損 / 目標價</th>
+                            <th>狀態解讀與操作指引</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr class="stock-row" data-search="8299 群聯 TPEx">
+                <td class="col-rank">1</td>
+                <td class="col-code"><span class="code-pill">8299</span> <span class="name-text">群聯</span> <span class="market-tag">TPEx</span></td>
+                <td class="col-price"><span class="bull">$1630.00</span></td>
+                <td class="col-pct"><span class="badge bull">+9.76%</span></td>
+                <td class="col-sitc"><span class="bull">1,692張 (+0.76%)</span></td>
+                <td class="col-foreign">-1,236張</td>
+                <td class="col-vcp"><span class="badge badge-expand">1.21x</span> / 22.7%</td>
+                <td class="col-pivot"><span class="text-pivot">$1595.0</span></td>
+                <td class="col-risk"><span class="text-stop">$1556.81 (-4.49%)</span> <span class="text-target">/ $1812.97</span></td>
+                <td class="col-desc"><span class="desc-text">帶量突破關鍵樞紐 1595.0元，VCP形態完成發動</span></td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 2: WATCHING -->
+        <div id="tab-watching" class="tab-content">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>名次</th>
+                            <th>證券名稱</th>
+                            <th>收盤價</th>
+                            <th>漲跌幅</th>
+                            <th>投信買超(投本比)</th>
+                            <th>外資買超</th>
+                            <th>量縮比 / 5日振幅</th>
+                            <th>關鍵樞紐(Pivot)</th>
+                            <th>防守底線 / 目標價</th>
+                            <th>狀態解讀與操作指引</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="10" class="empty-state">目前無符合條件之標的</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 3: FUEL -->
+        <div id="tab-fuel" class="tab-content">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>名次</th>
+                            <th>證券名稱</th>
+                            <th>收盤價</th>
+                            <th>漲跌幅</th>
+                            <th>投信買超(投本比)</th>
+                            <th>外資買超</th>
+                            <th>成交量(張)</th>
+                            <th>發行張數</th>
+                            <th>法人同買</th>
+                            <th>狀態解讀與操作指引</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr class="stock-row" data-search="1560 中砂 TWSE">
+                <td class="col-rank">1</td>
+                <td class="col-code"><span class="code-pill">1560</span> <span class="name-text">中砂</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$581.00</span></td>
+                <td class="col-pct"><span class="badge bear">-4.44%</span></td>
+                <td class="col-sitc"><span class="bull">1,009張 (+0.67%)</span></td>
+                <td class="col-foreign">-1,156張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.671%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="3665 貿聯-KY TWSE">
+                <td class="col-rank">2</td>
+                <td class="col-code"><span class="code-pill">3665</span> <span class="name-text">貿聯-KY</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bull">$1630.00</span></td>
+                <td class="col-pct"><span class="badge bull">+3.82%</span></td>
+                <td class="col-sitc"><span class="bull">1,140張 (+0.57%)</span></td>
+                <td class="col-foreign">-946張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.571%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="8028 昇陽半導體 TWSE">
+                <td class="col-rank">3</td>
+                <td class="col-code"><span class="code-pill">8028</span> <span class="name-text">昇陽半導體</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$140.50</span></td>
+                <td class="col-pct"><span class="badge bear">-6.02%</span></td>
+                <td class="col-sitc"><span class="bull">1,041張 (+0.57%)</span></td>
+                <td class="col-foreign">-1,188張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.567%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2368 金像電 TWSE">
+                <td class="col-rank">4</td>
+                <td class="col-code"><span class="code-pill">2368</span> <span class="name-text">金像電</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bull">$905.00</span></td>
+                <td class="col-pct"><span class="badge bull">+5.23%</span></td>
+                <td class="col-sitc"><span class="bull">2,821張 (+0.53%)</span></td>
+                <td class="col-foreign">-2,668張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.532%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="6223 旺矽 TPEx">
+                <td class="col-rank">5</td>
+                <td class="col-code"><span class="code-pill">6223</span> <span class="name-text">旺矽</span> <span class="market-tag">TPEx</span></td>
+                <td class="col-price"><span class="bull">$4115.00</span></td>
+                <td class="col-pct"><span class="badge bull">+9.15%</span></td>
+                <td class="col-sitc"><span class="bull">313張 (+0.32%)</span></td>
+                <td class="col-foreign">-139張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.32%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="6805 富世達 TWSE">
+                <td class="col-rank">6</td>
+                <td class="col-code"><span class="code-pill">6805</span> <span class="name-text">富世達</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$1535.00</span></td>
+                <td class="col-pct"><span class="badge bear">-4.06%</span></td>
+                <td class="col-sitc"><span class="bull">199張 (+0.29%)</span></td>
+                <td class="col-foreign">-32張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.29%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="3044 健鼎 TWSE">
+                <td class="col-rank">7</td>
+                <td class="col-code"><span class="code-pill">3044</span> <span class="name-text">健鼎</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$452.00</span></td>
+                <td class="col-pct"><span class="badge bear">-7.09%</span></td>
+                <td class="col-sitc"><span class="bull">1,441張 (+0.27%)</span></td>
+                <td class="col-foreign">-1,103張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.274%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2412 中華電 TWSE">
+                <td class="col-rank">8</td>
+                <td class="col-code"><span class="code-pill">2412</span> <span class="name-text">中華電</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$163.50</span></td>
+                <td class="col-pct"><span class="badge bear">-0.61%</span></td>
+                <td class="col-sitc"><span class="bull">20,673張 (+0.27%)</span></td>
+                <td class="col-foreign">-14,539張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.266%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2890 永豐金 TWSE">
+                <td class="col-rank">9</td>
+                <td class="col-code"><span class="code-pill">2890</span> <span class="name-text">永豐金</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$36.35</span></td>
+                <td class="col-pct"><span class="badge bear">-9.91%</span></td>
+                <td class="col-sitc"><span class="bull">34,151張 (+0.23%)</span></td>
+                <td class="col-foreign">-52,703張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.231%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2383 台光電 TWSE">
+                <td class="col-rank">10</td>
+                <td class="col-code"><span class="code-pill">2383</span> <span class="name-text">台光電</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$3355.00</span></td>
+                <td class="col-pct"><span class="badge bear">-1.18%</span></td>
+                <td class="col-sitc"><span class="bull">783張 (+0.22%)</span></td>
+                <td class="col-foreign">-2,289張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.219%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2892 第一金 TWSE">
+                <td class="col-rank">11</td>
+                <td class="col-code"><span class="code-pill">2892</span> <span class="name-text">第一金</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$36.95</span></td>
+                <td class="col-pct"><span class="badge bear">-7.16%</span></td>
+                <td class="col-sitc"><span class="bull">29,799張 (+0.21%)</span></td>
+                <td class="col-foreign">-33,653張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.207%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2886 兆豐金 TWSE">
+                <td class="col-rank">12</td>
+                <td class="col-code"><span class="code-pill">2886</span> <span class="name-text">兆豐金</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$49.70</span></td>
+                <td class="col-pct"><span class="badge bear">-9.64%</span></td>
+                <td class="col-sitc"><span class="bull">30,606張 (+0.21%)</span></td>
+                <td class="col-foreign">-46,479張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.206%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="6515 穎崴 TWSE">
+                <td class="col-rank">13</td>
+                <td class="col-code"><span class="code-pill">6515</span> <span class="name-text">穎崴</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$3015.00</span></td>
+                <td class="col-pct"><span class="badge bear">-6.37%</span></td>
+                <td class="col-sitc"><span class="bull">75張 (+0.21%)</span></td>
+                <td class="col-foreign">-143張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.206%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="4958 臻鼎-KY TWSE">
+                <td class="col-rank">14</td>
+                <td class="col-code"><span class="code-pill">4958</span> <span class="name-text">臻鼎-KY</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$328.50</span></td>
+                <td class="col-pct"><span class="badge bear">-9.88%</span></td>
+                <td class="col-sitc"><span class="bull">1,944張 (+0.17%)</span></td>
+                <td class="col-foreign">89張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.171%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="3017 奇鋐 TWSE">
+                <td class="col-rank">15</td>
+                <td class="col-code"><span class="code-pill">3017</span> <span class="name-text">奇鋐</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$2545.00</span></td>
+                <td class="col-pct"><span class="badge bear">-2.12%</span></td>
+                <td class="col-sitc"><span class="bull">475張 (+0.12%)</span></td>
+                <td class="col-foreign">53張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.121%)</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="3563 牧德 TWSE">
+                <td class="col-rank">16</td>
+                <td class="col-code"><span class="code-pill">3563</span> <span class="name-text">牧德</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$487.00</span></td>
+                <td class="col-pct"><span class="badge bear">-3.37%</span></td>
+                <td class="col-sitc"><span class="bull">66張 (+0.10%)</span></td>
+                <td class="col-foreign">3張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">法人積極買進，累積動能燃料 (投本比 0.103%)</span></td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 4: EXIT -->
+        <div id="tab-exit" class="tab-content">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>名次</th>
+                            <th>證券名稱</th>
+                            <th>收盤價</th>
+                            <th>漲跌幅</th>
+                            <th>投信賣超(投本比)</th>
+                            <th>外資買超</th>
+                            <th>成交量(張)</th>
+                            <th>發行張數</th>
+                            <th>警戒狀態</th>
+                            <th>狀態解讀與操作指引</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr class="stock-row" data-search="6187 萬潤 TPEx">
+                <td class="col-rank">1</td>
+                <td class="col-code"><span class="code-pill">6187</span> <span class="name-text">萬潤</span> <span class="market-tag">TPEx</span></td>
+                <td class="col-price"><span class="bull">$715.00</span></td>
+                <td class="col-pct"><span class="badge bull">+4.23%</span></td>
+                <td class="col-sitc"><span class="bear">-1,059張 (-1.08%)</span></td>
+                <td class="col-foreign">838張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="8021 尖點 TWSE">
+                <td class="col-rank">2</td>
+                <td class="col-code"><span class="code-pill">8021</span> <span class="name-text">尖點</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$244.50</span></td>
+                <td class="col-pct"><span class="badge bear">-9.94%</span></td>
+                <td class="col-sitc"><span class="bear">-1,129張 (-0.75%)</span></td>
+                <td class="col-foreign">809張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="3264 欣銓 TPEx">
+                <td class="col-rank">3</td>
+                <td class="col-code"><span class="code-pill">3264</span> <span class="name-text">欣銓</span> <span class="market-tag">TPEx</span></td>
+                <td class="col-price"><span class="bull">$156.00</span></td>
+                <td class="col-pct"><span class="badge bull">+7.22%</span></td>
+                <td class="col-sitc"><span class="bear">-3,452張 (-0.70%)</span></td>
+                <td class="col-foreign">1,722張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2603 長榮 TWSE">
+                <td class="col-rank">4</td>
+                <td class="col-code"><span class="code-pill">2603</span> <span class="name-text">長榮</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$252.50</span></td>
+                <td class="col-pct"><span class="badge bear">-1.75%</span></td>
+                <td class="col-sitc"><span class="bear">-13,284張 (-0.61%)</span></td>
+                <td class="col-foreign">13,006張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="5871 中租-KY TWSE">
+                <td class="col-rank">5</td>
+                <td class="col-code"><span class="code-pill">5871</span> <span class="name-text">中租-KY</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$102.00</span></td>
+                <td class="col-pct"><span class="badge bear">-1.45%</span></td>
+                <td class="col-sitc"><span class="bear">-10,544張 (-0.60%)</span></td>
+                <td class="col-foreign">11,485張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2313 華通 TWSE">
+                <td class="col-rank">6</td>
+                <td class="col-code"><span class="code-pill">2313</span> <span class="name-text">華通</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$153.00</span></td>
+                <td class="col-pct"><span class="badge bear">-9.73%</span></td>
+                <td class="col-sitc"><span class="bear">-7,415張 (-0.60%)</span></td>
+                <td class="col-foreign">12,315張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="1802 台玻 TWSE">
+                <td class="col-rank">7</td>
+                <td class="col-code"><span class="code-pill">1802</span> <span class="name-text">台玻</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$59.90</span></td>
+                <td class="col-pct"><span class="badge bear">-6.26%</span></td>
+                <td class="col-sitc"><span class="bear">-14,441張 (-0.50%)</span></td>
+                <td class="col-foreign">-81,441張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2486 一詮 TWSE">
+                <td class="col-rank">8</td>
+                <td class="col-code"><span class="code-pill">2486</span> <span class="name-text">一詮</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$126.50</span></td>
+                <td class="col-pct"><span class="badge bear">-1.17%</span></td>
+                <td class="col-sitc"><span class="bear">-1,139張 (-0.47%)</span></td>
+                <td class="col-foreign">698張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2351 順德 TWSE">
+                <td class="col-rank">9</td>
+                <td class="col-code"><span class="code-pill">2351</span> <span class="name-text">順德</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$111.00</span></td>
+                <td class="col-pct"><span class="badge bear">-6.33%</span></td>
+                <td class="col-sitc"><span class="bear">-865張 (-0.45%)</span></td>
+                <td class="col-foreign">515張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="3324 雙鴻 TPEx">
+                <td class="col-rank">10</td>
+                <td class="col-code"><span class="code-pill">3324</span> <span class="name-text">雙鴻</span> <span class="market-tag">TPEx</span></td>
+                <td class="col-price"><span class="bull">$858.00</span></td>
+                <td class="col-pct"><span class="badge bull">+7.52%</span></td>
+                <td class="col-sitc"><span class="bear">-386張 (-0.41%)</span></td>
+                <td class="col-foreign">-216張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2481 強茂 TWSE">
+                <td class="col-rank">11</td>
+                <td class="col-code"><span class="code-pill">2481</span> <span class="name-text">強茂</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$88.00</span></td>
+                <td class="col-pct"><span class="badge bear">-9.18%</span></td>
+                <td class="col-sitc"><span class="bear">-1,540張 (-0.40%)</span></td>
+                <td class="col-foreign">2,225張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="6531 愛普* TWSE">
+                <td class="col-rank">12</td>
+                <td class="col-code"><span class="code-pill">6531</span> <span class="name-text">愛普*</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$516.00</span></td>
+                <td class="col-pct"><span class="badge bear">-8.83%</span></td>
+                <td class="col-sitc"><span class="bear">-709張 (-0.40%)</span></td>
+                <td class="col-foreign">478張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="6147 頎邦 TPEx">
+                <td class="col-rank">13</td>
+                <td class="col-code"><span class="code-pill">6147</span> <span class="name-text">頎邦</span> <span class="market-tag">TPEx</span></td>
+                <td class="col-price"><span class="bull">$132.00</span></td>
+                <td class="col-pct"><span class="badge bull">+6.45%</span></td>
+                <td class="col-sitc"><span class="bear">-2,696張 (-0.36%)</span></td>
+                <td class="col-foreign">1,449張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="2027 大成鋼 TWSE">
+                <td class="col-rank">14</td>
+                <td class="col-code"><span class="code-pill">2027</span> <span class="name-text">大成鋼</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$43.70</span></td>
+                <td class="col-pct"><span class="badge bear">-9.24%</span></td>
+                <td class="col-sitc"><span class="bear">-7,142張 (-0.28%)</span></td>
+                <td class="col-foreign">2,785張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="3450 聯鈞 TWSE">
+                <td class="col-rank">15</td>
+                <td class="col-code"><span class="code-pill">3450</span> <span class="name-text">聯鈞</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$277.00</span></td>
+                <td class="col-pct"><span class="badge bear">-2.46%</span></td>
+                <td class="col-sitc"><span class="bear">-398張 (-0.27%)</span></td>
+                <td class="col-foreign">-35張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="6683 雍智科技 TPEx">
+                <td class="col-rank">16</td>
+                <td class="col-code"><span class="code-pill">6683</span> <span class="name-text">雍智科技</span> <span class="market-tag">TPEx</span></td>
+                <td class="col-price"><span class="bull">$730.00</span></td>
+                <td class="col-pct"><span class="badge bull">+6.73%</span></td>
+                <td class="col-sitc"><span class="bear">-74張 (-0.27%)</span></td>
+                <td class="col-foreign">94張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="3443 創意 TWSE">
+                <td class="col-rank">17</td>
+                <td class="col-code"><span class="code-pill">3443</span> <span class="name-text">創意</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$5070.00</span></td>
+                <td class="col-pct"><span class="badge bear">-9.95%</span></td>
+                <td class="col-sitc"><span class="bear">-329張 (-0.25%)</span></td>
+                <td class="col-foreign">308張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="6442 光聖 TWSE">
+                <td class="col-rank">18</td>
+                <td class="col-code"><span class="code-pill">6442</span> <span class="name-text">光聖</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$915.00</span></td>
+                <td class="col-pct"><span class="badge bear">-6.54%</span></td>
+                <td class="col-sitc"><span class="bear">-196張 (-0.24%)</span></td>
+                <td class="col-foreign">129張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="4551 智伸科 TWSE">
+                <td class="col-rank">19</td>
+                <td class="col-code"><span class="code-pill">4551</span> <span class="name-text">智伸科</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$117.50</span></td>
+                <td class="col-pct"><span class="badge bear">-5.24%</span></td>
+                <td class="col-sitc"><span class="bear">-243張 (-0.21%)</span></td>
+                <td class="col-foreign">223張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="6138 茂達 TPEx">
+                <td class="col-rank">20</td>
+                <td class="col-code"><span class="code-pill">6138</span> <span class="name-text">茂達</span> <span class="market-tag">TPEx</span></td>
+                <td class="col-price"><span class="bull">$198.50</span></td>
+                <td class="col-pct"><span class="badge bull">+5.59%</span></td>
+                <td class="col-sitc"><span class="bear">-156張 (-0.21%)</span></td>
+                <td class="col-foreign">177張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="6510 精測 TPEx">
+                <td class="col-rank">21</td>
+                <td class="col-code"><span class="code-pill">6510</span> <span class="name-text">精測</span> <span class="market-tag">TPEx</span></td>
+                <td class="col-price"><span class="bull">$2425.00</span></td>
+                <td class="col-pct"><span class="badge bull">+7.78%</span></td>
+                <td class="col-sitc"><span class="bear">-67張 (-0.20%)</span></td>
+                <td class="col-foreign">16張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="6830 汎銓 TWSE">
+                <td class="col-rank">22</td>
+                <td class="col-code"><span class="code-pill">6830</span> <span class="name-text">汎銓</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$316.50</span></td>
+                <td class="col-pct"><span class="badge bear">-6.50%</span></td>
+                <td class="col-sitc"><span class="bear">-100張 (-0.18%)</span></td>
+                <td class="col-foreign">168張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+
+            <tr class="stock-row" data-search="7769 鴻勁 TWSE">
+                <td class="col-rank">23</td>
+                <td class="col-code"><span class="code-pill">7769</span> <span class="name-text">鴻勁</span> <span class="market-tag">TWSE</span></td>
+                <td class="col-price"><span class="bear">$3065.00</span></td>
+                <td class="col-pct"><span class="badge bear">-4.22%</span></td>
+                <td class="col-sitc"><span class="bear">-291張 (-0.16%)</span></td>
+                <td class="col-foreign">160張</td>
+                <td class="col-vcp"><span class="badge badge-neutral">-</span> / -</td>
+                <td class="col-pivot"><span class="text-pivot">-</span></td>
+                <td class="col-risk"><span class="text-stop">-</span> <span class="text-target">/ -</span></td>
+                <td class="col-desc"><span class="desc-text">投信主力顯著賣超結帳</span></td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div>
+                © 2026 J Law Momentum Radar · Powered by Antigravity · MasonLee 投資研究專屬系統
+            </div>
+            <div>
+                資料權威來源：臺灣證券交易所 (TWSE) 與 證券櫃檯買賣中心 (TPEx) 官方開放資料庫
+            </div>
+        </footer>
     </div>
 
-    <div class="section-container">
-        <div class="section-title title-sitc">🔥 投信買超投本比 TOP 15 (2026/08/21)</div>
-        <table>
-            <thead>
-                <tr>
-                    <th>名次</th>
-                    <th>代號</th>
-                    <th>股票名稱</th>
-                    <th>投信買超 (張)</th>
-                    <th>投本比 (%)</th>
-                </tr>
-            </thead>
-            <tbody>
-<tr><td>1</td><td><b>6278</b></td><td><b>台表科</b></td><td class="buy-val">+158,2張</td><td class="buy-val">+0.975%</td></tr>
-<tr><td>2</td><td><b>2455</b></td><td><b>全新</b></td><td class="buy-val">+215,1張</td><td class="buy-val">+0.818%</td></tr>
-<tr><td>3</td><td><b>2486</b></td><td><b>一詮</b></td><td class="buy-val">+888,1張</td><td class="buy-val">+0.807%</td></tr>
-<tr><td>4</td><td><b>3450</b></td><td><b>聯鈞</b></td><td class="buy-val">+419張</td><td class="buy-val">+0.627%</td></tr>
-<tr><td>5</td><td><b>6472</b></td><td><b>保瑞</b></td><td class="buy-val">+705張</td><td class="buy-val">+0.397%</td></tr>
-<tr><td>6</td><td><b>3042</b></td><td><b>晶技</b></td><td class="buy-val">+299張</td><td class="buy-val">+0.289%</td></tr>
-<tr><td>7</td><td><b>6531</b></td><td><b>愛普*</b></td><td class="buy-val">+622張</td><td class="buy-val">+0.278%</td></tr>
-<tr><td>8</td><td><b>1402</b></td><td><b>遠東新</b></td><td class="buy-val">+011,11張</td><td class="buy-val">+0.208%</td></tr>
-<tr><td>9</td><td><b>3532</b></td><td><b>台勝科</b></td><td class="buy-val">+586張</td><td class="buy-val">+0.177%</td></tr>
-<tr><td>10</td><td><b>3665</b></td><td><b>貿聯-KY</b></td><td class="buy-val">+143張</td><td class="buy-val">+0.171%</td></tr>
-<tr><td>11</td><td><b>2049</b></td><td><b>上銀</b></td><td class="buy-val">+735張</td><td class="buy-val">+0.152%</td></tr>
-<tr><td>12</td><td><b>4746</b></td><td><b>台耀</b></td><td class="buy-val">+631張</td><td class="buy-val">+0.113%</td></tr>
-<tr><td>13</td><td><b>3014</b></td><td><b>聯陽</b></td><td class="buy-val">+781張</td><td class="buy-val">+0.113%</td></tr>
-<tr><td>14</td><td><b>8996</b></td><td><b>高力</b></td><td class="buy-val">+301張</td><td class="buy-val">+0.110%</td></tr>
-<tr><td>15</td><td><b>2313</b></td><td><b>華通</b></td><td class="buy-val">+603,1張</td><td class="buy-val">+0.106%</td></tr>
-            </tbody>
-        </table>
-    </div>
+    <script>
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            filterTable();
+        }
+
+        function filterTable() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const activeTab = document.querySelector('.tab-content.active');
+            if (!activeTab) return;
+            const rows = activeTab.querySelectorAll('.stock-row');
+            rows.forEach(row => {
+                const searchTarget = row.getAttribute('data-search').toLowerCase();
+                if (searchTarget.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
+    
